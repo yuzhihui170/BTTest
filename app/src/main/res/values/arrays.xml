@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+**
+** Copyright 2007 The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">   
+    <string-array name="pbap_folder_entries">
+        <item>Cellular phonebook</item>
+        <item>Cellular incoming calls</item>
+        <item>Cellular outgoing calls</item>
+        <item>Cellular missed calls</item>
+        <item>Simcard phonebook</item>
+        <item>Simcard incoming calls</item>
+        <item>Simcard outgoing calls</item>
+        <item>Simcard missed calls</item>
+    </string-array>
+  
+    <string-array translatable="false" name="pbap_folder_values">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>16</item>
+        <item>32</item>
+        <item>64</item>
+        <item>128</item>
+    </string-array>
+
+    <string-array name="pbap_attribute_entries">
+        <item>Name</item>
+        <item>Number</item>
+        <item>Sound</item>
+    </string-array>
+
+    <string-array translatable="false" name="pbap_attribute_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="pbap_order_entries">
+        <item>Indexed order</item>
+        <item>Alphabetical order</item>
+        <item>Phonetic order</item>
+    </string-array>
+
+    <string-array translatable="false" name="pbap_order_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="pbap_filter_entries">
+        <item>vCard Version(mandatory)</item>
+        <item>Formatted Name(mandatory for vcard 3.0)</item>
+        <item>Structured Presentation of Name(mandatory)</item>
+        <item>Associated Image or Photo</item>
+        <item>Birthday</item>
+        <item>Delivery Address</item>
+        <item>Delivery</item>
+        <item>Telephone Number(mandatory)</item>
+        <item>Electronic Mail Address</item>
+        <item>Electronic Mail</item>
+        <item>Time Zone</item>
+        <item>Geographic Position</item>
+        <item>Job</item>
+        <item>Role within the Organization</item>
+        <item>Organization Logo</item>
+        <item>vCard of Person Representing</item>
+        <item>Name of Organization</item>
+        <item>Comments</item>
+        <item>Revision</item>
+        <item>Pronunciation of Name</item>
+        <item>Uniform Resource Locator</item>
+        <item>Unique ID</item>
+        <item>Public Encryption Key</item>
+        <item>Nickname</item>
+        <item>Categories</item>
+        <item>Product ID</item>
+        <item>Class information</item>
+        <item>String used for sorting operations</item>
+        <item>Time stamp</item>
+        <item>Indicates the usage of a proprietary filter</item>
+    </string-array>
+
+    <string-array translatable="false" name="pbap_filter_values">
+      <item>1</item>
+      <item>2</item>
+      <item>4</item>
+      <item>8</item>
+      <item>16</item>
+      <item>32</item>
+      <item>64</item>
+      <item>128</item>
+      <item>256</item>
+      <item>512</item>
+      <item>1024</item>
+      <item>2048</item>
+      <item>4096</item>
+      <item>8192</item>
+      <item>16384</item>
+      <item>32768</item>
+      <item>65536</item>
+      <item>131072</item>
+      <item>262144</item>
+      <item>524288</item>
+      <item>1048576</item>
+      <item>2097152</item>
+      <item>4194304</item>
+      <item>8388608</item>
+      <item>16777216</item>
+      <item>33554432</item>
+      <item>67108864</item>
+      <item>134217728</item>
+      <item>268435456</item>
+      <item>549755813888</item>
+    </string-array>
+
+    <string-array name="pbap_vcard_format_entries">
+        <item>2.1</item>
+        <item>3.0</item>
+    </string-array>
+
+    <string-array translatable="false" name="pbap_vcard_format_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+</resources>

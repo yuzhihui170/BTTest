@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">כבר מותאם  %s מחוברים של</string>
+    <string name="DL_PairWithThisDevice">התאמה עם המכשיר הזה</string>
+    <string name="DL_PairedButNotConnected">הם מחוברים באופן אוטומטי ב </string>
+    <string name="DL_PairedAndConnecting">כבר מתאימים, הם מחוברים באופן אוטומטי ב...</string>
+    <string name="DL_Connecting">%s הוא החיבור ...</string>
+    <string name="DL_Pairing">תואם...</string>
+    <string name="DL_Pair">להתאים</string>
+    <string name="DL_Connect">קשר</string>
+    <string name="DL_UnPair">נתק את המשחק</string>
+    <string name="DL_UnConnect">לנתק</string>
+    <string name="setting_Discoverable">ניתן למצוא</string>
+    <string name="phonebook_clean">נקה את ספר טלפונים...</string>
+    <string name="calllog_clean">יומן קריאה ברור...</string>
+    <string name="phonebook_state">סטטוס PBAP:</string>
+    <string name="phonebook_Device">ציוד:</string>
+    <string name="phonebook_loading">טען את ספר טלפונים...</string>
+    <string name="calllog_loading">טעינת יומן קריאה...</string>
+    <string name="phonebook_dlcontacts">הורד את ספר טלפונים...</string>
+    <string name="phonebook_dlcalllog">הורד את יומן השיחות...</string>
+    <string name="phonebook_Search">לחפש</string>
+    <string name="main_DeviceList">רשימת ציוד</string>
+    <string name="main_Phone">לוח המקשים</string>
+    <string name="main_Phonebook">ספר טלפונים</string>
+    <string name="main_MusicAvrcp">מוסיקת Bluetooth</string>
+    <string name="main_bluetooth_enabled">להפעיל את Bluetooth</string>
+    <string name="main_bluetooth_disabled">לכבות את Bluetooth</string>
+    <string name="main_setting">הגדרות Bluetooth</string>
+    <string name="main_callrecord">רשומות שיחה</string>
+    <string name="setting_devicename">שם התקן:</string>
+    <string name="setting_pincode">קוד PIN:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">לחסוך</string>
+    <string name="setting_cancel">לבטל</string>
+    <string name="btn_profilelist_done">לקבוע</string>
+    <string name="btn_profilelist_cancel">לבטל</string>
+    <string name="please_conn_device">אנא לחבר התקני Bluetooth</string>
+    <string name="Had_conn_device">התקן Bluetooth מחובר:</string>
+    <string name="search_contacts">חיפוש עבור אנשי קשר</string>
+    <string name="ready_download_phonebook">בין אם כדי להוריד מחדש את ספר טלפונים?</string>
+    <string name="ready_download_calllog">בין אם כדי להוריד מחדש את יומן השיחות?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">חיבורים אנונימיים</string>
+    <string name="devicelist_pbapmode_auth">בדוק את החיבור</string>
+    <string name="enter_phone_num">אנא הכנס את מספר הטלפון</string>
+    <string name="unconnect_notice">אין אנשי קשר תואמים</string>
+    <string name="ready_delete_phonebook">אישור כדי למחוק את ספר הטלפונים שלך?</string>
+    <string name="ready_delete_calllog">אתה בטוח כדי למחוק את רשומות שיחה?</string>
+    <string name="call_log_dial_in">לקרוא</string>
+    <string name="call_log_missed">שלא נענו</string>
+    <string name="call_log_dial_out">יוצא</string>
+    <string name="avrcp_unconnected">AVRCP אינו מחובר, אתה לא יכול לנגן מוסיקה</string>
+    <string name="a2dp_unconnected">A2DP אינו מחובר, אתה לא יכול לנגן מוסיקה</string>
+    <string name="avrcp_a2dp_unconnected">אודיו אינם מחוברים, אתה לא יכול לנגן מוסיקה</string>
+    <string name="DL_Searching_device">לחפש...</string>
+    <string name="avrcp_playing">השמעת מוסיקת Bluetooth</string>
+    <string name="avrcp_noplaying">לא השמעת מוסיקת Bluetooth</string>
+    <string name="first_connecting">הטלפון הראשון להתחבר באופן אוטומטי זה לוקח זמן מעט ארוך, אנא המתן ...</string>
+    <string name="please_disconnect_device">נתק את המכשיר התואם</string>
+     <string name="connecting_HFP"> להיות אפילו HFP ...</string>
+    <string name="connecting_A2DP"> להיות אפילו A2DP ...</string>
+    <string name="connecting_AVRCP"> להיות אפילו AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">ציוד גישה ספר טלפונים זמין</string>
+    <string name="bluetooth_pbapc_device_operation">פעולת מכשיר Pbapc</string>
+    <string name="bluetooth_pbapc_device_search_result">תוצאות חיפוש Pbapc</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP ציוד:</string>
+    <string name="bluetooth_pbapc_device_status">סטטוס:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc הסמכה</string>
+    <string name="bluetooth_pbapc_device_username">שם משתמש:</string>
+    <string name="bluetooth_pbapc_device_password">סיסמא:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">חיבורים אנונימיים</string>
+    <string name="bluetooth_pbapc_device_dowload">הורד</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">בחר להוריד תיקייה</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">לא תציין תיקיית הורדה, בחר תיקייה להורדה אחת לפחות</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">טלפון ברור לפני ההורדה</string>
+    <string name="bluetooth_pbapc_device_view_contacts">צפה באנשי קשר</string>
+    <string name="bluetooth_pbapc_device_search">למצוא</string>
+    <string name="bluetooth_pbapc_device_search_folder">בחר תיקיית חיפוש</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">לא תציין תיקיית חיפוש, בחר בתיקיית חיפוש אחד לפחות</string>
+    <string name="bluetooth_pbapc_device_search_attribute">מאפייני חיפוש: </string>
+    <string name="bluetooth_pbapc_device_result_order">סדר תוצאות: </string>
+    <string name="bluetooth_pbapc_device_search_key">מילות מפתח: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">צפה בתוצאות האחרונות</string>
+    <string name="bluetooth_pbapc_device_setting">להקים</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">הוסר לפני ניתוק ספר טלפונים</string>
+    <string name="bluetooth_pbapc_device_result_filter">תוצאות להגדיר את סינון</string>
+    <string name="bluetooth_pbapc_device_vcard_format">גרסת תבנית vCard: </string>
+    <string name="bluetooth_pbapc_abort_operation">לבטל את הפעולה הנוכחית</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc לבטל את בקשת המבצע</string>
+    <string name="bluetooth_pbapc_connect_cancel">חיבור בוטל</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">מצב לא ידוע</string>
+  
+    <string name="bluetooth_pbapc_disconnected">מחובר</string>
+
+    <string name="bluetooth_pbapc_connecting">קשר...</string>
+
+    <string name="bluetooth_pbapc_connected">מחובר</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">חיבור אבד...</string>
+
+    <string name="bluetooth_pbapc_communicating">תקשורת...</string>
+
+    <string name="setting_pbap_anonymous">חיבורים אנונימיים PBAP</string>
+    
+    <string name="pb_name_unknown">לא ידוע</string>
+    <string name="str_no_pbap">הטלפון שלך אינו מחובר פונקציה "סנכרון ספר טלפונים"!</string>
+</resources>

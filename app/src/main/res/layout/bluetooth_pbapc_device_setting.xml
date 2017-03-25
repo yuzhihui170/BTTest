@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TabHost android:id="@+id/bt_pbapc_device_setting_tabhost"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+
+		<TextView android:text="@string/bluetooth_pbapc_device_current_device"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+
+		<TextView
+		    android:id="@+id/bt_pbapc_device_setting_text_device"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textAppearance="?android:attr/textAppearanceMedium"
+		    android:textSize="@dimen/text_middle_size" />
+		<TextView android:text="@string/bluetooth_pbapc_device_status"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+
+		<TextView android:id="@+id/bt_pbapc_device_setting_text_status"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+      android:textAppearance="?android:attr/textAppearanceMedium"/>
+		
+		<Button android:id="@+id/bt_pbapc_device_setting_button_abort_operation"
+			android:text="@string/bluetooth_pbapc_abort_operation"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+
+		<TabWidget android:id="@android:id/tabs"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"/>
+
+		<FrameLayout android:id="@android:id/tabcontent"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:paddingTop="5dip">
+
+			<LinearLayout android:id="@+id/bt_pbapc_device_setting_tab_download"
+				android:orientation="vertical"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+
+				<ScrollView android:layout_width="fill_parent"
+					android:layout_height="fill_parent">
+			
+					<LinearLayout android:orientation="vertical"
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent">
+			
+						<Button
+						    android:id="@+id/bt_pbapc_device_setting_button_download_folder"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="@string/bluetooth_pbapc_device_dowload_folder"
+						    android:textSize="@dimen/text_middle_size" />
+
+						<CheckBox
+						    android:id="@+id/bt_pbapc_device_setting_check_clear_before_download"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="@string/bluetooth_pbapc_device_clear_before_download"
+						    android:textSize="@dimen/text_middle_size" />
+
+						<LinearLayout android:orientation="horizontal"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:gravity="center_vertical">
+
+							<Button
+							    android:id="@+id/bt_pbapc_device_setting_button_download"
+							    android:layout_width="wrap_content"
+							    android:layout_height="wrap_content"
+							    android:text="@string/bluetooth_pbapc_device_dowload"
+							    android:textSize="@dimen/text_middle_size" />
+
+							<Button
+							    android:id="@+id/bt_pbapc_device_setting_button_view_contacts"
+							    android:layout_width="wrap_content"
+							    android:layout_height="wrap_content"
+							    android:layout_marginLeft="20px"
+							    android:text="@string/bluetooth_pbapc_device_view_contacts"
+							    android:textSize="@dimen/text_middle_size" />
+
+						</LinearLayout>
+
+					</LinearLayout>
+
+				</ScrollView>
+		
+			</LinearLayout>
+
+			<LinearLayout android:id="@+id/bt_pbapc_device_setting_tab_search"
+				android:orientation="vertical"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+
+				<ScrollView android:layout_width="fill_parent"
+					android:layout_height="fill_parent">
+
+				<LinearLayout android:orientation="vertical"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent">
+			
+					<Button
+					    android:id="@+id/bt_pbapc_device_setting_button_search_folder"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="@string/bluetooth_pbapc_device_search_folder"
+					    android:textSize="@dimen/text_middle_size" />
+
+					<LinearLayout android:orientation="horizontal"
+						android:gravity="center_vertical"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content">
+
+						<TextView
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="@string/bluetooth_pbapc_device_search_attribute"
+						    android:textSize="@dimen/text_middle_size" />
+
+						<Spinner android:id="@+id/bt_pbapc_device_setting_spinner_search_attribute"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"/>
+
+					</LinearLayout>
+
+					<LinearLayout android:orientation="horizontal"
+						android:gravity="center_vertical"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content">
+
+					<TextView
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="@string/bluetooth_pbapc_device_result_order"
+					    android:textSize="@dimen/text_middle_size" />
+
+					<Spinner android:id="@+id/bt_pbapc_device_setting_spinner_result_order"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"/>
+
+					</LinearLayout>
+
+					<LinearLayout android:orientation="horizontal"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center_vertical">
+
+						<TextView
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="@string/bluetooth_pbapc_device_search_key"
+						    android:textSize="@dimen/text_middle_size" />
+
+						<EditText
+						    android:id="@+id/bt_pbapc_device_setting_edit_search_key"
+						    android:layout_width="170px"
+						    android:layout_height="wrap_content"
+						    android:singleLine="true"
+						    android:textSize="@dimen/text_middle_size" />
+
+						<Button
+						    android:id="@+id/bt_pbapc_device_setting_button_search"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:layout_marginLeft="20px"
+						    android:text="@string/bluetooth_pbapc_device_search"
+						    android:textSize="@dimen/text_middle_size" />
+
+					</LinearLayout>
+		
+					<Button
+					    android:id="@+id/bt_pbapc_device_setting_button_view_latest_result"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="@string/bluetooth_pbapc_device_view_latest_result"
+					    android:textSize="@dimen/text_middle_size" />
+
+				</LinearLayout>
+
+				</ScrollView>
+
+			</LinearLayout>
+
+			<LinearLayout android:id="@+id/bt_pbapc_device_setting_tab_setting"
+				android:orientation="vertical"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+
+				<ScrollView android:layout_width="fill_parent"
+					android:layout_height="fill_parent">
+
+				<LinearLayout android:orientation="vertical"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent">
+
+					<CheckBox
+					    android:id="@+id/bt_pbapc_device_setting_check_clear_before_disconnect"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="@string/bluetooth_pbapc_device_clear_before_disconnect"
+					    android:textSize="@dimen/text_middle_size" />
+
+					<Button
+					    android:id="@+id/bt_pbapc_device_setting_button_result_filter"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="@string/bluetooth_pbapc_device_result_filter"
+					    android:textSize="@dimen/text_middle_size" />
+
+					<LinearLayout android:orientation="horizontal"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center_vertical">
+
+						<TextView
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    android:text="@string/bluetooth_pbapc_device_vcard_format"
+						    android:textSize="@dimen/text_middle_size" />
+
+						<Spinner android:id="@+id/bt_pbapc_device_setting_spinner_vcard_format"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+				</ScrollView>
+
+			</LinearLayout>
+
+		</FrameLayout>
+
+	</LinearLayout>
+
+	</TabHost>
+
+</LinearLayout>

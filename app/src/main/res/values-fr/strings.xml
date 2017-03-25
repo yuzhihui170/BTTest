@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">Ont été appariés et connectés %s</string>
+    <string name="DL_PairWithThisDevice">Assorti avec cet appareil</string>
+    <string name="DL_PairedButNotConnected">Ont été appariés </string>
+    <string name="DL_PairedAndConnecting">Ont été appariés, sont automatiquement connecté à ...</string>
+    <string name="DL_Connecting">%s s\'agit de la connexion ...</string>
+    <string name="DL_Pairing">Matching...</string>
+    <string name="DL_Pair">égaler</string>
+    <string name="DL_Connect">lien</string>
+    <string name="DL_UnPair">débranchez le match</string>
+    <string name="DL_UnConnect">couper</string>
+    <string name="setting_Discoverable">Peut-être trouvé</string>
+    <string name="phonebook_clean">Effacer l\'annuaire...</string>
+    <string name="calllog_clean">Effacer tous les appels...</string>
+    <string name="phonebook_state">état PBAP:</string>
+    <string name="phonebook_Device">équipement:</string>
+    <string name="phonebook_loading">Charger l\'annuaire...</string>
+    <string name="calllog_loading">Chargement journal d\'appels...</string>
+    <string name="phonebook_dlcontacts">Téléchargez l\'annuaire...</string>
+    <string name="phonebook_dlcalllog">Télécharger le journal des appels...</string>
+    <string name="phonebook_Search">Rechercher</string>
+    <string name="main_DeviceList">Liste d\'équipement</string>
+    <string name="main_Phone">clavier</string>
+    <string name="main_Phonebook">répertoire</string>
+    <string name="main_MusicAvrcp">musique Bluetooth</string>
+    <string name="main_bluetooth_enabled">Activez la fonction Bluetooth</string>
+    <string name="main_bluetooth_disabled">Désactivez le Bluetooth</string>
+    <string name="main_setting">paramètres Bluetooth</string>
+    <string name="main_callrecord">Enregistrement des appels</string>
+    <string name="setting_devicename">Nom de l\'appareil:</string>
+    <string name="setting_pincode">Code PIN:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">Sauvegarder</string>
+    <string name="setting_cancel">résilier</string>
+    <string name="btn_profilelist_done">déterminer</string>
+    <string name="btn_profilelist_cancel">résilier</string>
+    <string name="please_conn_device">S\'il vous plaît connecter les appareils Bluetooth</string>
+    <string name="Had_conn_device">Périphérique Bluetooth connecté:</string>
+    <string name="search_contacts">Rechercher des contacts</string>
+    <string name="ready_download_phonebook">Que ce soit pour re-télécharger l\'annuaire?</string>
+    <string name="ready_download_calllog">Que ce soit pour re-télécharger le journal des appels?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">Connexions anonymes</string>
+    <string name="devicelist_pbapmode_auth">Vérifiez la connexion</string>
+    <string name="enter_phone_num">S\'il vous plaît entrer le numéro de téléphone</string>
+    <string name="unconnect_notice">Pas de contacts correspondants</string>
+    <string name="ready_delete_phonebook">OK pour supprimer le répertoire que vous?</string>
+    <string name="ready_delete_calllog">Vous veillez à supprimer des enregistrements d\'appels?</string>
+    <string name="call_log_dial_in">appeler</string>
+    <string name="call_log_missed">Omission</string>
+    <string name="call_log_dial_out">sortant</string>
+    <string name="avrcp_unconnected">AVRCP n\'est pas connecté, vous ne pouvez pas jouer de la musique</string>
+    <string name="a2dp_unconnected">A2DP n\'est pas connecté, vous ne pouvez pas jouer de la musique</string>
+    <string name="avrcp_a2dp_unconnected">Audio n\'est pas connecté, vous ne pouvez pas jouer de la musique</string>
+    <string name="DL_Searching_device">Rechercher...</string>
+    <string name="avrcp_playing">Lecture de musique Bluetooth</string>
+    <string name="avrcp_noplaying">Pas de lecture de musique Bluetooth</string>
+    <string name="first_connecting">Le premier téléphone se connecte automatiquement cela prend du temps un peu long, veuillez patienter ...</string>
+    <string name="please_disconnect_device">Débranchez le dispositif d\'adaptation</string>
+     <string name="connecting_HFP"> Être même HFP ...</string>
+    <string name="connecting_A2DP"> Être même A2DP ...</string>
+    <string name="connecting_AVRCP"> Être même AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">Équipements d\'accès du répertoire disponible</string>
+    <string name="bluetooth_pbapc_device_operation">Le fonctionnement du dispositif Pbapc</string>
+    <string name="bluetooth_pbapc_device_search_result">Résultats de la recherche Pbapc</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP Equipement:</string>
+    <string name="bluetooth_pbapc_device_status">statut:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc Certification</string>
+    <string name="bluetooth_pbapc_device_username">nom d\'utilisateur:</string>
+    <string name="bluetooth_pbapc_device_password">mot de passe:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">Connexions anonymes</string>
+    <string name="bluetooth_pbapc_device_dowload">télécharger</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Sélectionner dossier de téléchargement</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Ne pas spécifier un dossier de téléchargement, s\'il vous plaît sélectionner au moins un dossier de téléchargement</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Effacer téléphone avant de télécharger</string>
+    <string name="bluetooth_pbapc_device_view_contacts">Afficher un contact</string>
+    <string name="bluetooth_pbapc_device_search">Trouvez</string>
+    <string name="bluetooth_pbapc_device_search_folder">Sélectionnez un dossier de recherche</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Ne pas spécifier un dossier de recherche, s\'il vous plaît sélectionner au moins un dossier de recherche</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Propriétés de la recherche: </string>
+    <string name="bluetooth_pbapc_device_result_order">Afin de résultats: </string>
+    <string name="bluetooth_pbapc_device_search_key">Mots-clés: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Voir les derniers résultats</string>
+    <string name="bluetooth_pbapc_device_setting">Mettre en place</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Coupée avant de débrancher l\'annuaire</string>
+    <string name="bluetooth_pbapc_device_result_filter">Set Filtrage des résultats</string>
+    <string name="bluetooth_pbapc_device_vcard_format">La version au format vCard: </string>
+    <string name="bluetooth_pbapc_abort_operation">Abandonner l\'opération en cours</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc Abandonner l\'requête d\'opération</string>
+    <string name="bluetooth_pbapc_connect_cancel">La connexion a été annulée</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">État inconnu</string>
+  
+    <string name="bluetooth_pbapc_disconnected">lié</string>
+
+    <string name="bluetooth_pbapc_connecting">lien...</string>
+
+    <string name="bluetooth_pbapc_connected">lié</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Perte de la connexion...</string>
+
+    <string name="bluetooth_pbapc_communicating">communication...</string>
+
+    <string name="setting_pbap_anonymous">Les connexions anonymes PBAP</string>
+    
+    <string name="pb_name_unknown">inconnue</string>
+    <string name="str_no_pbap">Votre téléphone n\'est pas connecté fonction "téléphone du carnet d\'synchronisation"!</string>
+</resources>

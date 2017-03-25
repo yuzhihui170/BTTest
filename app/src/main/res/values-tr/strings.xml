@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">Uyumlu ve bağlı %s edilmiştir</string>
+    <string name="DL_PairWithThisDevice">Bu cihaz ile uyumlu</string>
+    <string name="DL_PairedButNotConnected">Bahisler edilmiştir </string>
+    <string name="DL_PairedAndConnecting">Bahisler edilmiştir, otomatik olarak bağlı olan ...</string>
+    <string name="DL_Connecting">%s bağlantı ...</string>
+    <string name="DL_Pairing">uygun...</string>
+    <string name="DL_Pair">maç</string>
+    <string name="DL_Connect">bağlantı</string>
+    <string name="DL_UnPair">maç çıkarın</string>
+    <string name="DL_UnConnect">kesmek</string>
+    <string name="setting_Discoverable">Bulunabilir</string>
+    <string name="phonebook_clean">Telefon rehberi temizleyin...</string>
+    <string name="calllog_clean">Açık arama kaydı...</string>
+    <string name="phonebook_state">PBAP devlet:</string>
+    <string name="phonebook_Device">ekipman:</string>
+    <string name="phonebook_loading">Telefon rehberi yükleyin...</string>
+    <string name="calllog_loading">Arama kaydı Yükleniyor...</string>
+    <string name="phonebook_dlcontacts">Telefon rehberi indir...</string>
+    <string name="phonebook_dlcalllog">Arama kaydı indir...</string>
+    <string name="phonebook_Search">arama</string>
+    <string name="main_DeviceList">ekipman Listesi</string>
+    <string name="main_Phone">Tuş takımı</string>
+    <string name="main_Phonebook">Telefon rehberi</string>
+    <string name="main_MusicAvrcp">Bluetooth müzik</string>
+    <string name="main_bluetooth_enabled">Bluetooth açın</string>
+    <string name="main_bluetooth_disabled">Bluetooth kapatın</string>
+    <string name="main_setting">Bluetooth ayarları</string>
+    <string name="main_callrecord">arama kaydı</string>
+    <string name="setting_devicename">Aygıt Adı:</string>
+    <string name="setting_pincode">PIN kodu:</string>
+    <string name="setting_pincode_txt">1.234</string>
+    <string name="setting_ok">kurtarmak</string>
+    <string name="setting_cancel">iptal</string>
+    <string name="btn_profilelist_done">belirlemek</string>
+    <string name="btn_profilelist_cancel">iptal</string>
+    <string name="please_conn_device">Bluetooth aygıtları bağlamak Lütfen</string>
+    <string name="Had_conn_device">Bağlı Bluetooth cihazı:</string>
+    <string name="search_contacts">kişileri arama</string>
+    <string name="ready_download_phonebook">Edip yeniden indir telefon rehberi?</string>
+    <string name="ready_download_calllog">Edip yeniden indirmek arama günlüğü?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">Anonim Bağlantılar</string>
+    <string name="devicelist_pbapmode_auth">bağlantı doğrulayın</string>
+    <string name="enter_phone_num">Telefon numarasını girin</string>
+    <string name="unconnect_notice">Eşleşen kişi</string>
+    <string name="ready_delete_phonebook">Tamam telefon rehberi Silmek?</string>
+    <string name="ready_delete_calllog">Emin arama kayıtlarını silmek için?</string>
+    <string name="call_log_dial_in">çağrı</string>
+    <string name="call_log_missed">cevapsız</string>
+    <string name="call_log_dial_out">giden</string>
+    <string name="avrcp_unconnected">AVRCP bağlı değil, müzik çalamaz</string>
+    <string name="a2dp_unconnected">A2DP bağlı değil, müzik çalamaz</string>
+    <string name="avrcp_a2dp_unconnected">Ses bağlı değil, müzik çalamaz</string>
+    <string name="DL_Searching_device">arama...</string>
+    <string name="avrcp_playing">Bluetooth müzik çalma</string>
+    <string name="avrcp_noplaying">Hayır Bluetooth müzik çalma</string>
+    <string name="first_connecting">Otomatik olarak bağlanmak için ilk telefon biraz uzun zaman alır, lütfen bekleyin ...</string>
+    <string name="please_disconnect_device">Eşleşen cihazın bağlantısını kesin</string>
+     <string name="connecting_HFP"> Hatta HFP olmak ...</string>
+    <string name="connecting_A2DP"> Hatta A2DP olmak ...</string>
+    <string name="connecting_AVRCP">Hatta AVRCP olmak ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">Mevcut telefon rehberi erişim ekipmanları</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapc cihaz kullanımı</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc arama sonuçları</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP Ekipmanları:</string>
+    <string name="bluetooth_pbapc_device_status">durum:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc Sertifikasyon</string>
+    <string name="bluetooth_pbapc_device_username">kullanıcı adı:</string>
+    <string name="bluetooth_pbapc_device_password">parola:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">Anonim Bağlantılar</string>
+    <string name="bluetooth_pbapc_device_dowload">İndir</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Klasör indir seçin</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Bir indirme klasörü belirtmezseniz, en az bir indirme klasörü seçiniz</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Indirmeden önce açık telefon</string>
+    <string name="bluetooth_pbapc_device_view_contacts">bir kişi bilgileri</string>
+    <string name="bluetooth_pbapc_device_search">bulmak</string>
+    <string name="bluetooth_pbapc_device_search_folder">Arama Klasörü seçin</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Arama Klasörü belirtilmemişse, en az bir arama klasörleri seçiniz</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Arama özellikleri: </string>
+    <string name="bluetooth_pbapc_device_result_order">Sonuçlar için: </string>
+    <string name="bluetooth_pbapc_device_search_key">Anahtar Kelimeler: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">En son sonuçlarını görüntüle</string>
+    <string name="bluetooth_pbapc_device_setting">kurmak</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Telefon rehberi çıkarmadan önce kaldırıldı</string>
+    <string name="bluetooth_pbapc_device_result_filter">Filtreleme Set Sonuçlar</string>
+    <string name="bluetooth_pbapc_device_vcard_format">vCard biçimi sürümü: </string>
+    <string name="bluetooth_pbapc_abort_operation">Iptal Geçerli işlemi</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc iptal operasyon talebi</string>
+    <string name="bluetooth_pbapc_connect_cancel">Bağlantı iptal edildi</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">Bilinmeyen durum</string>
+  
+    <string name="bluetooth_pbapc_disconnected">bağlı</string>
+
+    <string name="bluetooth_pbapc_connecting">bağlantı...</string>
+
+    <string name="bluetooth_pbapc_connected">bağlı</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Kayıp bağlantı...</string>
+
+    <string name="bluetooth_pbapc_communicating">iletişim...</string>
+
+    <string name="setting_pbap_anonymous">PBAP anonim bağlantılar</string>
+    
+    <string name="pb_name_unknown">bilinmeyen</string>
+    <string name="str_no_pbap">Telefonunuzda "telefon rehberi senkronizasyonu" fonksiyonu bağlı değil!</string>
+</resources>

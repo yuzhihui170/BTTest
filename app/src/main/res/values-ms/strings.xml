@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">Telah dipadankan dan %s berkaitan</string>
+    <string name="DL_PairWithThisDevice">Dipadankan dengan peranti ini</string>
+    <string name="DL_PairedButNotConnected">Telah dipadankan </string>
+    <string name="DL_PairedAndConnecting">Telah dipadankan, yang dihubungkan secara automatik di dalam ...</string>
+    <string name="DL_Connecting">%s adalah sambungan ...</string>
+    <string name="DL_Pairing">Pedang...</string>
+    <string name="DL_Pair">perlawanan</string>
+    <string name="DL_Connect">Connection</string>
+    <string name="DL_UnPair">Putuskan perlawanan</string>
+    <string name="DL_UnConnect">Putuskan</string>
+    <string name="setting_Discoverable">Boleh didapati</string>
+    <string name="phonebook_clean">Membersihkan buku telefon...</string>
+    <string name="calllog_clean">Log panggilan yang jelas...</string>
+    <string name="phonebook_state">PBAP negeri:</string>
+    <string name="phonebook_Device">peralatan:</string>
+    <string name="phonebook_loading">Memuatkan buku telefon...</string>
+    <string name="calllog_loading">Belum log panggilan...</string>
+    <string name="phonebook_dlcontacts">Memuat turun buku telefon...</string>
+    <string name="phonebook_dlcalllog">Muat log panggilan...</string>
+    <string name="phonebook_Search">Carian</string>
+    <string name="main_DeviceList">Senarai peralatan</string>
+    <string name="main_Phone">Pad dail</string>
+    <string name="main_Phonebook">buku Telefon</string>
+    <string name="main_MusicAvrcp">muzik Bluetooth</string>
+    <string name="main_bluetooth_enabled">Hidupkan Bluetooth</string>
+    <string name="main_bluetooth_disabled">Matikan Bluetooth</string>
+    <string name="main_setting">tetapan Bluetooth</string>
+    <string name="main_callrecord">rekod panggilan</string>
+    <string name="setting_devicename">Nama peranti:</string>
+    <string name="setting_pincode">kod PIN:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">Simpan</string>
+    <string name="setting_cancel">Batal</string>
+    <string name="btn_profilelist_done">menentukan</string>
+    <string name="btn_profilelist_cancel">Batal</string>
+    <string name="please_conn_device">Sila menyambung peranti Bluetooth</string>
+    <string name="Had_conn_device">Peranti Bluetooth berkaitan:</string>
+    <string name="search_contacts">Cari kenalan</string>
+    <string name="ready_download_phonebook">Sama-turun semula buku telefon?</string>
+    <string name="ready_download_calllog">-Turun semula sama ada untuk log panggilan?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">Sambungan perseorangan</string>
+    <string name="devicelist_pbapmode_auth">mengesahkan sambungan</string>
+    <string name="enter_phone_num">Sila masukkan nombor telefon</string>
+    <string name="unconnect_notice">Tiada kenalan yang sepadan</string>
+    <string name="ready_delete_phonebook">OK untuk memadam buku telefon anda?</string>
+    <string name="ready_delete_calllog">Anda pasti untuk memadam rekod panggilan?</string>
+    <string name="call_log_dial_in">hubungi</string>
+    <string name="call_log_missed">terlepas</string>
+    <string name="call_log_dial_out">keluar</string>
+    <string name="avrcp_unconnected">AVRCP tidak disambung, anda tidak boleh bermain muzik</string>
+    <string name="a2dp_unconnected">A2DP tidak disambung, anda tidak boleh bermain muzik</string>
+    <string name="avrcp_a2dp_unconnected">Audio tidak disambung, anda tidak boleh bermain muzik</string>
+    <string name="DL_Searching_device">Carian...</string>
+    <string name="avrcp_playing">Main balik muzik Bluetooth</string>
+    <string name="avrcp_noplaying">Tidak main muzik Bluetooth</string>
+    <string name="first_connecting">Telefon pertama untuk menyambung secara automatik ia mengambil sedikit masa panjang, sila tunggu ...</string>
+    <string name="please_disconnect_device">Putuskan peranti yang sepadan</string>
+     <string name="connecting_HFP"> Sebagai walaupun HFP ...</string>
+    <string name="connecting_A2DP"> Sebagai walaupun A2DP ...</string>
+    <string name="connecting_AVRCP">Sebagai walaupun AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">Terdapat peralatan akses buku telefon</string>
+    <string name="bluetooth_pbapc_device_operation">Operasi peranti Pbapc</string>
+    <string name="bluetooth_pbapc_device_search_result">Hasil carian Pbapc</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP peralatan:</string>
+    <string name="bluetooth_pbapc_device_status">status:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc Sijil</string>
+    <string name="bluetooth_pbapc_device_username">Gelaran:</string>
+    <string name="bluetooth_pbapc_device_password">Kata laluan:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">Sambungan perseorangan</string>
+    <string name="bluetooth_pbapc_device_dowload">turun</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Pilih folder muat turun</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Tidak menentukan folder muat turun, sila pilih sekurang-kurangnya satu folder muat turun</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Telefon yang jelas sebelum memuat turun</string>
+    <string name="bluetooth_pbapc_device_view_contacts">Lihat kenalan</string>
+    <string name="bluetooth_pbapc_device_search">Cari</string>
+    <string name="bluetooth_pbapc_device_search_folder">Pilih Folder Search</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Tidak menentukan folder carian, sila pilih sekurang-kurangnya satu folder carian</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Cari hartanah: </string>
+    <string name="bluetooth_pbapc_device_result_order">Keputusan pesanan: </string>
+    <string name="bluetooth_pbapc_device_search_key">Keywords: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Lihat keputusan terkini</string>
+    <string name="bluetooth_pbapc_device_setting">Sediakan</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Dikeluarkan sebelum memutuskan buku telefon</string>
+    <string name="bluetooth_pbapc_device_result_filter">Keputusan Set Penapisan</string>
+    <string name="bluetooth_pbapc_device_vcard_format">versi format vCard: </string>
+    <string name="bluetooth_pbapc_abort_operation">Membatalkan operasi semasa</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc membatalkan permintaan operasi</string>
+    <string name="bluetooth_pbapc_connect_cancel">Sambungan telah dibatalkan</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">Keadaan yang tidak diketahui</string>
+  
+    <string name="bluetooth_pbapc_disconnected">Bersambung</string>
+
+    <string name="bluetooth_pbapc_connecting">Connection...</string>
+
+    <string name="bluetooth_pbapc_connected">Bersambung</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Sambungan hilang...</string>
+
+    <string name="bluetooth_pbapc_communicating">komunikasi...</string>
+
+    <string name="setting_pbap_anonymous">PBAP sambungan tanpa nama</string>
+    
+    <string name="pb_name_unknown">Tidak diketahui</string>
+    <string name="str_no_pbap">Telefon anda tidak disambung "buku penyegerakan telefon" fungsi!</string>
+</resources>

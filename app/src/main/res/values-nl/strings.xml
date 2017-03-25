@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">Zijn afgestemd en aangesloten %s</string>
+    <string name="DL_PairWithThisDevice">Matched met dit apparaat</string>
+    <string name="DL_PairedButNotConnected">Zijn afgestemd </string>
+    <string name="DL_PairedAndConnecting">Zijn afgestemd, zijn automatisch verbonden in ...</string>
+    <string name="DL_Connecting">%s is de verbinding ...</string>
+    <string name="DL_Pairing">Matching ...</string>
+    <string name="DL_Pair">wedstrijd</string>
+    <string name="DL_Connect">aansluiting</string>
+    <string name="DL_UnPair">Koppel de wedstrijd</string>
+    <string name="DL_UnConnect">loskoppelen</string>
+    <string name="setting_Discoverable">Kan worden gevonden</string>
+    <string name="phonebook_clean">Schakel het telefoonboek...</string>
+    <string name="calllog_clean">Duidelijke oproep log...</string>
+    <string name="phonebook_state">PBAP Status:</string>
+    <string name="phonebook_Device">uitrusting:</string>
+    <string name="phonebook_loading">Laad het telefoonboek...</string>
+    <string name="calllog_loading">Laden bellijst...</string>
+    <string name="phonebook_dlcontacts">Download het telefoonboek...</string>
+    <string name="phonebook_dlcalllog">Download de bellijst...</string>
+    <string name="phonebook_Search">zoeken</string>
+    <string name="main_DeviceList">Equipment List</string>
+    <string name="main_Phone">dialpad</string>
+    <string name="main_Phonebook">telefoonboek</string>
+    <string name="main_MusicAvrcp">Bluetooth muziek</string>
+    <string name="main_bluetooth_enabled">schakel Bluetooth</string>
+    <string name="main_bluetooth_disabled">Schakel Bluetooth</string>
+    <string name="main_setting">Bluetooth-instellingen</string>
+    <string name="main_callrecord">call records</string>
+    <string name="setting_devicename">Apparaatnaam:</string>
+    <string name="setting_pincode">PIN-code:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">sparen</string>
+    <string name="setting_cancel">annuleren</string>
+    <string name="btn_profilelist_done">bepalen</string>
+    <string name="btn_profilelist_cancel">annuleren</string>
+    <string name="please_conn_device">Sluit Bluetooth-apparaten</string>
+    <string name="Had_conn_device">Aangesloten Bluetooth-apparaat:</string>
+    <string name="search_contacts">zoeken naar contactpersonen</string>
+    <string name="ready_download_phonebook">Of opnieuw te downloaden van het telefoonboek?</string>
+    <string name="ready_download_calllog">Of opnieuw te downloaden de bellijst?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">anonieme verbindingen</string>
+    <string name="devicelist_pbapmode_auth">Controleer de aansluiting</string>
+    <string name="enter_phone_num">Vul het telefoonnummer</string>
+    <string name="unconnect_notice">Geen overeenkomende contactpersonen</string>
+    <string name="ready_delete_phonebook">OK om het telefoonboek kunt verwijderen?</string>
+    <string name="ready_delete_calllog">U zeker oproep records te verwijderen?</string>
+    <string name="call_log_dial_in">noemen</string>
+    <string name="call_log_missed">gemiste</string>
+    <string name="call_log_dial_out">uitgaande</string>
+    <string name="avrcp_unconnected">AVRCP niet is aangesloten, kunt u geen muziek afspelen</string>
+    <string name="a2dp_unconnected">A2DP is niet aangesloten, kunt u geen muziek afspelen</string>
+    <string name="avrcp_a2dp_unconnected">Audio niet is aangesloten, kunt u geen muziek afspelen</string>
+    <string name="DL_Searching_device">zoeken...</string>
+    <string name="avrcp_playing">Bluetooth muziek afspelen</string>
+    <string name="avrcp_noplaying">Geen Bluetooth muziek afspelen</string>
+    <string name="first_connecting">De eerste telefoon automatisch verbinding het tijd een beetje lang duurt, even geduld ...</string>
+    <string name="please_disconnect_device">请先断开已匹配的设备</string>
+     <string name="connecting_HFP"> Omdat zelfs HFP ...</string>
+    <string name="connecting_A2DP"> Omdat zelfs A2DP ...</string>
+    <string name="connecting_AVRCP"> Omdat zelfs AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">Beschikbaar telefoonboek toegang apparatuur</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapc werking van het apparaat</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc zoekresultaten</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP Equipment:</string>
+    <string name="bluetooth_pbapc_device_status">toestand:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc Certificering</string>
+    <string name="bluetooth_pbapc_device_username">gebruikersnaam:</string>
+    <string name="bluetooth_pbapc_device_password">wachtwoord:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">anonieme verbindingen</string>
+    <string name="bluetooth_pbapc_device_dowload">Download</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Selecteer downloaden folder</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Heb een download map niet opgeeft, selecteer dan tenminste een download map</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Duidelijke telefoon voor het downloaden</string>
+    <string name="bluetooth_pbapc_device_view_contacts">een contactpersoon weergeven</string>
+    <string name="bluetooth_pbapc_device_search">vinden</string>
+    <string name="bluetooth_pbapc_device_search_folder">Selecteer een zoekmap</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Heeft een zoekmap niet opgeven, selecteer dan tenminste een zoekmap</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Zoek eigenschappen: </string>
+    <string name="bluetooth_pbapc_device_result_order">Resultaten volgorde: </string>
+    <string name="bluetooth_pbapc_device_search_key">trefwoorden: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Bekijk de laatste resultaten</string>
+    <string name="bluetooth_pbapc_device_setting">instellen</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Verwijderd voordat u het telefoonboek</string>
+    <string name="bluetooth_pbapc_device_result_filter">Set resultaten filteren</string>
+    <string name="bluetooth_pbapc_device_vcard_format">vCard-formaat versie: </string>
+    <string name="bluetooth_pbapc_abort_operation">Afbreken van de huidige bewerking</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc de bewerking te annuleren verzoek</string>
+    <string name="bluetooth_pbapc_connect_cancel">Connection is geannuleerd</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">Onbekende toestand</string>
+  
+    <string name="bluetooth_pbapc_disconnected">aangesloten</string>
+
+    <string name="bluetooth_pbapc_connecting">aansluiting...</string>
+
+    <string name="bluetooth_pbapc_connected">aangesloten</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Verloren verbinding...</string>
+
+    <string name="bluetooth_pbapc_communicating">mededeling...</string>
+
+    <string name="setting_pbap_anonymous">PBAP anonieme verbindingen</string>
+    
+    <string name="pb_name_unknown">onbekend</string>
+    <string name="str_no_pbap">De telefoon is niet aangesloten "book telefoon synchroniseren"-functie!</string>
+</resources>

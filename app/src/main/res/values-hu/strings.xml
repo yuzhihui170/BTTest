@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">Már kiegyenlített és csatlakoztatva %s</string>
+    <string name="DL_PairWithThisDevice">Illeszkedik a készülék</string>
+    <string name="DL_PairedButNotConnected">Már kiegyenlített </string>
+    <string name="DL_PairedAndConnecting">Már kiegyenlített, automatikusan csatlakozik ...</string>
+    <string name="DL_Connecting">%s a kapcsolat ...</string>
+    <string name="DL_Pairing">összeillő...</string>
+    <string name="DL_Pair">mérkőzés</string>
+    <string name="DL_Connect">kapcsolat</string>
+    <string name="DL_UnPair">húzza ki a meccs</string>
+    <string name="DL_UnConnect">húzza ki</string>
+    <string name="setting_Discoverable">Megtalálható</string>
+    <string name="phonebook_clean">A telefonkönyv törlése...</string>
+    <string name="calllog_clean">Hívásnapló ürítése...</string>
+    <string name="phonebook_state">PBAP Status:</string>
+    <string name="phonebook_Device">berendezés:</string>
+    <string name="phonebook_loading">Töltse be a telefonkönyv...</string>
+    <string name="calllog_loading">Betöltése hívásnapló...</string>
+    <string name="phonebook_dlcontacts">Töltse le a telefonkönyv...</string>
+    <string name="phonebook_dlcalllog">Töltse le a hívásnapló...</string>
+    <string name="phonebook_Search">Keresés</string>
+    <string name="main_DeviceList">felszerelések listája</string>
+    <string name="main_Phone">Tárcsázó</string>
+    <string name="main_Phonebook">Telefonkönyv</string>
+    <string name="main_MusicAvrcp">Bluetooth zene</string>
+    <string name="main_bluetooth_enabled">Kapcsolja be a Bluetooth</string>
+    <string name="main_bluetooth_disabled">Kapcsolja ki a Bluetooth</string>
+    <string name="main_setting">Bluetooth-beállítások</string>
+    <string name="main_callrecord">Hívásnapló</string>
+    <string name="setting_devicename">Device Name:</string>
+    <string name="setting_pincode">PIN kód:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">kivéve</string>
+    <string name="setting_cancel">Mégsem</string>
+    <string name="btn_profilelist_done">Határozza meg</string>
+    <string name="btn_profilelist_cancel">Mégsem</string>
+    <string name="please_conn_device">Kérjük, csatlakoztassa Bluetooth-eszközök</string>
+    <string name="Had_conn_device">Bluetooth készülék:</string>
+    <string name="search_contacts">névjegyek keresése</string>
+    <string name="ready_download_phonebook">Legyen-e újra letölteni a telefonkönyvet?</string>
+    <string name="ready_download_calllog">Legyen-e újra letölteni a hívásnapló?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">névtelen kapcsolatok</string>
+    <string name="devicelist_pbapmode_auth">Ellenőrizze a csatlakozás</string>
+    <string name="enter_phone_num">Kérjük, adja meg a telefonszámát</string>
+    <string name="unconnect_notice">Nem talált tételek</string>
+    <string name="ready_delete_phonebook">OK, hogy törölje a telefonkönyv?</string>
+    <string name="ready_delete_calllog">Biztos, hogy törölni hívás rekordok?</string>
+    <string name="call_log_dial_in">hívás</string>
+    <string name="call_log_missed">megszakított</string>
+    <string name="call_log_dial_out">kimenő</string>
+    <string name="avrcp_unconnected">AVRCP nincs csatlakoztatva, akkor nem lehet zenélni</string>
+    <string name="a2dp_unconnected">A2DP nincs csatlakoztatva, akkor nem lehet zenélni</string>
+    <string name="avrcp_a2dp_unconnected">Hang nincs csatlakoztatva, akkor nem zenélni</string>
+    <string name="DL_Searching_device">Keresés...</string>
+    <string name="avrcp_playing">Bluetooth zenelejátszás</string>
+    <string name="avrcp_noplaying">Nincs Bluetooth zenelejátszás</string>
+    <string name="first_connecting">Az első telefon automatikusan kapcsolódjon időbe telik egy kicsit hosszú, kérem várjon ...</string>
+    <string name="please_disconnect_device">Húzza ki a megfelelő eszköz</string>
+     <string name="connecting_HFP"> Mivel még HFP ...</string>
+    <string name="connecting_A2DP"> Mivel még A2DP ...</string>
+    <string name="connecting_AVRCP"> Mivel még AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">A rendelkezésre álló telefonkönyv hozzáférési eszközök</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapc készülék működésének</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc keresési eredmények</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP Felszereltség:</string>
+    <string name="bluetooth_pbapc_device_status">állapot:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc tanúsítás</string>
+    <string name="bluetooth_pbapc_device_username">felhasználónév:</string>
+    <string name="bluetooth_pbapc_device_password">jelszó:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">névtelen kapcsolatok</string>
+    <string name="bluetooth_pbapc_device_dowload">letöltése</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Válassza ki a letöltési mappához</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Ne adjon egy letöltési mappát, kérjük, válasszon ki legalább egy letöltés mappa</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Tiszta Letöltés előtt</string>
+    <string name="bluetooth_pbapc_device_view_contacts">Partner megtekintése</string>
+    <string name="bluetooth_pbapc_device_search">talál</string>
+    <string name="bluetooth_pbapc_device_search_folder">Válassza ki a keresési mappa</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Ne adja meg a keresési mappa Válasszon legalább egy keresési mappát</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Keresés tulajdonságok: </string>
+    <string name="bluetooth_pbapc_device_result_order">Eredmények sorrendben: </string>
+    <string name="bluetooth_pbapc_device_search_key">Kulcsszavak: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Tekintse meg a legújabb eredmények</string>
+    <string name="bluetooth_pbapc_device_setting">beállítása</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Eltávolítják, mielőtt kihúzza a telefonkönyv</string>
+    <string name="bluetooth_pbapc_device_result_filter">Set Eredmények szűrés</string>
+    <string name="bluetooth_pbapc_device_vcard_format">vCard formátumú változata: </string>
+    <string name="bluetooth_pbapc_abort_operation">Megszakítás az aktuális művelet</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc művelet megszakításához kérelem</string>
+    <string name="bluetooth_pbapc_connect_cancel">Connection törölték</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">Ismeretlen állapot</string>
+  
+    <string name="bluetooth_pbapc_disconnected">összefüggő</string>
+
+    <string name="bluetooth_pbapc_connecting">kapcsolat...</string>
+
+    <string name="bluetooth_pbapc_connected">összefüggő</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Elveszett kapcsolat...</string>
+
+    <string name="bluetooth_pbapc_communicating">közlés...</string>
+
+    <string name="setting_pbap_anonymous">PBAP névtelen kapcsolatok</string>
+    
+    <string name="pb_name_unknown">ismeretlen</string>
+    <string name="str_no_pbap">A telefon nem csatlakozik "telefonkönyv szinkronizálás" funkció!</string>
+</resources>

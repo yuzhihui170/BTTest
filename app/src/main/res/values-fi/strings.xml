@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">On sovitettu ja liitetty %s</string>
+    <string name="DL_PairWithThisDevice">Hyväksytty tämän laitteen kanssa</string>
+    <string name="DL_PairedButNotConnected">On löytynyt </string>
+    <string name="DL_PairedAndConnecting">On löytynyt, ovat automaattisesti kytketty ...</string>
+    <string name="DL_Connecting">%s on yhteys ...</string>
+    <string name="DL_Pairing">Vastaavat...</string>
+    <string name="DL_Pair">ottelu</string>
+    <string name="DL_Connect">yhteys</string>
+    <string name="DL_UnPair">Irrota ottelu</string>
+    <string name="DL_UnConnect">katkaista</string>
+    <string name="setting_Discoverable">Löytyy</string>
+    <string name="phonebook_clean">Tyhjennä puhelinluettelo...</string>
+    <string name="calllog_clean">Tyhjennä puhelulokia...</string>
+    <string name="phonebook_state">PBAP Tila:</string>
+    <string name="phonebook_Device">laitteet:</string>
+    <string name="phonebook_loading">Lataa puhelinluettelosta...</string>
+    <string name="calllog_loading">Ladataan puhelulokia...</string>
+    <string name="phonebook_dlcontacts">Lataa puhelinluettelosta...</string>
+    <string name="phonebook_dlcalllog">Lataa puhelulokia...</string>
+    <string name="phonebook_Search">Etsi</string>
+    <string name="main_DeviceList">Equipment List</string>
+    <string name="main_Phone">dialpad</string>
+    <string name="main_Phonebook">puhelinluettelo</string>
+    <string name="main_MusicAvrcp">Bluetooth musiikki</string>
+    <string name="main_bluetooth_enabled">Kytke Bluetooth</string>
+    <string name="main_bluetooth_disabled">Sammuta Bluetooth</string>
+    <string name="main_setting">Bluetooth-asetukset</string>
+    <string name="main_callrecord">Puhelutiedot</string>
+    <string name="setting_devicename">laitteen nimi:</string>
+    <string name="setting_pincode">PIN-koodi:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">säästää</string>
+    <string name="setting_cancel">peruuttaa</string>
+    <string name="btn_profilelist_done">määrittää</string>
+    <string name="btn_profilelist_cancel">peruuttaa</string>
+    <string name="please_conn_device">Liitä Bluetooth-laitteita</string>
+    <string name="Had_conn_device">Yhdistetty Bluetooth-laitteeseen:</string>
+    <string name="search_contacts">Voit etsiä yhteystietoja</string>
+    <string name="ready_download_phonebook">Olipa ladata uudelleen puhelinluettelosta?</string>
+    <string name="ready_download_calllog">Olipa ladata uudelleen puhelulokia?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">anonyymit yhteydet</string>
+    <string name="devicelist_pbapmode_auth">Varmista yhteys</string>
+    <string name="enter_phone_num">Syötä puhelinnumero</string>
+    <string name="unconnect_notice">Ei vastaavia kontakteja</string>
+    <string name="ready_delete_phonebook">OK poistaaksesi puhelinluettelon sinulle?</string>
+    <string name="ready_delete_calllog">Haluatko varmasti poistaa Puhelutietueet?</string>
+    <string name="call_log_dial_in">soittaa</string>
+    <string name="call_log_missed">Missed</string>
+    <string name="call_log_dial_out">lähtevä</string>
+    <string name="avrcp_unconnected">AVRCP ei ole kytketty, et voi toistaa musiikkia</string>
+    <string name="a2dp_unconnected">A2DP ei ole kytketty, et voi toistaa musiikkia</string>
+    <string name="avrcp_a2dp_unconnected">Ääni ei ole kytketty, et voi toistaa musiikkia</string>
+    <string name="DL_Searching_device">Etsi...</string>
+    <string name="avrcp_playing">Bluetooth musiikin toisto</string>
+    <string name="avrcp_noplaying">Ei Bluetooth musiikin toisto</string>
+    <string name="first_connecting">Ensimmäinen puhelin automaattisesti yhteyden se vie aikaa hieman pitkä, odota hetki ...</string>
+    <string name="please_disconnect_device">Irrota sisovituslaitteen</string>
+     <string name="connecting_HFP"> Ovat jopa HFP ...</string>
+    <string name="connecting_A2DP"> Ovat jopa A2DP ...</string>
+    <string name="connecting_AVRCP">Ovat jopa AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">Saatavilla puhelinluetteloon laitteet</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapc laitteen toiminta</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc hakutuloksia</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP laitteet:</string>
+    <string name="bluetooth_pbapc_device_status">tila:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc sertifiointi</string>
+    <string name="bluetooth_pbapc_device_username">käyttäjätunnus:</string>
+    <string name="bluetooth_pbapc_device_password">salasana:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">anonyymit yhteydet</string>
+    <string name="bluetooth_pbapc_device_dowload">Lataa</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Valitse latauskansioon</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Älä määritä noutokansioon, valitse vähintään yksi lataus kansio</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Tyhjennä puhelimen ennen lataamista</string>
+    <string name="bluetooth_pbapc_device_view_contacts">Katso yhteystiedot</string>
+    <string name="bluetooth_pbapc_device_search">löytää</string>
+    <string name="bluetooth_pbapc_device_search_folder">Valitse Hakukansio</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Älä määritä haku kansion, valitse vähintään yksi haku kansio</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Etsi ominaisuuksia: </string>
+    <string name="bluetooth_pbapc_device_result_order">Tulokset järjestyksessä: </string>
+    <string name="bluetooth_pbapc_device_search_key">Avainsanat: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Katso uusimmat tulokset</string>
+    <string name="bluetooth_pbapc_device_setting">perustettu</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Poistettava ennen irrottamista puhelinluettelosta</string>
+    <string name="bluetooth_pbapc_device_result_filter">Set Tulokset suodatus</string>
+    <string name="bluetooth_pbapc_device_vcard_format">vCard versio: </string>
+    <string name="bluetooth_pbapc_abort_operation">Keskeytä nykyinen toiminta</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc keskeyttää operaatiopyyntö</string>
+    <string name="bluetooth_pbapc_connect_cancel">Yhteys on peruutettu</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">Tuntematon tila</string>
+  
+    <string name="bluetooth_pbapc_disconnected">kytketty</string>
+
+    <string name="bluetooth_pbapc_connecting">yhteys...</string>
+
+    <string name="bluetooth_pbapc_connected">kytketty</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Katkenneen...</string>
+
+    <string name="bluetooth_pbapc_communicating">viestintä...</string>
+
+    <string name="setting_pbap_anonymous">PBAP anonyymit yhteydet</string>
+    
+    <string name="pb_name_unknown">tuntematon</string>
+    <string name="str_no_pbap">Puhelinta ei ole kytketty "yhteystietojen synkronointi"-toiminto!</string>
+</resources>

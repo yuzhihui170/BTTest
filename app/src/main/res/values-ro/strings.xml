@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">Au fost adaptate și conectate %s</string>
+    <string name="DL_PairWithThisDevice">Potrivit cu acest aparat</string>
+    <string name="DL_PairedButNotConnected">Au fost potrivite </string>
+    <string name="DL_PairedAndConnecting">Au fost potrivite, sunt conectate în mod automat, în ...</string>
+    <string name="DL_Connecting">%s este conexiunea ...</string>
+    <string name="DL_Pairing">potrivire...</string>
+    <string name="DL_Pair">potrivi</string>
+    <string name="DL_Connect">conexiune</string>
+    <string name="DL_UnPair">Deconectați meci</string>
+    <string name="DL_UnConnect">deconecta</string>
+    <string name="setting_Discoverable">Pot fi găsite</string>
+    <string name="phonebook_clean">Goliți cartea de telefon...</string>
+    <string name="calllog_clean">Clar jurnalul de apeluri...</string>
+    <string name="phonebook_state">PBAP Stare:</string>
+    <string name="phonebook_Device">echipament:</string>
+    <string name="phonebook_loading">Încărcați cartea de telefon...</string>
+    <string name="calllog_loading">Se încarcă jurnalul de apeluri...</string>
+    <string name="phonebook_dlcontacts">Descărcați cartea de telefon...</string>
+    <string name="phonebook_dlcalllog">Descărcați jurnalul de apeluri...</string>
+    <string name="phonebook_Search">Caută</string>
+    <string name="main_DeviceList">Lista de echipamente</string>
+    <string name="main_Phone">Tastatură</string>
+    <string name="main_Phonebook">cartea de telefon</string>
+    <string name="main_MusicAvrcp">muzică Bluetooth</string>
+    <string name="main_bluetooth_enabled">Porniți Bluetooth</string>
+    <string name="main_bluetooth_disabled">Dezactivați Bluetooth</string>
+    <string name="main_setting">setări Bluetooth</string>
+    <string name="main_callrecord">înregistrările apelurilor</string>
+    <string name="setting_devicename">Nume dispozitiv:</string>
+    <string name="setting_pincode">cod PIN:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">salva</string>
+    <string name="setting_cancel">anula</string>
+    <string name="btn_profilelist_done">determina</string>
+    <string name="btn_profilelist_cancel">anula</string>
+    <string name="please_conn_device">Vă rugăm să conectați dispozitive Bluetooth</string>
+    <string name="Had_conn_device">Dispozitiv Bluetooth conectat:</string>
+    <string name="search_contacts">căutarea contactelor</string>
+    <string name="ready_download_phonebook">Fie pentru a re-descărca cartea de telefon?</string>
+    <string name="ready_download_calllog">Fie pentru a re-descărca jurnalul de apeluri?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">anonime Conexiuni</string>
+    <string name="devicelist_pbapmode_auth">Verificați conexiunea</string>
+    <string name="enter_phone_num">Vă rugăm să introduceți numărul de telefon</string>
+    <string name="unconnect_notice">Nu contacte potrivire</string>
+    <string name="ready_delete_phonebook">OK pentru a șterge cartea de telefon?</string>
+    <string name="ready_delete_calllog">Sigur pentru a șterge înregistrări de apel?</string>
+    <string name="call_log_dial_in">apel</string>
+    <string name="call_log_missed">Pierdute</string>
+    <string name="call_log_dial_out">de ieșire</string>
+    <string name="avrcp_unconnected">AVRCP nu este conectat, nu puteți reda muzică</string>
+    <string name="a2dp_unconnected">A2DP nu este conectat, nu puteți reda muzică</string>
+    <string name="avrcp_a2dp_unconnected">Audio nu este conectat, nu puteți reda muzică</string>
+    <string name="DL_Searching_device">Caută...</string>
+    <string name="avrcp_playing">Redarea de muzică Bluetooth</string>
+    <string name="avrcp_noplaying">Nu redarea de muzică Bluetooth</string>
+    <string name="first_connecting">Primul telefon să se conecteze automat este nevoie de timp un pic cam lung, va rugam asteptati ...</string>
+    <string name="please_disconnect_device">Deconectați dispozitivul de potrivire</string>
+     <string name="connecting_HFP"> Fiind chiar HFP ...</string>
+    <string name="connecting_A2DP"> Fiind chiar A2DP ...</string>
+    <string name="connecting_AVRCP"> Fiind chiar AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">Disponibil echipamente de acces agendă telefonică</string>
+    <string name="bluetooth_pbapc_device_operation">Funcționarea aparatului Pbapc</string>
+    <string name="bluetooth_pbapc_device_search_result">Rezultatele căutării Pbapc</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP Echipamente:</string>
+    <string name="bluetooth_pbapc_device_status">Starea:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc Certificare</string>
+    <string name="bluetooth_pbapc_device_username">nume utilizator:</string>
+    <string name="bluetooth_pbapc_device_password">parolă:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">anonime Conexiuni</string>
+    <string name="bluetooth_pbapc_device_dowload">Descărcați</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Selectați Descarca folder</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Nu specificați un folder de descărcare, vă rugăm să selectați cel puțin un folder de descărcare</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Telefonul clar înainte de a descărca</string>
+    <string name="bluetooth_pbapc_device_view_contacts">Vezi un contact</string>
+    <string name="bluetooth_pbapc_device_search">găsi</string>
+    <string name="bluetooth_pbapc_device_search_folder">Selectați un folder de căutare</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Nu specificați un folder de căutare, vă rugăm să selectați cel puțin un folder de căutare</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Proprietăți de căutare: </string>
+    <string name="bluetooth_pbapc_device_result_order">Ordoneaza rezultate: </string>
+    <string name="bluetooth_pbapc_device_search_key">Cuvinte cheie: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Vezi cele mai recente rezultate</string>
+    <string name="bluetooth_pbapc_device_setting">Configurarea</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Eliminat înainte de a deconecta cartea de telefon</string>
+    <string name="bluetooth_pbapc_device_result_filter">Set Rezultate filtrare</string>
+    <string name="bluetooth_pbapc_device_vcard_format">Versiunea format vCard: </string>
+    <string name="bluetooth_pbapc_abort_operation">Renunța la operația de curent</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc abandona cererea operațiunea</string>
+    <string name="bluetooth_pbapc_connect_cancel">Conexiunea a fost anulat</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">De stat Necunoscut</string>
+  
+    <string name="bluetooth_pbapc_disconnected">legat</string>
+
+    <string name="bluetooth_pbapc_connecting">conexiune...</string>
+
+    <string name="bluetooth_pbapc_connected">legat</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Conexiune pierdut...</string>
+
+    <string name="bluetooth_pbapc_communicating">comunicare...</string>
+
+    <string name="setting_pbap_anonymous">Conexiuni anonime PBAP</string>
+    
+    <string name="pb_name_unknown">necunoscut</string>
+    <string name="str_no_pbap">Telefonul dvs. nu este conectat "carte de sincronizare de telefon" functie!</string>
+</resources>

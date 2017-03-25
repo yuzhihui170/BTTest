@@ -1,8 +1,28 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-    </style>
+    <style name="AppTheme" parent="android:Theme.Light" />
+	<style name="DialNumBtnStyle">
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:padding">15dp</item>
+	    <item name="android:background">#00000000</item>
+	</style>
+	
+	<style name="MainUITabImgBtnStyle">
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_height">0dp</item>
+	    <item name="android:layout_weight">2</item>
+	    <item name="android:background">#00000000</item>
+	    <item name="android:scaleType">fitCenter</item>
+	</style>
+	
+	<style name="Theme.AppStartLoad" parent="android:Theme">  
+		<item name="android:windowBackground">@drawable/bg</item>  
+		<item name="android:windowNoTitle">true</item>  
+	</style>
 
+	<style name="Theme.AppStartLoadTranslucent" parent="android:Theme">  
+		<item name="android:windowIsTranslucent">true</item> 
+		<item name="android:windowNoTitle">true</item>  
+	</style>
 </resources>

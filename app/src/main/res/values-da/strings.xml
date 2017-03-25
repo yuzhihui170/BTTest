@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">Er blevet matchet og tilsluttet %s</string>
+    <string name="DL_PairWithThisDevice">Matchet med denne enhed</string>
+    <string name="DL_PairedButNotConnected">Er blevet matchet </string>
+    <string name="DL_PairedAndConnecting">Er blevet matchet, er automatisk forbundet i ...</string>
+    <string name="DL_Connecting">%s er forbindelsen ...</string>
+    <string name="DL_Pairing">matching...</string>
+    <string name="DL_Pair">Match</string>
+    <string name="DL_Connect">tilslutning</string>
+    <string name="DL_UnPair">Afbryd kampen</string>
+    <string name="DL_UnConnect">Afbryd</string>
+    <string name="setting_Discoverable">Kan findes</string>
+    <string name="phonebook_clean">Ryd telefonbogen...</string>
+    <string name="calllog_clean">Klar opfordring log...</string>
+    <string name="phonebook_state">PBAP Status:</string>
+    <string name="phonebook_Device">udstyr:</string>
+    <string name="phonebook_loading">Indlæse telefonbogen...</string>
+    <string name="calllog_loading">Loading opkaldslog...</string>
+    <string name="phonebook_dlcontacts">Hent telefonbogen...</string>
+    <string name="phonebook_dlcalllog">Hent opkaldsloggen...</string>
+    <string name="phonebook_Search">Søg</string>
+    <string name="main_DeviceList">udstyr List</string>
+    <string name="main_Phone">nummerblok</string>
+    <string name="main_Phonebook">Telefonbog</string>
+    <string name="main_MusicAvrcp">Bluetooth Musik</string>
+    <string name="main_bluetooth_enabled">Tænd Bluetooth</string>
+    <string name="main_bluetooth_disabled">Slå Bluetooth</string>
+    <string name="main_setting">Bluetooth-indstillinger</string>
+    <string name="main_callrecord">call records</string>
+    <string name="setting_devicename">Device Name:</string>
+    <string name="setting_pincode">PIN-kode:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">Gem</string>
+    <string name="setting_cancel">Annuller</string>
+    <string name="btn_profilelist_done">Bestem</string>
+    <string name="btn_profilelist_cancel">Annuller</string>
+    <string name="please_conn_device">Tilslut Bluetooth-enheder</string>
+    <string name="Had_conn_device">Tilsluttede Bluetooth-enhed:</string>
+    <string name="search_contacts">Søg efter kontakter</string>
+    <string name="ready_download_phonebook">Om der skal re-download telefonbogen?</string>
+    <string name="ready_download_calllog">Om der skal re-download opkaldsloggen?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">anonyme forbindelser</string>
+    <string name="devicelist_pbapmode_auth">kontrollere forbindelsen</string>
+    <string name="enter_phone_num">Indtast telefonnummeret</string>
+    <string name="unconnect_notice">Ingen matchende kontaktpersoner</string>
+    <string name="ready_delete_phonebook">OK for at slette den telefonbog, du?</string>
+    <string name="ready_delete_calllog">Du sørge for at slette opkaldslister?</string>
+    <string name="call_log_dial_in">Ring</string>
+    <string name="call_log_missed">Mistede</string>
+    <string name="call_log_dial_out">udgående</string>
+    <string name="avrcp_unconnected">AVRCP ikke er tilsluttet, kan du ikke afspille musik</string>
+    <string name="a2dp_unconnected">A2DP ikke er tilsluttet, kan du ikke afspille musik</string>
+    <string name="avrcp_a2dp_unconnected">Audio ikke er tilsluttet, kan du ikke afspille musik</string>
+    <string name="DL_Searching_device">Søg...</string>
+    <string name="avrcp_playing">Bluetooth musikafspilning</string>
+    <string name="avrcp_noplaying">Ingen Bluetooth musikafspilning</string>
+    <string name="first_connecting">Den første telefon til automatisk at oprette forbindelse det tager tid lidt lang, vent venligst ...</string>
+    <string name="please_disconnect_device">Afbryd matchende enhed</string>
+     <string name="connecting_HFP"> Bliver selv HFP ...</string>
+    <string name="connecting_A2DP"> Bliver selv A2DP ...</string>
+    <string name="connecting_AVRCP"> Bliver selv AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">Telefonbogs adgang udstyr</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapc enhed operation</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc søgeresultater</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP Udstyr:</string>
+    <string name="bluetooth_pbapc_device_status">status:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc Certificering</string>
+    <string name="bluetooth_pbapc_device_username">brugernavn:</string>
+    <string name="bluetooth_pbapc_device_password">adgangskode:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">anonyme forbindelser</string>
+    <string name="bluetooth_pbapc_device_dowload">Hent</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Vælg download-mappen</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Ikke angiver en download-mappe, skal du vælge mindst ét ​​download-mappe</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Clear telefonen, inden du henter</string>
+    <string name="bluetooth_pbapc_device_view_contacts">Se en kontaktperson</string>
+    <string name="bluetooth_pbapc_device_search">Find</string>
+    <string name="bluetooth_pbapc_device_search_folder">Vælg en søgemappe</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Ikke angiver en søgemappe, skal du vælge mindst én søgemappe</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Søgning egenskaber: </string>
+    <string name="bluetooth_pbapc_device_result_order">Resultater rækkefølge: </string>
+    <string name="bluetooth_pbapc_device_search_key">nøgleord: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Se de seneste resultater</string>
+    <string name="bluetooth_pbapc_device_setting">Opsætning</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Fjernet før du frakobler telefonbogen</string>
+    <string name="bluetooth_pbapc_device_result_filter">Set Resultater Filtrering</string>
+    <string name="bluetooth_pbapc_device_vcard_format">vCard-format udgave: </string>
+    <string name="bluetooth_pbapc_abort_operation">Afbryd den aktuelle handling</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc afbryde operationen anmodningen</string>
+    <string name="bluetooth_pbapc_connect_cancel">Connection er blevet annulleret</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">Ukendt tilstand</string>
+  
+    <string name="bluetooth_pbapc_disconnected">forbundet</string>
+
+    <string name="bluetooth_pbapc_connecting">tilslutning...</string>
+
+    <string name="bluetooth_pbapc_connected">forbundet</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Tabt forbindelse...</string>
+
+    <string name="bluetooth_pbapc_communicating">kommunikation...</string>
+
+    <string name="setting_pbap_anonymous">PBAP anonyme forbindelser</string>
+    
+    <string name="pb_name_unknown">ukendt</string>
+    <string name="str_no_pbap">Din telefon er ikke tilsluttet "telefonbog synkronisering" funktion!</string>
+</resources>

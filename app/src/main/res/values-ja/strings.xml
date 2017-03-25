@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">ブルートゥース</string>
+    <string name="DL_PairedAndConnected"> %sがマッチして接続されています</string>
+    <string name="DL_PairWithThisDevice">このデバイスと一致</string>
+    <string name="DL_PairedButNotConnected">マッチングされて </string>
+    <string name="DL_PairedAndConnecting">マッチングされて、自動的に接続されている...</string>
+    <string name="DL_Connecting">%sは接続です...</string>
+    <string name="DL_Pairing">マッチング...</string>
+    <string name="DL_Pair">一致</string>
+    <string name="DL_Connect">接続</string>
+    <string name="DL_UnPair">試合を外し</string>
+    <string name="DL_UnConnect">切断</string>
+    <string name="setting_Discoverable">見つけることができる</string>
+    <string name="phonebook_clean">電話帳をクリア...</string>
+    <string name="calllog_clean">クリアコールログ...</string>
+    <string name="phonebook_state">PBAPステータス：</string>
+    <string name="phonebook_Device">機器:</string>
+    <string name="phonebook_loading">電話帳を読み込む...</string>
+    <string name="calllog_loading">コールログのロード...</string>
+    <string name="phonebook_dlcontacts">電話帳をダウンロード...</string>
+    <string name="phonebook_dlcalllog">コールログをダウンロード...</string>
+    <string name="phonebook_Search">検索</string>
+    <string name="main_DeviceList">機器リスト</string>
+    <string name="main_Phone">ダイヤルパッド</string>
+    <string name="main_Phonebook">電話帳</string>
+    <string name="main_MusicAvrcp">Bluetooth音楽</string>
+    <string name="main_bluetooth_enabled">ブルートゥースをオンに</string>
+    <string name="main_bluetooth_disabled">、Bluetoothをオフにする</string>
+    <string name="main_setting">Bluetooth設定</string>
+    <string name="main_callrecord">通話記録</string>
+    <string name="setting_devicename">装置名:</string>
+    <string name="setting_pincode">PIN:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">保存</string>
+    <string name="setting_cancel">キャンセル</string>
+    <string name="btn_profilelist_done">決定する</string>
+    <string name="btn_profilelist_cancel">キャンセル</string>
+    <string name="please_conn_device">Bluetoothデバイスを接続してください。</string>
+    <string name="Had_conn_device">接続されているBluetoothデバイス:</string>
+    <string name="search_contacts">連絡先の検索</string>
+    <string name="ready_download_phonebook">するかどうかを再ダウンロード電話帳?</string>
+    <string name="ready_download_calllog">コールログを再度ダウンロードするかどうか?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">匿名接続</string>
+    <string name="devicelist_pbapmode_auth">接続を確認</string>
+    <string name="enter_phone_num">電話番号を入力してください。</string>
+    <string name="unconnect_notice">一致する連絡先ん</string>
+    <string name="ready_delete_phonebook">OK電話帳を削除する?</string>
+    <string name="ready_delete_calllog">コールレコードを削除するよろしい?</string>
+    <string name="call_log_dial_in">コール</string>
+    <string name="call_log_missed">不在</string>
+    <string name="call_log_dial_out">アウトゴーイング</string>
+    <string name="avrcp_unconnected">AVRCPが接続されていない、あなたは、音楽を再生することはできません</string>
+    <string name="a2dp_unconnected">A2DPが接続されていない、あなたは、音楽を再生することはできません</string>
+    <string name="avrcp_a2dp_unconnected">オーディオが接続されていない、あなたは、音楽を再生することはできません</string>
+    <string name="DL_Searching_device">検索...</string>
+    <string name="avrcp_playing">Bluetoothの音楽再生</string>
+    <string name="avrcp_noplaying">いいえBluetooth音楽再生しない</string>
+    <string name="first_connecting">自動的に接続する最初の携帯電話は、それが少し長い時間がかかり、お待ちください...</string>
+    <string name="please_disconnect_device">一致するデバイスを外してください</string>
+     <string name="connecting_HFP"> さえHFPビーイング...</string>
+    <string name="connecting_A2DP"> でもA2DPあること...</string>
+    <string name="connecting_AVRCP"> さえAVRCPビーイング...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">利用できる電話帳アクセス機器</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapcデバイス動作</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc検索結果</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP機器:</string>
+    <string name="bluetooth_pbapc_device_status">ステータス:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc認定</string>
+    <string name="bluetooth_pbapc_device_username">ユーザー名:</string>
+    <string name="bluetooth_pbapc_device_password">パスワード:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">匿名接続</string>
+    <string name="bluetooth_pbapc_device_dowload">ダウンロード</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">フォルダを選択し、ダウンロード</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">ダウンロードフォルダを指定しない場合、少なくとも一つのダウンロードフォルダを選択してください</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">ダウンロードする前に、明確な電話</string>
+    <string name="bluetooth_pbapc_device_view_contacts">連絡先を見る</string>
+    <string name="bluetooth_pbapc_device_search">見つける</string>
+    <string name="bluetooth_pbapc_device_search_folder">検索フォルダを選択してください</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">検索フォルダを指定しない場合、少なくとも一つの検索フォルダを選択してください</string>
+    <string name="bluetooth_pbapc_device_search_attribute">検索プロパティ： </string>
+    <string name="bluetooth_pbapc_device_result_order">結果の順序： </string>
+    <string name="bluetooth_pbapc_device_search_key">キーワード： </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">最新の結果を見る</string>
+    <string name="bluetooth_pbapc_device_setting">セットアップする</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">電話帳を切断する前に削除しました</string>
+    <string name="bluetooth_pbapc_device_result_filter">フィルタリング設定の結果</string>
+    <string name="bluetooth_pbapc_device_vcard_format">vCardフォーマットバージョン: </string>
+    <string name="bluetooth_pbapc_abort_operation">中止現在の操作</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc中止操作要求</string>
+    <string name="bluetooth_pbapc_connect_cancel">接続がキャンセルされました</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">未知状態</string>
+  
+    <string name="bluetooth_pbapc_disconnected">接続されている</string>
+
+    <string name="bluetooth_pbapc_connecting">接続...</string>
+
+    <string name="bluetooth_pbapc_connected">接続されている</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">失われた接続...</string>
+
+    <string name="bluetooth_pbapc_communicating">コミュニケーション...</string>
+
+    <string name="setting_pbap_anonymous">PBAP匿名接続</string>
+    
+    <string name="pb_name_unknown">不明</string>
+    <string name="str_no_pbap">お使いの携帯電話は、"電話帳の同期"機能接続されていません！</string>
+</resources>

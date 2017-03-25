@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+	<TextView 
+	    android:id="@+id/pb_item_LetterTag"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:textSize="@dimen/text_small_size"
+	    android:background="#40000000"
+	    android:paddingLeft="10dp"/>
+	
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+         android:paddingBottom="10dp"
+        android:orientation="horizontal">
+	    <ImageView
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="left|center"
+	        android:src="@drawable/pb_list_icon"
+	        android:layout_weight="1"/>
+	    
+	    <LinearLayout
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	         android:layout_weight="5"
+	        android:orientation="vertical">
+	        <TextView 
+	            android:id="@+id/pb_name"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textSize="@dimen/text_middle_size"
+	            android:textStyle="bold"/>
+	        <TextView 
+	            android:id="@+id/pb_number"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textSize="@dimen/text_small_size"/>
+	    </LinearLayout>
+	    
+	 	<ImageButton
+	        android:id="@+id/pb_dial_btn"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:background="#00000000"
+	        android:src="@drawable/pb_list_dial"
+	        android:layout_gravity="right|center"/>
+	</LinearLayout>
+	
+</LinearLayout>

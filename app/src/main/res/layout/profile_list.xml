@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:background="@color/white"
+        android1:orientation="horizontal" >
+
+
+        <LinearLayout
+            android1:layout_width="wrap_content"
+            android1:layout_height="match_parent"
+            android1:background="@color/white"
+            android1:orientation="horizontal" >
+
+
+            <TextView
+                android1:id="@+id/profile_list_name"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:background="@color/white"
+                android1:paddingLeft="5dp"
+                android1:textColor="@color/black"
+                android1:textSize="@dimen/text_size"
+                android1:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/profile_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_small_size" />
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android1:layout_width="match_parent"
+            android1:layout_height="match_parent"
+            android1:layout_gravity="center_horizontal"
+            android1:background="@color/white"
+            android1:gravity="right" >
+
+
+            <CheckBox
+                android1:id="@+id/profile_list_ck"
+                android1:layout_width="wrap_content"
+                android1:layout_height="wrap_content"
+                android1:gravity="right" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

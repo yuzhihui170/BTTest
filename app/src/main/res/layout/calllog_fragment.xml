@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="1dp"
+    android:divider="?android:attr/dividerHorizontal"
+    android:showDividers="end">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5">
+        
+           <ListView
+	            android:id="@+id/contact_tile_list"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:paddingTop="@dimen/contact_tile_list_padding_top"
+	            android:clipToPadding="false"
+	            android:fadingEdge="none"
+	            android:dividerHeight="2dp"
+	            android:divider="#FFFFFF" />
+
+        <TextView 
+            android:id="@+id/list_empty_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_middle_size"
+            android:text="@string/unconnect_notice"
+            android:visibility="gone"/>        
+    </FrameLayout>
+    
+        <LinearLayout 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+         android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:gravity="center">
+        <ImageButton 
+            android:id="@+id/calllog_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:background="#00000000"
+            android:src="@drawable/btn_del_pb"/>
+        <ImageButton 
+            android:id="@+id/calllog_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:src="@drawable/btn_down_pb"/>
+    </LinearLayout>
+   
+</LinearLayout>

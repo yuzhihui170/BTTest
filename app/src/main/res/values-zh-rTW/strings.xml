@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">藍牙</string>
+    <string name="DL_PairedAndConnected">已匹配且已連接 %s</string>
+    <string name="DL_PairWithThisDevice">與此設備匹配</string>
+    <string name="DL_PairedButNotConnected">已匹配但未連接</string>
+    <string name="DL_PairedAndConnecting">已匹配,正在自動連接中...</string>
+    <string name="DL_Connecting">%s 正在連接中...</string>
+    <string name="DL_Pairing">匹配中...</string>
+    <string name="DL_Pair">匹配</string>
+    <string name="DL_Connect">連接</string>
+    <string name="DL_UnPair">斷開匹配</string>
+    <string name="DL_UnConnect">斷開連接</string>
+    <string name="setting_Discoverable">可被發現</string>
+    <string name="phonebook_clean">清除電話本中...</string>
+    <string name="calllog_clean">清除通話記錄中...</string>
+    <string name="phonebook_state">PBAP 狀態:</string>
+    <string name="phonebook_Device">設備:</string>
+    <string name="phonebook_loading">加載電話本中...</string>
+    <string name="calllog_loading">加載通話記錄中...</string>
+    <string name="phonebook_dlcontacts">下載電話本中...</string>
+    <string name="phonebook_dlcalllog">下載通話記錄中...</string>
+    <string name="phonebook_Search">搜索</string>
+    <string name="main_DeviceList">設備列表</string>
+    <string name="main_Phone">撥號鍵盤</string>
+    <string name="main_Phonebook">電話本</string>
+    <string name="main_MusicAvrcp">藍牙音樂</string>
+    <string name="main_bluetooth_enabled">打開藍牙</string>
+    <string name="main_bluetooth_disabled">關閉藍牙</string>
+    <string name="main_setting">藍牙設置</string>
+    <string name="main_callrecord">通話記錄</string>
+    <string name="setting_devicename">設備名稱:</string>
+    <string name="setting_pincode">PIN碼:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">保存</string>
+    <string name="setting_cancel">取消</string>
+    <string name="btn_profilelist_done">確定</string>
+    <string name="btn_profilelist_cancel">取消</string>
+    <string name="please_conn_device">請先連接藍牙設備</string>
+    <string name="Had_conn_device">已連接藍牙設備:</string>
+    <string name="search_contacts">搜索聯繫人</string>
+    <string name="devicelist_pbapmode_anonymous">匿名連接</string>
+    <string name="devicelist_pbapmode_auth">驗證連接</string>
+    <string name="enter_phone_num">請輸入電話號碼</string>
+    <string name="unconnect_notice">暫無匹配聯繫人</string>
+    <string name="ready_delete_phonebook">確定刪除電話本嗎?</string>
+    <string name="ready_delete_calllog">確定刪除通話記錄嗎?</string>
+    <string name="call_log_dial_in">來電</string>
+    <string name="call_log_missed">未接</string>
+    <string name="call_log_dial_out">撥出</string>
+    <string name="DL_Searching_device">搜索中...</string>
+    <string name="avrcp_playing">藍牙音樂播放中</string>
+    <string name="avrcp_noplaying">藍牙音樂暫無播放</string>
+    <string name="avrcp_unconnected">AVRCP未連接,不能播放音樂</string>
+    <string name="a2dp_unconnected">A2DP未連接,不能播放音樂</string>
+    <string name="avrcp_a2dp_unconnected">音頻未連接,不能播放音樂</string>
+    <string name="first_connecting">手機第一次自動連接需要時間有點長,請稍後...</string>
+    <string name="please_disconnect_device">請先斷開已匹配的設備</string>
+    <string name="connecting_HFP"> ,正在連HFP...</string>
+    <string name="connecting_A2DP"> ,正在連A2DP...</string>
+    <string name="connecting_AVRCP"> ,正在連AVRCP...</string>
+    <string name="ready_download_phonebook">是否重新下載電話本?</string>
+    <string name="ready_download_calllog">是否重新下载通話記錄?</string>
+    <string name="PBAP_Disconnected">PBAP未连接,需先断开再连接</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">可用电话簿接入设备</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapc 設備操作</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc 搜索結果</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP 設備:</string>
+    <string name="bluetooth_pbapc_device_status">狀態:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc 認證</string>
+    <string name="bluetooth_pbapc_device_username">用戶名:</string>
+    <string name="bluetooth_pbapc_device_password">密碼:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">匿名連接</string>
+    <string name="bluetooth_pbapc_device_dowload">下載</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Select download folder</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">No download folder specified, please select at least one download folder.</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Clear phonebook before download</string>
+    <string name="bluetooth_pbapc_device_view_contacts">View contacts</string>
+    <string name="bluetooth_pbapc_device_search">Search</string>
+    <string name="bluetooth_pbapc_device_search_folder">Select search folder</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">No search folder specified, please select at least one search folder.</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Search attribute: </string>
+    <string name="bluetooth_pbapc_device_result_order">Result order: </string>
+    <string name="bluetooth_pbapc_device_search_key">Keyword: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">View latest result</string>
+    <string name="bluetooth_pbapc_device_setting">Setting</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Clear phonebook before disconnect</string>
+    <string name="bluetooth_pbapc_device_result_filter">Set result filter</string>
+    <string name="bluetooth_pbapc_device_vcard_format">Vcard format version: </string>
+    <string name="bluetooth_pbapc_abort_operation">Abort current operation</string>
+    <string name="bluetooth_pbapc_send_abort_request">Pbapc abort operation request has sended.</string>
+    <string name="bluetooth_pbapc_connect_cancel">連接已取消</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">未知的狀態</string>
+  
+    <string name="bluetooth_pbapc_disconnected">失去連接</string>
+
+    <string name="bluetooth_pbapc_connecting">連接中...</string>
+
+    <string name="bluetooth_pbapc_connected">已連接</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">失去連接中...</string>
+
+    <string name="bluetooth_pbapc_communicating">通信中...</string>
+
+    <string name="setting_pbap_anonymous">PBAP 匿名連接</string>
+    
+    <string name="pb_name_unknown">未知的</string>
+    <string name="str_no_pbap">您的手機未連接"電話本同步"功能！</string>
+</resources>

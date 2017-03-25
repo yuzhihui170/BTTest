@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">Bluetooth</string>
+    <string name="DL_PairedAndConnected">Были подкреплены и подключены %s</string>
+    <string name="DL_PairWithThisDevice">В сочетании с этим устройством</string>
+    <string name="DL_PairedButNotConnected">Были подкреплены </string>
+    <string name="DL_PairedAndConnecting">Были подкреплены, автоматически соединяются в ...</string>
+    <string name="DL_Connecting">%s является связь ...</string>
+    <string name="DL_Pairing">согласование...</string>
+    <string name="DL_Pair">совпадать</string>
+    <string name="DL_Connect">подключение</string>
+    <string name="DL_UnPair">Отключите матч</string>
+    <string name="DL_UnConnect">отключать</string>
+    <string name="setting_Discoverable">Может быть найден</string>
+    <string name="phonebook_clean">Снимите телефонную книгу...</string>
+    <string name="calllog_clean">Очистить список вызовов...</string>
+    <string name="phonebook_state">PBAP Статус:</string>
+    <string name="phonebook_Device">оборудование:</string>
+    <string name="phonebook_loading">Загрузите телефонную книгу...</string>
+    <string name="calllog_loading">Загрузка журнала вызовов...</string>
+    <string name="phonebook_dlcontacts">Скачать телефонную книгу...</string>
+    <string name="phonebook_dlcalllog">Скачать журнал вызовов...</string>
+    <string name="phonebook_Search">Поиск</string>
+    <string name="main_DeviceList">перечень оборудования</string>
+    <string name="main_Phone">Dialpad</string>
+    <string name="main_Phonebook">телефонная книга</string>
+    <string name="main_MusicAvrcp">Bluetooth музыки</string>
+    <string name="main_bluetooth_enabled">Включите Bluetooth</string>
+    <string name="main_bluetooth_disabled">Выключите Bluetooth</string>
+    <string name="main_setting">параметры Bluetooth</string>
+    <string name="main_callrecord">звонков</string>
+    <string name="setting_devicename">Имя устройства:</string>
+    <string name="setting_pincode">ПИН-код:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">экономить</string>
+    <string name="setting_cancel">отменить</string>
+    <string name="btn_profilelist_done">определять</string>
+    <string name="btn_profilelist_cancel">отменить</string>
+    <string name="please_conn_device">Пожалуйста, подключите Bluetooth устройств</string>
+    <string name="Had_conn_device">Связи Bluetooth устройства:</string>
+    <string name="search_contacts">Поиск контактов</string>
+    <string name="ready_download_phonebook">Ли повторно загружать телефонный справочник?</string>
+    <string name="ready_download_calllog">Ли повторно загрузить журнал вызовов?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">анонимных подключений</string>
+    <string name="devicelist_pbapmode_auth">Проверьте соединение</string>
+    <string name="enter_phone_num">Пожалуйста, введите номер телефона</string>
+    <string name="unconnect_notice">Нет соответствующих контактов</string>
+    <string name="ready_delete_phonebook">ОК, чтобы удалить телефонную книгу?</string>
+    <string name="ready_delete_calllog">Вы действительно хотите удалить записи вызовов?</string>
+    <string name="call_log_dial_in">называть</string>
+    <string name="call_log_missed">Пропущенный</string>
+    <string name="call_log_dial_out">исходящий</string>
+    <string name="avrcp_unconnected">AVRCP не подключен, вы не можете играть музыку</string>
+    <string name="a2dp_unconnected">A2DP не подключен, вы не можете играть музыку</string>
+    <string name="avrcp_a2dp_unconnected">Аудио не подключен, вы не можете играть музыку</string>
+    <string name="DL_Searching_device">Поиск...</string>
+    <string name="avrcp_playing">Bluetooth воспроизведения музыки</string>
+    <string name="avrcp_noplaying">Нет воспроизведения музыки Bluetooth</string>
+    <string name="first_connecting">Первый телефон для автоматического подключения требуется время немного долго, пожалуйста, подождите ...</string>
+    <string name="please_disconnect_device">Отключите согласующего устройства</string>
+     <string name="connecting_HFP"> Будучи даже HFP ...</string>
+    <string name="connecting_A2DP"> Будучи даже A2DP ...</string>
+    <string name="connecting_AVRCP"> Будучи даже AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">Имеющееся оборудование доступом к телефонной книге</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapc операции устройства</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc результаты поиска</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP оборудование:</string>
+    <string name="bluetooth_pbapc_device_status">статус:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc сертификации</string>
+    <string name="bluetooth_pbapc_device_username">имя пользователя:</string>
+    <string name="bluetooth_pbapc_device_password">пароль:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">анонимных подключений</string>
+    <string name="bluetooth_pbapc_device_dowload">скачать</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Выберите папку загрузки</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Не указывайте папку загрузки, пожалуйста, выберите хотя бы один папки загрузки</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Ясно телефон перед загрузкой</string>
+    <string name="bluetooth_pbapc_device_view_contacts">Просмотр адресата</string>
+    <string name="bluetooth_pbapc_device_search">находить</string>
+    <string name="bluetooth_pbapc_device_search_folder">Выберите папку поиска</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Не указывайте папку поиска, вы можете выбрать по крайней мере один папки поиска</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Поиск недвижимости: </string>
+    <string name="bluetooth_pbapc_device_result_order">Результаты заказа: </string>
+    <string name="bluetooth_pbapc_device_search_key">Ключевые слова: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Просмотр последних результатов</string>
+    <string name="bluetooth_pbapc_device_setting">создавать</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Удалены перед отключением телефонной книге</string>
+    <string name="bluetooth_pbapc_device_result_filter">Набор Результаты фильтрации</string>
+    <string name="bluetooth_pbapc_device_vcard_format">версия формате визитной карточки: </string>
+    <string name="bluetooth_pbapc_abort_operation">Прервать текущую операцию</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc прервать операцию запроса</string>
+    <string name="bluetooth_pbapc_connect_cancel">Соединение было отменено</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">Неизвестное состояние</string>
+  
+    <string name="bluetooth_pbapc_disconnected">подключенный</string>
+
+    <string name="bluetooth_pbapc_connecting">подключение...</string>
+
+    <string name="bluetooth_pbapc_connected">подключенный</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Потеря связи...</string>
+
+    <string name="bluetooth_pbapc_communicating">связь...</string>
+
+    <string name="setting_pbap_anonymous">PBAP анонимных подключений</string>
+    
+    <string name="pb_name_unknown">неизвестный</string>
+    <string name="str_no_pbap">Ваш телефон не подключен "синхронизации телефонной книги" функции!</string>
+</resources>

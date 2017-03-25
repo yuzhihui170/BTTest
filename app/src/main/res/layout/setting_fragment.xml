@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="1dp"
+    tools:context=".SettingActivity">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:paddingLeft="100dp"
+                android:paddingTop="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_devicename"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/text_size" />
+            
+            <EditText
+                android:id="@+id/edit_devicename"
+                android:layout_toRightOf="@id/textView1"
+                android:layout_alignBaseline="@id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size" 
+                android:textColor="#FFFFFF"
+                android:background="@drawable/phoneedit_backgnd"/>
+
+            <!--  
+            <TextView
+                android:id="@+id/textView2"
+                android:paddingLeft="100dp"
+                android:paddingTop="50dp"
+                android:layout_below="@id/textView1"
+                android:layout_alignLeft="@id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_pincode"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/text_size" />
+            
+            <EditText
+                android:id="@+id/edit_pincode"
+                android:layout_alignLeft="@id/edit_devicename"
+                android:layout_alignBottom="@id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_pincode_txt"
+                android:textSize="@dimen/text_size"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/phoneedit_backgnd">
+            </EditText>
+            -->
+
+            <CheckBox
+                android:id="@+id/setting_discoverable"
+                android:layout_alignLeft="@id/edit_devicename"
+                android:layout_marginTop="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:text="@string/setting_Discoverable"
+                android:textSize="@dimen/text_size" />
+</RelativeLayout>

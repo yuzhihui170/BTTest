@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/tab_backgnd">
+    
+       <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/Btn_Phone"
+                android:contentDescription="@string/main_Phone"
+                android:src="@drawable/phone"
+                style="@style/MainUITabImgBtnStyle" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/Btn_Phonebook"          
+                android:contentDescription="@string/main_Phonebook"
+                android:src="@drawable/phonebook"
+                style="@style/MainUITabImgBtnStyle" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/Btn_CallRecord"
+                android:contentDescription="@string/main_callrecord"
+                android:src="@drawable/call_log" 
+                style="@style/MainUITabImgBtnStyle"/>
+        </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/Btn_MusicAvrcp"
+                android:contentDescription="@string/main_MusicAvrcp"
+                android:src="@drawable/musicavrcp" 
+                style="@style/MainUITabImgBtnStyle"/>
+        </LinearLayout>
+        
+         <LinearLayout
+            android:id="@+id/LinearLayout_DeviceList"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical" >
+             <ImageButton
+                android:id="@+id/Btn_DeviceList"
+                android:contentDescription="@string/main_DeviceList"
+                android:src="@drawable/devicelist" 
+                style="@style/MainUITabImgBtnStyle"/>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical" >
+            <ImageButton
+                android:id="@+id/Btn_setting"
+                android:adjustViewBounds="true"
+                android:src="@drawable/setting" 
+                style="@style/MainUITabImgBtnStyle"/>
+        </LinearLayout>
+       
+</LinearLayout>

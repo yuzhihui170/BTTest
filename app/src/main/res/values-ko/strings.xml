@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">블루투스</string>
+    <string name="DL_PairedAndConnected">일치와 연결  %s의되었습니다</string>
+    <string name="DL_PairWithThisDevice">이 장치와 일치</string>
+    <string name="DL_PairedButNotConnected">일치 된 </string>
+    <string name="DL_PairedAndConnecting">일치 된, 자동으로 연결되어 ...</string>
+    <string name="DL_Connecting">%s은 (는) 연결입니다 ...</string>
+    <string name="DL_Pairing">어울리는...</string>
+    <string name="DL_Pair">일치하는</string>
+    <string name="DL_Connect">연결</string>
+    <string name="DL_UnPair">경기를 분리</string>
+    <string name="DL_UnConnect">분리</string>
+    <string name="setting_Discoverable">찾을 수 있습니다</string>
+    <string name="phonebook_clean">전화 번호부 취소...</string>
+    <string name="calllog_clean">통화 기록 지우기...</string>
+    <string name="phonebook_state">PBAP 상태 :</string>
+    <string name="phonebook_Device">장비:</string>
+    <string name="phonebook_loading">전화 번호부를로드...</string>
+    <string name="calllog_loading">통화 로그를로드...</string>
+    <string name="phonebook_dlcontacts">전화 번호부 다운로드...</string>
+    <string name="phonebook_dlcalllog">통화 로그를 다운로드...</string>
+    <string name="phonebook_Search">검색</string>
+    <string name="main_DeviceList">장비 목록</string>
+    <string name="main_Phone">다이얼 패드</string>
+    <string name="main_Phonebook">전화 번호부</string>
+    <string name="main_MusicAvrcp">블루투스 음악</string>
+    <string name="main_bluetooth_enabled">블루투스를 켜십시오</string>
+    <string name="main_bluetooth_disabled">블루투스를 끄십시오</string>
+    <string name="main_setting">블루투스 설정</string>
+    <string name="main_callrecord">통화 기록</string>
+    <string name="setting_devicename">장치 이름 :</string>
+    <string name="setting_pincode">PIN 코드:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">저장</string>
+    <string name="setting_cancel">취소</string>
+    <string name="btn_profilelist_done">결정</string>
+    <string name="btn_profilelist_cancel">취소</string>
+    <string name="please_conn_device">블루투스 장치를 연결하십시오</string>
+    <string name="Had_conn_device">연결된 블루투스 장치:</string>
+    <string name="search_contacts">연락처 검색</string>
+    <string name="ready_download_phonebook">여부를 다시 다운로드 전화 번호부?</string>
+    <string name="ready_download_calllog">여부를 다시 다운로드 통화 로그?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">익명 연결</string>
+    <string name="devicelist_pbapmode_auth">연결을 확인</string>
+    <string name="enter_phone_num">전화 번호를 입력하세요</string>
+    <string name="unconnect_notice">일치하는 연락처가 없습니다</string>
+    <string name="ready_delete_phonebook">전화 번호부를 삭제하려면 OK?</string>
+    <string name="ready_delete_calllog">당신은 확실히 통화 기록을 삭제하려면?</string>
+    <string name="call_log_dial_in">전화</string>
+    <string name="call_log_missed">부재</string>
+    <string name="call_log_dial_out">나가는</string>
+    <string name="avrcp_unconnected">AVRCP가 연결되지 않은, 당신은 음악을 재생할 수 없습니다</string>
+    <string name="a2dp_unconnected">A2DP가 연결되지 않은, 당신은 음악을 재생할 수 없습니다</string>
+    <string name="avrcp_a2dp_unconnected">오디오가 연결되지 않은, 당신은 음악을 재생할 수 없습니다</string>
+    <string name="DL_Searching_device">검색...</string>
+    <string name="avrcp_playing">블루투스 음악 재생</string>
+    <string name="avrcp_noplaying">어떤 블루투스 음악 재생하지</string>
+    <string name="first_connecting">자동으로 연결하는 첫 번째 전화는 조금 시간이 오래 걸립니다 기다려주십시오 ...</string>
+    <string name="please_disconnect_device">일치하는 장치를 분리</string>
+     <string name="connecting_HFP"> 심지어 HFP되고 ...</string>
+    <string name="connecting_A2DP"> 심지어 A2DP되고 ...</string>
+    <string name="connecting_AVRCP">심지어 AVRCP되고 ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">사용 가능한 전화 번호부 액세스 장비</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapc 장치 작동</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc 검색 결과</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP 장비 :</string>
+    <string name="bluetooth_pbapc_device_status">지위:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc 인증</string>
+    <string name="bluetooth_pbapc_device_username">사용자 이름:</string>
+    <string name="bluetooth_pbapc_device_password">암호:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">익명 연결</string>
+    <string name="bluetooth_pbapc_device_dowload">다운로드</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">폴더 다운로드를 선택</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">다운로드 폴더를 지정하지 마십시오, 적어도 하나의 다운로드 폴더를 선택하십시오</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">다운로드하기 전에 명확한 전화</string>
+    <string name="bluetooth_pbapc_device_view_contacts">연락처보기</string>
+    <string name="bluetooth_pbapc_device_search">발견</string>
+    <string name="bluetooth_pbapc_device_search_folder">검색 폴더를 선택</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">검색 폴더를 지정하지 마십시오, 적어도 하나의 검색 폴더를 선택하십시오</string>
+    <string name="bluetooth_pbapc_device_search_attribute">검색 속성 : </string>
+    <string name="bluetooth_pbapc_device_result_order">검색 결과 순서 : </string>
+    <string name="bluetooth_pbapc_device_search_key">키워드 : </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">최근 결과보기</string>
+    <string name="bluetooth_pbapc_device_setting">설정</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">전화 번호부를 분리하기 전에 제거</string>
+    <string name="bluetooth_pbapc_device_result_filter">필터링 설정 결과</string>
+    <string name="bluetooth_pbapc_device_vcard_format">vCard 형식 버전: </string>
+    <string name="bluetooth_pbapc_abort_operation">중지 현재 작업</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc 중단 작업 요청</string>
+    <string name="bluetooth_pbapc_connect_cancel">연결이 취소되었습니다</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">알 수없는 상태</string>
+  
+    <string name="bluetooth_pbapc_disconnected">연결</string>
+
+    <string name="bluetooth_pbapc_connecting">연결...</string>
+
+    <string name="bluetooth_pbapc_connected">연결</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">연결이 끊어...</string>
+
+    <string name="bluetooth_pbapc_communicating">통신...</string>
+
+    <string name="setting_pbap_anonymous">PBAP 익명 연결</string>
+    
+    <string name="pb_name_unknown">알 수없는</string>
+    <string name="str_no_pbap">귀하의 휴대 전화는 "전화 번호부 동기화"기능이 연결되어 있지 않습니다!</string>
+</resources>

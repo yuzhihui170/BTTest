@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">bluetooth</string>
+    <string name="DL_PairedAndConnected">Đã được ghép và kết nối %s</string>
+    <string name="DL_PairWithThisDevice">Phù hợp với thiết bị này</string>
+    <string name="DL_PairedButNotConnected">Đã được xuất hiện </string>
+    <string name="DL_PairedAndConnecting">Đã được xuất hiện, tự động kết nối trong ...</string>
+    <string name="DL_Connecting">%s là kết nối ...</string>
+    <string name="DL_Pairing">phù hợp...</string>
+    <string name="DL_Pair">phù hợp</string>
+    <string name="DL_Connect">liên quan</string>
+    <string name="DL_UnPair">ngắt kết nối của trận đấu</string>
+    <string name="DL_UnConnect">ngắt kết nối</string>
+    <string name="setting_Discoverable">Có thể được tìm thấy</string>
+    <string name="phonebook_clean">Xóa sổ điện thoại...</string>
+    <string name="calllog_clean">Rõ ràng nhật ký cuộc gọi...</string>
+    <string name="phonebook_state">PBAP Tình trạng:</string>
+    <string name="phonebook_Device">thiết bị:</string>
+    <string name="phonebook_loading">Tải danh bạ điện thoại...</string>
+    <string name="calllog_loading">Tải nhật ký cuộc gọi...</string>
+    <string name="phonebook_dlcontacts">Tải về các cuốn sách điện thoại...</string>
+    <string name="phonebook_dlcalllog">Tải về nhật ký cuộc gọi...</string>
+    <string name="phonebook_Search">tìm kiếm</string>
+    <string name="main_DeviceList">Danh sách thiết bị</string>
+    <string name="main_Phone">bàn phím quay số</string>
+    <string name="main_Phonebook">danh bạ điện thoại</string>
+    <string name="main_MusicAvrcp">âm nhạc bluetooth</string>
+    <string name="main_bluetooth_enabled">bật Bluetooth</string>
+    <string name="main_bluetooth_disabled">tắt Bluetooth</string>
+    <string name="main_setting">cài đặt Bluetooth</string>
+    <string name="main_callrecord">bản ghi cuộc gọi</string>
+    <string name="setting_devicename">Tên thiết bị:</string>
+    <string name="setting_pincode">mã PIN:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">tiết kiệm</string>
+    <string name="setting_cancel">hủy bỏ</string>
+    <string name="btn_profilelist_done">xác định</string>
+    <string name="btn_profilelist_cancel">hủy bỏ</string>
+    <string name="please_conn_device">Hãy kết nối các thiết bị Bluetooth</string>
+    <string name="Had_conn_device">Thiết bị Bluetooth kết nối:</string>
+    <string name="search_contacts">tìm kiếm các địa chỉ liên lạc</string>
+    <string name="ready_download_phonebook">Có nên download lại danh bạ điện thoại?</string>
+    <string name="ready_download_calllog">Có nên download lại nhật ký cuộc gọi?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">Kết nối vô danh</string>
+    <string name="devicelist_pbapmode_auth">Kiểm tra kết nối</string>
+    <string name="enter_phone_num">Vui lòng nhập số điện thoại</string>
+    <string name="unconnect_notice">Không liên hệ phù hợp</string>
+    <string name="ready_delete_phonebook">OK để xóa danh bạ điện thoại bạn?</string>
+    <string name="ready_delete_calllog">Bạn có chắc chắn để xóa các bản ghi cuộc gọi?</string>
+    <string name="call_log_dial_in">kêu</string>
+    <string name="call_log_missed">bỏ qua</string>
+    <string name="call_log_dial_out">đi</string>
+    <string name="avrcp_unconnected">AVRCP không được kết nối, bạn không thể chơi âm nhạc</string>
+    <string name="a2dp_unconnected">A2DP không được kết nối, bạn không thể chơi âm nhạc</string>
+    <string name="avrcp_a2dp_unconnected">Âm thanh không được kết nối, bạn không thể chơi âm nhạc</string>
+    <string name="DL_Searching_device">tìm kiếm...</string>
+    <string name="avrcp_playing">Nghe nhạc bluetooth</string>
+    <string name="avrcp_noplaying">Không nghe nhạc Bluetooth</string>
+    <string name="first_connecting">Điện thoại đầu tiên để tự động kết nối phải mất thời gian một chút dài, xin vui lòng chờ ...</string>
+    <string name="please_disconnect_device">Ngắt kết nối các thiết bị phù hợp</string>
+     <string name="connecting_HFP"> Thậm chí là HFP ...</string>
+    <string name="connecting_A2DP"> Được thậm chí A2DP ...</string>
+    <string name="connecting_AVRCP"> Thậm chí là AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">Thiết bị truy cập danh bạ có sẵn</string>
+    <string name="bluetooth_pbapc_device_operation">Thiết bị hoạt động Pbapc</string>
+    <string name="bluetooth_pbapc_device_search_result">Kết quả tìm kiếm Pbapc</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP Thiết bị:</string>
+    <string name="bluetooth_pbapc_device_status">tình trạng:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc chứng nhận</string>
+    <string name="bluetooth_pbapc_device_username">tên người dùng:</string>
+    <string name="bluetooth_pbapc_device_password">mật khẩu:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">Kết nối vô danh</string>
+    <string name="bluetooth_pbapc_device_dowload">tải về</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Chọn thư mục tải về</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Không chỉ định một thư mục tải về, xin vui lòng chọn ít nhất một thư mục tải về</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Rõ ràng điện thoại trước khi tải về</string>
+    <string name="bluetooth_pbapc_device_view_contacts">xem một số liên lạc</string>
+    <string name="bluetooth_pbapc_device_search">Tìm</string>
+    <string name="bluetooth_pbapc_device_search_folder">Chọn một thư mục tìm kiếm</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Không chỉ định một thư mục tìm kiếm, xin vui lòng chọn ít nhất một thư mục tìm kiếm</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Tài sản tìm kiếm: </string>
+    <string name="bluetooth_pbapc_device_result_order">Kết quả theo thứ tự: </string>
+    <string name="bluetooth_pbapc_device_search_key">Từ khóa chính: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Xem kết quả mới nhất</string>
+    <string name="bluetooth_pbapc_device_setting">thành lập</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">cthành lập</string>
+    <string name="bluetooth_pbapc_device_result_filter">Kết quả bộ lọc</string>
+    <string name="bluetooth_pbapc_device_vcard_format">phiên bản định dạng vCard: </string>
+    <string name="bluetooth_pbapc_abort_operation">Hủy bỏ các hoạt động hiện tại</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc hủy bỏ các yêu cầu hoạt động</string>
+    <string name="bluetooth_pbapc_connect_cancel">Kết nối đã bị hủy</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">Tình trạng không rõ</string>
+  
+    <string name="bluetooth_pbapc_disconnected">kết nối</string>
+
+    <string name="bluetooth_pbapc_connecting">liên quan...</string>
+
+    <string name="bluetooth_pbapc_connected">kết nối</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Mất kết nối...</string>
+
+    <string name="bluetooth_pbapc_communicating">thông tin...</string>
+
+    <string name="setting_pbap_anonymous">Kết nối nặc danh PBAP</string>
+    
+    <string name="pb_name_unknown">chưa biết</string>
+    <string name="str_no_pbap">Điện thoại của bạn không kết nối "điện thoại cuốn sách đồng bộ hóa" chức năng!</string>
+</resources>

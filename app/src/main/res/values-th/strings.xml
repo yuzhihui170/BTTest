@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">บลูทู ธ</string>
+    <string name="DL_PairedAndConnected">ได้รับการจับคู่และเชื่อมต่อกับ %s</string>
+    <string name="DL_PairWithThisDevice">จับคู่กับอุปกรณ์นี้</string>
+    <string name="DL_PairedButNotConnected">ได้รับการจับคู่จ </string>
+    <string name="DL_PairedAndConnecting">ได้รับการจับคู่จะเชื่อมต่อโดยอัตโนมัติใน ...</string>
+    <string name="DL_Connecting">%s คือการเชื่อมต่อ ...</string>
+    <string name="DL_Pairing">เหมาะสม...</string>
+    <string name="DL_Pair">การแข่งขัน</string>
+    <string name="DL_Connect">สัมพันธ์</string>
+    <string name="DL_UnPair">ตัดการเชื่อมต่อการแข่งขัน</string>
+    <string name="DL_UnConnect">ปลด</string>
+    <string name="setting_Discoverable">สามารถพบได้</string>
+    <string name="phonebook_clean">ล้างสมุดโทรศัพท์...</string>
+    <string name="calllog_clean">บันทึกการโทรที่ชัดเจน...</string>
+    <string name="phonebook_state">สถานะ PBAP:</string>
+    <string name="phonebook_Device">อุปกรณ์:</string>
+    <string name="phonebook_loading">โหลดสมุดโทรศัพท์...</string>
+    <string name="calllog_loading">กำลังโหลดบันทึกการโทร...</string>
+    <string name="phonebook_dlcontacts">ดาวน์โหลดสมุดโทรศัพท์...</string>
+    <string name="phonebook_dlcalllog">ดาวน์โหลดบันทึกการโทร...</string>
+    <string name="phonebook_Search">ค้นหา</string>
+    <string name="main_DeviceList">รายชื่ออุปกรณ์</string>
+    <string name="main_Phone">Dialpad</string>
+    <string name="main_Phonebook">สมุดโทรศัพท์</string>
+    <string name="main_MusicAvrcp">เพลงบลูทู ธ</string>
+    <string name="main_bluetooth_enabled">เปิดบลูทู ธ</string>
+    <string name="main_bluetooth_disabled">ปิดบลูทู ธ</string>
+    <string name="main_setting">การตั้งค่าบลูทู ธ</string>
+    <string name="main_callrecord">บันทึกข้อมูลการโทร</string>
+    <string name="setting_devicename">ชื่ออุปกรณ:</string>
+    <string name="setting_pincode">รหัส PIN:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">ประหยัด</string>
+    <string name="setting_cancel">ยกเลิก</string>
+    <string name="btn_profilelist_done">กำหนด</string>
+    <string name="btn_profilelist_cancel">ยกเลิก</string>
+    <string name="please_conn_device">โปรดเชื่อมต่ออุปกรณ์บลูทู ธ</string>
+    <string name="Had_conn_device">อุปกรณ์บลูทู ธ เชื่อมต่อ:</string>
+    <string name="search_contacts">ค้นหารายชื่อผู้ติดต่อ</string>
+    <string name="ready_download_phonebook">ไม่ว่าจะดาวน์โหลดใหม่สมุดโทรศัพท์?</string>
+    <string name="ready_download_calllog">ไม่ว่าจะดาวน์โหลดใหม่บันทึกการโทร?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">การเชื่อมต่อที่ไม่เปิดเผยตัว</string>
+    <string name="devicelist_pbapmode_auth">ตรวจสอบการเชื่อมต่อ</string>
+    <string name="enter_phone_num">กรุณาใส่หมายเลขโทรศัพท์</string>
+    <string name="unconnect_notice">ไม่มีรายชื่อการจับคู่</string>
+    <string name="ready_delete_phonebook">ตกลงที่จะลบสมุดโทรศัพท์คุณ?</string>
+    <string name="ready_delete_calllog">คุณแน่ใจแล้วหรือที่จะลบบันทึกการโทร?</string>
+    <string name="call_log_dial_in">โทรศัพท์</string>
+    <string name="call_log_missed">พลาด</string>
+    <string name="call_log_dial_out">ขาออก</string>
+    <string name="avrcp_unconnected">AVRCP ไม่ได้เชื่อมต่อคุณไม่สามารถเล่นเพลง</string>
+    <string name="a2dp_unconnected">A2DP ไม่ได้เชื่อมต่อคุณไม่สามารถเล่นเพลง</string>
+    <string name="avrcp_a2dp_unconnected">เสียงไม่ได้เชื่อมต่อคุณไม่สามารถเล่นเพลง</string>
+    <string name="DL_Searching_device">ค้นหา...</string>
+    <string name="avrcp_playing">เล่นเพลงบลูทู ธ</string>
+    <string name="avrcp_noplaying">ไม่มีการเล่นเพลงบลูทู ธ</string>
+    <string name="first_connecting">โทรศัพท์แรกที่เชื่อมต่อโดยอัตโนมัติจะใช้เวลาเพียงเล็กน้อยนานโปรดรอสักครู่ ...</string>
+    <string name="please_disconnect_device">ถอดอุปกรณ์ที่ตรงกัน</string>
+     <string name="connecting_HFP"> แม้เป็น HFP ...</string>
+    <string name="connecting_A2DP"> เป็น A2DP แม้ ...</string>
+    <string name="connecting_AVRCP">แม้เป็น AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">สมุดโทรศัพท์ของอุปกรณ์ที่มีการเข้าถึง</string>
+    <string name="bluetooth_pbapc_device_operation">การดำเนินงานอุปกรณ์ Pbapc</string>
+    <string name="bluetooth_pbapc_device_search_result">ผลการค้นหา Pbapc</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP 设备:</string>
+    <string name="bluetooth_pbapc_device_status">สถานะ:</string>
+    <string name="bluetooth_pbapc_device_authentication">รับรอง Pbapc</string>
+    <string name="bluetooth_pbapc_device_username">ชื่อผู้ใช้:</string>
+    <string name="bluetooth_pbapc_device_password">รหัสผ่าน:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">การเชื่อมต่อที่ไม่เปิดเผยตัว</string>
+    <string name="bluetooth_pbapc_device_dowload">ดาวน์โหลด</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">เลือกดาวน์โหลดโฟลเดอร์</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">ไม่ระบุโฟลเดอร์ดาวน์โหลดโปรดเลือกโฟลเดอร์ดาวน์โหลดอย่างน้อยหนึ่ง</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">โทรศัพท์ที่ชัดเจนก่อนที่จะดาวน์โหลด</string>
+    <string name="bluetooth_pbapc_device_view_contacts">ดูรายชื่อผู้ติดต่อ</string>
+    <string name="bluetooth_pbapc_device_search">หา</string>
+    <string name="bluetooth_pbapc_device_search_folder">เลือกโฟลเดอร์การค้นหา</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">ไม่ระบุโฟลเดอร์การค้นหาโปรดเลือกโฟลเดอร์การค้นหาอย่างน้อยหนึ่ง</string>
+    <string name="bluetooth_pbapc_device_search_attribute">คุณสมบัติค้นหา: </string>
+    <string name="bluetooth_pbapc_device_result_order">เพื่อผลการศึกษา: </string>
+    <string name="bluetooth_pbapc_device_search_key">คำสำคัญ: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">ดูผลล่าสุด</string>
+    <string name="bluetooth_pbapc_device_setting">จัดตั้งขึ้น</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">ลบออกก่อนที่จะถอดสมุดโทรศัพท์</string>
+    <string name="bluetooth_pbapc_device_result_filter">ผลลัพธ์ชุดกรอง</string>
+    <string name="bluetooth_pbapc_device_vcard_format">รุ่นรูปแบบ vCard: </string>
+    <string name="bluetooth_pbapc_abort_operation">ยกเลิกการดำเนินงานในปัจจุบัน</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc ขอยกเลิกการดำเนินงาน</string>
+    <string name="bluetooth_pbapc_connect_cancel">การเชื่อมต่อได้ถูกยกเลิกแล้ว</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">รัฐที่ไม่รู้จัก</string>
+  
+    <string name="bluetooth_pbapc_disconnected">เกี่ยวข้อง</string>
+
+    <string name="bluetooth_pbapc_connecting">สัมพันธ์...</string>
+
+    <string name="bluetooth_pbapc_connected">เกี่ยวข้อง</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">การเชื่อมต่อที่หายไป...</string>
+
+    <string name="bluetooth_pbapc_communicating">การสื่อสาร...</string>
+
+    <string name="setting_pbap_anonymous">PBAP การเชื่อมต่อที่ไม่ระบุชื่อ</string>
+    
+    <string name="pb_name_unknown">ไม่ทราบ</string>
+    <string name="str_no_pbap">โทรศัพท์ของคุณไม่ได้เชื่อมต่อ "สมุดโทรศัพท์ประสานงาน"!</string>
+</resources>

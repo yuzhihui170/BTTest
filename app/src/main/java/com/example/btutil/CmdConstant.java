@@ -1,8 +1,10 @@
 package com.example.btutil;
 
 
+import android.app.SearchableInfo;
+
 public class CmdConstant {
-    //ARM --> BT : AT#[CMD]\r\n
+    //ARM ---> BT : AT#[CMD]\r\n
     public static String HEAD = "AT#";
     public static String END = "\\r\\n";
     public static String CONNECT = "CC";            // 1.连接最后一次连接设备,或者配对列表index
@@ -64,4 +66,39 @@ public class CmdConstant {
     public static String MOUSE_KEY = "HL";          // 51.HL:鼠标按键
     public static String MOUSE_DOWN = "HO";         // 52.HO[x:4][y:4]:鼠标按下
     public static String MOUSE_UP = "HP";           // 53.HP[x:4][y:4]:鼠标弹起
+
+
+    //BT --->ARM: [CMD]\r\n
+    public static String BT_CONNECT = "IB";      //IB:蓝牙连接;
+    public static String BT_DISCONNECT = "IA";   //IA:蓝牙断开;
+    public static String CALL_IN = "ID";         //ID[number]:来电; IP[numberlen:2]\r\nID[number]\r\n:来电回复 IG:通话中
+    public static String HANG_UP = "IF";         //IF:电话挂断;
+    public static String CURRENT_NUM = "IR";     //IR[NUMBER]:当前通话号码
+    public static String MIC_OPEN = "MJ";        //MJ:MIC 开
+    public static String MIC_CLOSE = "MK";       //MK:MIC 关
+    public static String CALL_OUT = "IC";        //IC[number]:去电
+    public static String CALL_STATUS_MISS = "MG";//MG[STATUS:1]:1;未连接 2;连接中 3;已连接 4 去电 5 来电 6通话中
+    public static String START_SURCESS = "IS";   //IS;启动成功
+    public static String VOICE_VALUE = "VS";     //VS[VALUE]
+    public static String VOICE_BT = "MC";        //MC:声音在蓝牙端
+    public static String VOICE_PHONE = "MD";     //MD:声音在手机端
+    public static String MUSIC_PLAYING = "MB";   //音乐播放中
+    public static String MUSIC_PAUSE = "MA";     //音乐暂停
+    public static String STATUS_AUTO_CONNECT = "MF";     //自动接听状态:MF[AUTO_CONNECT:1][AUTO_ANSWER:1]
+    public static String MUSIC_INFO = "MI";      // MI[name]\xff[author]\xff[timer]\xff[index]\xff[count]
+    public static String BT_NAME = "MM";         //查询/设置蓝牙名称 MM[NAME]
+    public static String PASSWD = "MN";          //MN[CODE]
+    public static String VERSION = "MW";         //MW[version]
+    public static String A2DP_STAUTS = "MU";     //MU[STATUS:1]: 1:未连接 2:连接中 3:已连接 4:播放中
+    public static String MACTCH_LIST = "MX";     //MX[index:1][addr][name]
+    public static String READ_TELE_BOOK_DATA = "PB";      //读取电话本的数据PB[name]\FF[number]\r\n;
+    public static String READ_TELE_BOOK_END = "PC";       //PC:结束下载
+    public static String CALL_RECORDS_DATA = "PD";        //PD[index:2][number]\r\n;
+    public static String RECEIVED_CALLS_DATA = "PD";      //PD[index:2][number]\r\n;
+    public static String MISS_CALLS_DATA = "PD";          //PD[index:2][number]\r\n;
+    public static String DOWNLOAD_END = "PD";               //PD:结束下载
+
+    public static String SEARCH_RESULT = "IX";    //IX[addr:12][name]
+    public static String SEARCH_OVER = "IY";      //IY:搜索结束
+    public static String PARSE_NUM = "DT";        //DT[number]:当前解析出来的号码;
 }

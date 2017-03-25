@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">bluetooth</string>
+    <string name="DL_PairedAndConnected">Boli zladené a spojené %s</string>
+    <string name="DL_PairWithThisDevice">Uzavreté s týmto prístrojom</string>
+    <string name="DL_PairedButNotConnected">Boli uzavreté </string>
+    <string name="DL_PairedAndConnecting">Boli uzavreté, sú automaticky zapojené do ...</string>
+    <string name="DL_Connecting">%s je spojenie ...</string>
+    <string name="DL_Pairing">vhodný...</string>
+    <string name="DL_Pair">zápas</string>
+    <string name="DL_Connect">spojenie</string>
+    <string name="DL_UnPair">odpojte zápas</string>
+    <string name="DL_UnConnect">odpojiť</string>
+    <string name="setting_Discoverable">Možno nájsť</string>
+    <string name="phonebook_clean">Vymazanie telefónneho zoznamu...</string>
+    <string name="calllog_clean">Clear hovorov...</string>
+    <string name="phonebook_state">PBAP Stav:</string>
+    <string name="phonebook_Device">zariadenie:</string>
+    <string name="phonebook_loading">Vložte telefónny zoznam...</string>
+    <string name="calllog_loading">Nahrávanie hovorov...</string>
+    <string name="phonebook_dlcontacts">Stiahnite si telefónny zoznam...</string>
+    <string name="phonebook_dlcalllog">Stiahnite si hovorov...</string>
+    <string name="phonebook_Search">vyhľadávanie</string>
+    <string name="main_DeviceList">zoznam vybavenia</string>
+    <string name="main_Phone">číselník</string>
+    <string name="main_Phonebook">telefónny zoznam</string>
+    <string name="main_MusicAvrcp">bluetooth hudba</string>
+    <string name="main_bluetooth_enabled">zapnúť Bluetooth</string>
+    <string name="main_bluetooth_disabled">vypnite Bluetooth,</string>
+    <string name="main_setting">Nastavenie Bluetooth</string>
+    <string name="main_callrecord">záznamy hovorov</string>
+    <string name="setting_devicename">Názov zariadenia:</string>
+    <string name="setting_pincode">PIN kód:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">uložiť</string>
+    <string name="setting_cancel">zrušiť</string>
+    <string name="btn_profilelist_done">určiť</string>
+    <string name="btn_profilelist_cancel">zrušiť</string>
+    <string name="please_conn_device">Prosím, pripojte zariadenie Bluetooth</string>
+    <string name="Had_conn_device">Pripojené zariadenie Bluetooth:</string>
+    <string name="search_contacts">Vyhľadávanie kontaktov</string>
+    <string name="ready_download_phonebook">Či už znovu stiahnuť telefónny zoznam?</string>
+    <string name="ready_download_calllog">Nech stiahnuť znova hovorov?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">anonymné pripojenie</string>
+    <string name="devicelist_pbapmode_auth">overte pripojenie</string>
+    <string name="enter_phone_num">Prosím, zadajte telefónne číslo</string>
+    <string name="unconnect_notice">Žiadne zodpovedajúce kontakty</string>
+    <string name="ready_delete_phonebook">OK Ak chcete odstrániť telefónny zoznam?</string>
+    <string name="ready_delete_calllog">Naozaj chcete zmazať záznamy o volaných číslach?</string>
+    <string name="call_log_dial_in">volanie</string>
+    <string name="call_log_missed">zmeškané</string>
+    <string name="call_log_dial_out">vychádzajúce</string>
+    <string name="avrcp_unconnected">AVRCP nie je pripojený, nie je možné prehrávať hudbu</string>
+    <string name="a2dp_unconnected">A2DP nie je pripojený, nie je možné prehrávať hudbu</string>
+    <string name="avrcp_a2dp_unconnected">Zvuk nie je pripojený, nie je možné prehrávať hudbu</string>
+    <string name="DL_Searching_device">vyhľadávanie...</string>
+    <string name="avrcp_playing">Bluetooth prehrávanie hudby</string>
+    <string name="avrcp_noplaying">Nie Bluetooth prehrávanie hudby</string>
+    <string name="first_connecting">Prvý telefón sa automaticky pripojí nejaký čas trvá trochu dlho, čakajte prosím ...</string>
+    <string name="please_disconnect_device">Odpojte zodpovedajúce zariadenie</string>
+     <string name="connecting_HFP"> Byť ešte HFP ...</string>
+    <string name="connecting_A2DP">Byť aj A2DP ...</string>
+    <string name="connecting_AVRCP"> Byť ešte AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">K dispozícii prístup k adresáru zariadení</string>
+    <string name="bluetooth_pbapc_device_operation">Pbapc prevádzku zariadenia</string>
+    <string name="bluetooth_pbapc_device_search_result">Pbapc výsledky vyhľadávania</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP Vybavenie:</string>
+    <string name="bluetooth_pbapc_device_status">postavenie:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc certifikácia</string>
+    <string name="bluetooth_pbapc_device_username">Užívateľské meno:</string>
+    <string name="bluetooth_pbapc_device_password">heslo:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">anonymné pripojenie</string>
+    <string name="bluetooth_pbapc_device_dowload">stiahnuť</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">Vyberte priečinok pre sťahovanie</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">Nezadávajte zložku sťahovanie, vyberte aspoň jednu zložku pre sťahovanie</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">Clear telefón pred stiahnutím</string>
+    <string name="bluetooth_pbapc_device_view_contacts">Zobraziť kontakt</string>
+    <string name="bluetooth_pbapc_device_search">nájsť</string>
+    <string name="bluetooth_pbapc_device_search_folder">Vyberte priečinok výsledkov hľadania</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">Nezadávajte vyhľadávací priečinok, vyberte aspoň jednu zložku výsledkov hľadania</string>
+    <string name="bluetooth_pbapc_device_search_attribute">Vyhľadať nehnuteľnosť: </string>
+    <string name="bluetooth_pbapc_device_result_order">Výsledky aby: </string>
+    <string name="bluetooth_pbapc_device_search_key">Kľúčové slová: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">Pozrite sa na najnovšie výsledky</string>
+    <string name="bluetooth_pbapc_device_setting">založiť</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">Odstránené pred odpojením telefónny zoznam</string>
+    <string name="bluetooth_pbapc_device_result_filter">Set Výsledky filtrovanie</string>
+    <string name="bluetooth_pbapc_device_vcard_format">vo formáte vCard verzia: </string>
+    <string name="bluetooth_pbapc_abort_operation">Prerušiť aktuálnej operácie</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc prerušiť prevádzku žiadosť</string>
+    <string name="bluetooth_pbapc_connect_cancel">Pripojenie bolo zrušené</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">Neznámy stav</string>
+  
+    <string name="bluetooth_pbapc_disconnected">spojený</string>
+
+    <string name="bluetooth_pbapc_connecting">spojenie...</string>
+
+    <string name="bluetooth_pbapc_connected">spojený</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">Stratené spojenie...</string>
+
+    <string name="bluetooth_pbapc_communicating">komunikácia...</string>
+
+    <string name="setting_pbap_anonymous">PBAP anonymné pripojenie</string>
+    
+    <string name="pb_name_unknown">neznámy</string>
+    <string name="str_no_pbap">Váš telefón nie je pripojený "telefónny zoznam synchronizácia" funkcie!</string>
+</resources>

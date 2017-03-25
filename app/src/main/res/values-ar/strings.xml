@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string name="app_name">بلوتوث</string>
+    <string name="DL_PairedAndConnected">تم المتطابقة %s متصلا ق</string>
+    <string name="DL_PairWithThisDevice">المتطابقة مع هذا الجهاز</string>
+    <string name="DL_PairedButNotConnected">وترتبط تلقائيا في </string>
+    <string name="DL_PairedAndConnecting">تم المتطابقة، وترتبط تلقائيا في ...</string>
+    <string name="DL_Connecting">%s هي العلاقة ...</string>
+    <string name="DL_Pairing">مطابقة ...</string>
+    <string name="DL_Pair">مباراة</string>
+    <string name="DL_Connect">صلة</string>
+    <string name="DL_UnPair">افصل المباراة</string>
+    <string name="DL_UnConnect">قطع</string>
+    <string name="setting_Discoverable">ويمكن الاطلاع على</string>
+    <string name="phonebook_clean">مسح دليل الهاتف ...</string>
+    <string name="calllog_clean">سجل المكالمات واضحة ...</string>
+    <string name="phonebook_state">PBAP الحالة:</string>
+    <string name="phonebook_Device">معدات:</string>
+    <string name="phonebook_loading">تحميل دليل الهاتف...</string>
+    <string name="calllog_loading">التحميل سجل المكالمات...</string>
+    <string name="phonebook_dlcontacts">تحميل دليل الهاتف...</string>
+    <string name="phonebook_dlcalllog">تحميل سجل المكالمات...</string>
+    <string name="phonebook_Search">بحث</string>
+    <string name="main_DeviceList">قائمة معدات</string>
+    <string name="main_Phone">لوحة الاتصال</string>
+    <string name="main_Phonebook">دليل التلفونات</string>
+    <string name="main_MusicAvrcp">الموسيقى بلوتوث</string>
+    <string name="main_bluetooth_enabled">بدوره على بلوتوث</string>
+    <string name="main_bluetooth_disabled">إيقاف تشغيل Bluetooth</string>
+    <string name="main_setting">ضبط Bluetooth</string>
+    <string name="main_callrecord">سجلات المكالمات</string>
+    <string name="setting_devicename">اسم الجهاز:</string>
+    <string name="setting_pincode">رمز PIN:</string>
+    <string name="setting_pincode_txt">1234</string>
+    <string name="setting_ok">حفظ</string>
+    <string name="setting_cancel">إلغاء</string>
+    <string name="btn_profilelist_done">حدد</string>
+    <string name="btn_profilelist_cancel">إلغاء</string>
+    <string name="please_conn_device">يرجى الاتصال أجهزة Bluetooth</string>
+    <string name="Had_conn_device">جهاز بلوتوث متصل:</string>
+    <string name="search_contacts">البحث عن جهات الاتصال</string>
+    <string name="ready_download_phonebook">ما إذا كان يجب إعادة تحميل دفتر الهاتف?</string>
+    <string name="ready_download_calllog">ما إذا كان يجب إعادة تحميل سجل المكالمات?</string>
+    
+    <string name="devicelist_pbapmode_anonymous">الاتصالات المجهولة</string>
+    <string name="devicelist_pbapmode_auth">تحقق من الاتصال</string>
+    <string name="enter_phone_num">يرجى إدخال رقم الهاتف</string>
+    <string name="unconnect_notice">لا اتصالات مطابقة</string>
+    <string name="ready_delete_phonebook">انقر فوق موافق لحذف الكتاب الهاتف الذي?</string>
+    <string name="ready_delete_calllog">أنت متأكد من حذف سجلات المكالمات?</string>
+    <string name="call_log_dial_in">استدعاء</string>
+    <string name="call_log_missed">غاب</string>
+    <string name="call_log_dial_out">المنتهية ولايته</string>
+    <string name="avrcp_unconnected">غير متصل AVRCP، لا يمكنك تشغيل الموسيقى</string>
+    <string name="a2dp_unconnected">غير متصل A2DP، ​​لا يمكنك تشغيل الموسيقى</string>
+    <string name="avrcp_a2dp_unconnected">لم يتم توصيل الصوت، لا يمكنك تشغيل الموسيقى</string>
+    <string name="DL_Searching_device">بحث...</string>
+    <string name="avrcp_playing">تشغيل الموسيقى بلوتوث</string>
+    <string name="avrcp_noplaying">لا تشغيل الموسيقى بلوتوث</string>
+    <string name="first_connecting">أول هاتف للاتصال تلقائيا يستغرق وقتا طويلا قليلا، يرجى الانتظار...</string>
+    <string name="please_disconnect_device">افصل جهاز التصفح</string>
+     <string name="connecting_HFP"> يجري حتى HFP...</string>
+    <string name="connecting_A2DP"> يجري حتى A2DP ...</string>
+    <string name="connecting_AVRCP"> يجري حتى AVRCP ...</string>
+    
+    <!-- Summary for Bluetooth phone book access device list-->
+    <string name="bluetooth_available_pbapc_device">يتوفر وصول المعدات دليل الهاتف</string>
+    <string name="bluetooth_pbapc_device_operation">تشغيل الجهاز Pbapc</string>
+    <string name="bluetooth_pbapc_device_search_result">نتائج البحث Pbapc</string>
+    <string name="bluetooth_pbapc_device_current_device">PBAP المعدات:</string>
+    <string name="bluetooth_pbapc_device_status">حالة:</string>
+    <string name="bluetooth_pbapc_device_authentication">Pbapc شهادة</string>
+    <string name="bluetooth_pbapc_device_username">اسم المستخدم:</string>
+    <string name="bluetooth_pbapc_device_password">كلمة السر:</string>
+    <string name="bluetooth_pbapc_device_anonymous_connect">الاتصالات المجهولة</string>
+    <string name="bluetooth_pbapc_device_dowload">تحميل</string>
+    <string name="bluetooth_pbapc_device_dowload_folder">اختر تحميل المجلد</string>
+    <string name="bluetooth_pbapc_device_no_dowload_folder">لم تقم بتحديد مجلد التحميل، يرجى تحديد مجلد التحميل واحد على الأقل</string>
+    <string name="bluetooth_pbapc_device_clear_before_download">الهاتف اضحة قبل تحميله</string>
+    <string name="bluetooth_pbapc_device_view_contacts">عرض الاتصال</string>
+    <string name="bluetooth_pbapc_device_search">اكتشاف</string>
+    <string name="bluetooth_pbapc_device_search_folder">حدد مجلد البحث</string>
+    <string name="bluetooth_pbapc_device_no_search_folder">لم تقم بتحديد مجلد البحث، الرجاء اختيار مجلد بحث واحد على الأقل</string>
+    <string name="bluetooth_pbapc_device_search_attribute">خصائص البحث: </string>
+    <string name="bluetooth_pbapc_device_result_order">نتائج الترتيب: </string>
+    <string name="bluetooth_pbapc_device_search_key">كلمات البحث: </string>
+    <string name="bluetooth_pbapc_device_view_latest_result">شاهد آخر النتائج</string>
+    <string name="bluetooth_pbapc_device_setting">نصب</string>
+    <string name="bluetooth_pbapc_device_clear_before_disconnect">إزالة قبل فصل دفتر الهاتف</string>
+    <string name="bluetooth_pbapc_device_result_filter">مجموعة نتائج الفلترة</string>
+    <string name="bluetooth_pbapc_device_vcard_format">بصيغة بطاقة إصدار تنسيق: </string>
+    <string name="bluetooth_pbapc_abort_operation">إحباط العملية الحالية</string>
+    <string name="bluetooth_pbapc_send_abort_request">pbapc إحباط عملية طلب</string>
+    <string name="bluetooth_pbapc_connect_cancel">تم إلغاء اتصال</string>
+    <!-- Title for Bluetooth Phonebook Client-->
+    <string name="bluetooth_pbapc_unknownstate">حالة غير معروفة</string>
+  
+    <string name="bluetooth_pbapc_disconnected">متصل</string>
+
+    <string name="bluetooth_pbapc_connecting">صلة...</string>
+
+    <string name="bluetooth_pbapc_connected">متصل</string>
+  
+    <string name="bluetooth_pbapc_disconnecting">فقدان الاتصال...</string>
+
+    <string name="bluetooth_pbapc_communicating">اتصالات...</string>
+
+    <string name="setting_pbap_anonymous">اتصالات مجهولة PBAP</string>
+    
+    <string name="pb_name_unknown">غير معروف</string>
+    <string name="str_no_pbap">يكون هاتفك غير متصل "دفتر الهاتف التزامن" وظيفة!</string>
+</resources>
