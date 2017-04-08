@@ -23,6 +23,20 @@ public class BTUtil {
     private OutputStream mOutputStream;
     private InputStream mInputStream;
 
+    private static BTUtil btUtil = null;
+
+    //静态工厂方法
+    public static BTUtil getInstance() {
+        if(btUtil == null) {
+            synchronized (BTUtil.class) {
+                if(btUtil == null) {
+                    btUtil = new BTUtil();
+                }
+            }
+        }
+        return btUtil;
+    }
+
     //打开设备
     public void openDevice() {
         if(null == mSerialPort) {
@@ -32,6 +46,7 @@ public class BTUtil {
                 mInputStream = mSerialPort.getInputStream();
             } catch (IOException e) {
                 e.printStackTrace();
+                Log.e(TAG, "can not open bt.");
             }
         }
         Log.d(TAG,"[BTUtil] openDevice dev:" + mPathDefault + " baudrate:"+115200);
@@ -75,7 +90,7 @@ public class BTUtil {
     public void write(String cmdStr) {
         byte[] cmd = cmdStr.getBytes();
         write(cmd, 0, cmd.length);
-        Log.d(TAG, "cmdstr:"+cmdStr);
+        Log.d(TAG, "write cmdstr:"+cmdStr);
     }
 
     //cmd:需要比较的指令 匹配成功返回true, 适合只需要获取状态不需要获取额外数据的指令
@@ -124,11 +139,15 @@ public class BTUtil {
     }
 
     //BT-->ARM 获取搜索结果 43.IX[addr:12][name]
-    public String searchResule() {
+    public String searchResult() {
         byte[] buffer = new byte[100];
         int ret = read(buffer, 0, 100);
+        if(ret < 0) {
+            return null;
+        }
         String result = new String(buffer, 0, ret);
         if(result.substring(0, 1).equals(CmdConstant.SEARCH_RESULT)) {
+            Log.d(TAG,"result:"+result);
             return result;
         }
         return null;

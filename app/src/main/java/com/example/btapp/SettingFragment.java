@@ -21,7 +21,10 @@ import android.widget.EditText;
 import android.app.Fragment;
 import android.content.res.Resources;
 
+import com.example.btutil.BTUtil;
+
 public class SettingFragment extends Fragment{
+
 	private CheckBox cb_discoverable;
 	private EditText edit_devicename;
 	private View m_settingsView;
@@ -32,10 +35,11 @@ public class SettingFragment extends Fragment{
 	private long startTimestamp = 0;
 	private boolean m_IsRunning = false;
 	private static byte[]  lock= new byte[0];
+
+	private BTUtil mBTUtil;
 	
     @Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
-		// TODO Auto-generated method stub
 		super.setUserVisibleHint(isVisibleToUser);
 		
 //		if(isVisibleToUser == true){
@@ -79,58 +83,61 @@ public class SettingFragment extends Fragment{
         m_settingsView = inflater.inflate(R.layout.setting_fragment, (ViewGroup)getActivity().findViewById(R.id.tabpage_frame), false);
       	initComponents();
 
+		mBTUtil = BTUtil.getInstance();
+		mBTUtil.openDevice();
     }
     
     @Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //    	Log.d(global.TAG, "[SettingFragment] onCreateView");
-
     	return m_settingsView;
-	}
-
-    
-	@Override
-	public void onPause() {
-		// TODO Auto-generated method stub
-//		Log.d(global.TAG, "[SettingFragment] onPause");
-		super.onPause();
-	}
-
-	@Override
-	public void onResume() {
-		// TODO Auto-generated method stub
-//		Log.d(global.TAG, "[SettingFragment] onResume");
-		super.onResume();
-		
-		long currentTimestamp = System.currentTimeMillis();
-//		Log.d(global.TAG, "currentTimestamp:"+ currentTimestamp);
-//    	if (global.bu.getDiscoverable()) {
-//	    	if (currentTimestamp < startTimestamp + DEFAULT_DISCOVERABLE_TIMEOUT){
-//	    		global.bu.setDiscoverableTimeout( (int)(currentTimestamp - startTimestamp));
-//	    	} 	
-//    	}
-    	
-//    	discoverableThread = new DiscoverableThread(handler);
-//		discoverableThread.start();
-//		discoverableThread.isRunning = true;
-    	
 	}
 
 	@Override
 	public void onStart() {
-		// TODO Auto-generated method stub
 //		Log.d(global.TAG, "[SettingFragment] onStart");
 		super.onStart();
 	}
 
 	@Override
+	public void onResume() {
+//		Log.d(global.TAG, "[SettingFragment] onResume");
+		super.onResume();
+
+		long currentTimestamp = System.currentTimeMillis();
+//		Log.d(global.TAG, "currentTimestamp:"+ currentTimestamp);
+//    	if (global.bu.getDiscoverable()) {
+//	    	if (currentTimestamp < startTimestamp + DEFAULT_DISCOVERABLE_TIMEOUT){
+//	    		global.bu.setDiscoverableTimeout( (int)(currentTimestamp - startTimestamp));
+//	    	}
+//    	}
+
+//    	discoverableThread = new DiscoverableThread(handler);
+//		discoverableThread.start();
+//		discoverableThread.isRunning = true;
+
+	}
+    
+	@Override
+	public void onPause() {
+//		Log.d(global.TAG, "[SettingFragment] onPause");
+		super.onPause();
+	}
+
+	@Override
 	public void onStop() {
-		// TODO Auto-generated method stub
-//		discoverableThread.stopThread();
 //		Log.d(global.TAG, "[SettingFragment] onStop");
+//		discoverableThread.stopThread();
 		super.onStop();
+	}
+
+	@Override
+	public void onDestroy() {
+//    	Log.d(global.TAG, "[SettingFragment] onDestroy");
+		//discoverableThread.isRunning = false;
+		m_IsRunning = false;
+		super.onDestroy();
+		mBTUtil.closeDevice();
 	}
 
 	private String formatTimeRemaining(int timeout) {
@@ -144,15 +151,7 @@ public class SettingFragment extends Fragment{
         sb.append(sec);
         return sb.toString();
     }
-    
-    @Override
-    public void onDestroy(){
-    	//discoverableThread.isRunning = false;
-//    	Log.d(global.TAG, "[SettingFragment] onDestroy");
-    	m_IsRunning = false;
-    	super.onDestroy();
-    }
-    
+
 	private void initComponents(){
     	cb_discoverable = (CheckBox)m_settingsView.findViewById(R.id.setting_discoverable);
 //    	cb_discoverable.setChecked(global.bu.getDiscoverable());

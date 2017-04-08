@@ -57,8 +57,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.btutil.BTUtil;
+
 public class DeviceListFragment extends Fragment{
-	
+	private static String TAG = "yzh";
 	private static final int DIALOG_STATE_PAIRED_AND_CONNECTED = 0;
 	private static final int DIALOG_STATE_PAIRED_BUT_NOT_CONNECTED = 1;
 	private static final int DIALOG_STATE_NO_PAIR = 2;
@@ -78,8 +80,9 @@ public class DeviceListFragment extends Fragment{
 	private TextView m_listSerchingText;
 	private TextView m_listEmptyText;
 
-	private BluetoothAdapter btAdapter;
-	private BluetoothDevice device;
+//	private BluetoothAdapter btAdapter;
+//	private BluetoothDevice device;
+	private ShowSearchTextThread mSearchThread;
 	
 	private String BondedBTAddress;
 	private String selectedBTAddress;
@@ -92,6 +95,8 @@ public class DeviceListFragment extends Fragment{
 	private boolean ProfileHaveA2DPFlag = false;
 	private boolean ProfileHaveAVRCPFlag = false;
 	private static byte[]  lock= new byte[0];
+
+	private BTUtil mBTUtil;
 	
 	OnCallBackListener mCallback;
 	
@@ -105,7 +110,6 @@ public class DeviceListFragment extends Fragment{
 	
     @Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
-		// TODO Auto-generated method stub
 		super.setUserVisibleHint(isVisibleToUser);
 		
 //		if(isVisibleToUser == true){
@@ -118,13 +122,12 @@ public class DeviceListFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
-//    	Log.d(global.TAG, "[DeviceListActivity] onCreate");
     	selectedBTAddress = "";
     	selectedState = "";
         //Init ArrayList and ListView
     	LayoutInflater inflater = getActivity().getLayoutInflater();
     	m_devicesView = inflater.inflate(R.layout.devicelist_fragment,
-    			(ViewGroup)getActivity().findViewById(R.id.tabpage_frame),false);
+    			(ViewGroup)getActivity().findViewById(R.id.tabpage_frame), false);
     	
         data = new ArrayList<Map<String,Object>>();
         dlAdapter = new DeviceListAdapter(getActivity(), data);
@@ -139,18 +142,18 @@ public class DeviceListFragment extends Fragment{
         
         search_btn = (ImageButton)m_devicesView.findViewById(R.id.list_search_btn);
         search_btn.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
 				data.clear();
-				addPairedDevicesToListview();
-		        if (btAdapter.isDiscovering()){
-		        	btAdapter.cancelDiscovery();
-		        }
-		        	btAdapter.startDiscovery();
-		        	
-		        	new ShowSearchTextThread().start();
+//				addPairedDevicesToListview();
+//		        if (btAdapter.isDiscovering()){
+//		        	btAdapter.cancelDiscovery();
+//		        }
+//				btAdapter.startDiscovery();
+				if (!isRunning) {
+					mSearchThread = new ShowSearchTextThread();
+					mSearchThread.start();
+				}
 			}
 		});
     	
@@ -171,16 +174,19 @@ public class DeviceListFragment extends Fragment{
 //        filter.addAction("android.bluetooth.device.action.ProfileHaveAVRCP");
 //        getActivity().registerReceiver(mReceiver, filter); 
         
-        btAdapter= BluetoothAdapter.getDefaultAdapter();
-//        if(btAdapter == null){
-//        	Log.d(global.TAG, "锟借备锟斤拷支锟斤拷锟斤拷锟斤拷");
-//        }else{
-//        	Log.d(global.TAG, "锟借备支锟斤拷锟斤拷锟斤拷");
+//        btAdapter= BluetoothAdapter.getDefaultAdapter();
+//        if(btAdapter == null) {
+//        	Log.d(global.TAG, "");
+//        }else {
+//        	Log.d(global.TAG, "");
 //        }
         
         //Add paired devices to list.
         addPairedDevicesToListview();
-        
+
+		mBTUtil = BTUtil.getInstance();
+        mBTUtil.openDevice();
+		Log.d(TAG, "[DeviceListFragment] onCreate");
     }
     
     public Handler mHandler = new Handler() {
@@ -193,88 +199,96 @@ public class DeviceListFragment extends Fragment{
           	 }
         }
     };
-    
-    public class ShowSearchTextThread extends Thread {
 
+	private boolean isRunning = false;
+    public class ShowSearchTextThread extends Thread {
     	@Override
     	public void run() {
     		synchronized (lock) {
+				isRunning = true;
 //	    		CommonUtils.sleep(500);
 	    		mHandler.sendEmptyMessage(0);
+				if (mBTUtil != null) {
+					mBTUtil.search();
+				} else {
+					return;
+				}
+				while (isRunning) {
+					String result = mBTUtil.searchResult();
+					if (result == null) {
+						break;
+					}
+				}
+				mBTUtil.stopSearch();
+				Log.d(TAG, " Search Thread exit.");
     		}
     	}
+
+		public void stopThread() {
+			isRunning = false;
+		}
     }
     
     @Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-//    	Log.d(global.TAG, "[DeviceListFragment] onCreateView");
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    	Log.d(TAG, "[DeviceListFragment] onCreateView");
 		return m_devicesView;
+	}
+
+	@Override
+	public void onDestroyView() {
+		super.onDestroyView();
+		Log.d(TAG, "[DeviceListFragment] onDestroyView");
 	}
 
 	@Override
     public void onStart(){
     	super.onStart();
-//    	Log.d(global.TAG, "[DeviceListFragment] onStart");
+    	Log.d(TAG, "[DeviceListFragment] onStart");
     }
+
+	@Override
+	public void onResume() {
+		super.onResume();
+//		beginDiscovery();
+		Log.d(TAG, "[DeviceListFragment] onResume");
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		Log.d(TAG, "[DeviceListFragment] onPause");
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		mSearchThread.stopThread();
+//		btAdapter.cancelDiscovery();
+		//	getActivity().setTitle(getResources().getString(R.string.app_name));
+		Log.d(TAG, "[DeviceListFragment] onStop");
+	}
     
     @Override
     public void onDestroy(){
     	super.onDestroy();
-//    	Log.d(global.TAG, "[DeviceListFragment] onDestroy");
 //    	getActivity().unregisterReceiver(mReceiver);
-    }
-  
-    
-    @Override
-	public void onResume() {
-		// TODO Auto-generated method stub
-//    	Log.d(global.TAG, "[DeviceListFragment] onResume");
-		super.onResume();
-//		beginDiscovery();
-		
-	}
-
-    
-	@Override
-	public void onPause() {
-		// TODO Auto-generated method stub
-//		Log.d(global.TAG, "[DeviceListFragment] onPause");
-		super.onPause();
-	}
-
-
-	@Override
-	public void onStop() {
-		// TODO Auto-generated method stub
-//		Log.d(global.TAG, "[DeviceListFragment] onStop");
-		super.onStop();
-
-    	btAdapter.cancelDiscovery();
-    //	getActivity().setTitle(getResources().getString(R.string.app_name));
-	}
-
-	@Override
-	public void onDestroyView() {
-		// TODO Auto-generated method stub
-//		Log.d(global.TAG, "[DeviceListActivity] onDestroyView");
-		super.onDestroyView();
+		mBTUtil.closeDevice();
+		Log.d(TAG, "[DeviceListFragment] onDestroy");
 	}
 
 	public void beginDiscovery() {
     	  // Set filter for BroadcastReceiver.
-
         //Scan new devices.
-        if (btAdapter.isDiscovering()){
+//        if (btAdapter.isDiscovering()){
 //        	Log.v(global.TAG, "Old process is discovering.");
-        	btAdapter.cancelDiscovery();
-        }
-        if (! btAdapter.isDiscovering()){
+//        	btAdapter.cancelDiscovery();
+//        }
+//        if (! btAdapter.isDiscovering()){
 //        	Log.v(global.TAG, "Start discovery.");
-        	btAdapter.startDiscovery();
+//        	btAdapter.startDiscovery();
      //   	getActivity().setTitle(getResources().getString(R.string.app_name) + "     Scaning...");
-        }
+//        }
     }
 
 //	@Override
@@ -583,15 +597,15 @@ public class DeviceListFragment extends Fragment{
     }
     
     private void addPairedDevicesToListview(){
-        Set<BluetoothDevice> devices= btAdapter.getBondedDevices();
-//        Log.d(global.TAG, "How many devices  (" + devices.size() + ").");
-        if(devices.size()>0) {
-            for(Iterator<BluetoothDevice> iterator=devices.iterator();iterator.hasNext();){ 
-            	device=iterator.next();
-            	addItem(device.getName(),"("+device.getAddress()+")", true);
-            	refershState(device.getAddress());
-            }
-        }
+//        Set<BluetoothDevice> devices= btAdapter.getBondedDevices();
+////        Log.d(global.TAG, "How many devices  (" + devices.size() + ").");
+//        if(devices.size()>0) {
+//            for(Iterator<BluetoothDevice> iterator=devices.iterator();iterator.hasNext();){
+//            	device=iterator.next();
+//            	addItem(device.getName(),"("+device.getAddress()+")", true);
+//            	refershState(device.getAddress());
+//            }
+//        }
         dlAdapter.notifyDataSetChanged();
     }
     
@@ -617,13 +631,11 @@ public class DeviceListFragment extends Fragment{
     }
     
     private void savebondedAdd(String BTAddress){
-    	//锟斤拷锟芥当前匹锟斤拷锟斤拷只锟斤拷锟斤拷锟斤拷锟街�
     	SharedPreferences sp = getActivity().getSharedPreferences("bondedAddress", Context.MODE_PRIVATE);
     	Editor editor = sp.edit();
     	editor.putString("STRING_KEY",BTAddress);
     	editor.commit();
     	
-    	//锟矫碉拷锟较达拷匹锟斤拷锟斤拷锟斤拷锟斤拷锟街�
     	SharedPreferences Lastsp = getActivity().getSharedPreferences("LastAddress",  getActivity().MODE_PRIVATE);
 		String LastAddress = Lastsp.getString("STRING_KEY", "");
 			 
@@ -640,10 +652,9 @@ public class DeviceListFragment extends Fragment{
 		Lasteditor.putString("STRING_KEY",BTAddress);
 		Lasteditor.commit();
     	        
-        if (btAdapter.isDiscovering()){
-//        	Log.v(global.TAG, "isDiscovering11111111111111111");
-        	btAdapter.cancelDiscovery();
-        }
+//        if (btAdapter.isDiscovering()){
+//        	btAdapter.cancelDiscovery();
+//        }
         
 //        openProfilelist(BTAddress);
         
@@ -658,16 +669,16 @@ public class DeviceListFragment extends Fragment{
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (action.equals(BluetoothDevice.ACTION_FOUND)) {
-                    device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+//                    device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
 //                    Log.v(global.TAG, "Found Device:" + device.getName() +"  "+ device.getAddress());
                     //Ignore exist devices.
                     for (int i=0; i<data.size(); i++){
                         String addr = getAddress(data.get(i).get("state").toString());
-                        if (device.getAddress().equals(addr))
-                            return;
+//                        if (device.getAddress().equals(addr))
+//                            return;
                     }
                     //Add item
-                    addItem(device.getName(),getActivity().getResources().getString(R.string.DL_PairWithThisDevice)+"("+device.getAddress()+")", false);
+//                    addItem(device.getName(),getActivity().getResources().getString(R.string.DL_PairWithThisDevice)+"("+device.getAddress()+")", false);
                     dlAdapter.notifyDataSetChanged();
             }else if (action.equals(BluetoothAdapter.ACTION_DISCOVERY_FINISHED)) {
 //    	    	Log.v(global.TAG, "Search Finished");
@@ -708,10 +719,10 @@ public class DeviceListFragment extends Fragment{
 //                        break;
                 }
             }else if (action.equals(BluetoothDevice.ACTION_NAME_CHANGED)) { //Gary_debug
-                device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                String name = intent.getStringExtra(BluetoothDevice.EXTRA_NAME);
+//                device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+//                String name = intent.getStringExtra(BluetoothDevice.EXTRA_NAME);
 //                Log.v(global.TAG, "ACTION_NAME_CHANGED -- BTAddress:"+device.getAddress()+"name: "+name);
-                refreshName(device, name);
+//                refreshName(device, name);
             }/*else if(action.equals(BluetoothA2dpSink.ACTION_A2DP_SINK_STATUS_CHANGED)) {
             	Log.v(global.TAG, "BLUETOOTH_A2DP_SINK_CONNECTION_ADDRESS");
         		 int state = intent.getIntExtra(
