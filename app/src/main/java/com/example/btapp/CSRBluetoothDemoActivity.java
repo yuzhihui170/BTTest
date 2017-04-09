@@ -146,27 +146,22 @@ public class CSRBluetoothDemoActivity extends Activity {
     
     @Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
 		super.onPause();
 //		AppRunState.SetAppStop();
 	}
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
-		// TODO Auto-generated method stub
-	//	super.onSaveInstanceState(outState);//锟剿句话要注锟酵碉拷锟斤拷锟斤拷锟斤拷锟紽ragment锟斤拷startActivity时锟斤拷锟斤拷锟斤拷锟絅ullpointer锟斤拷锟斤拷
+	//	super.onSaveInstanceState(outState);
 	}
 
-	/**
-     * 锟斤拷锟斤拷锟斤拷锟借备
-     */
     private void switchOnBT() {
     	BluetoothAdapter btAdapter= BluetoothAdapter.getDefaultAdapter();
 //    	Log.v(global.TAG, "[CSRBluetoothDemoActivity]:Device name:"+btAdapter.getName()
 //    			+"Device Add:"+ btAdapter.getAddress());
     
     	boolean btState = btAdapter.getState() == BluetoothAdapter.STATE_ON;
-     	if(!btState){  //锟斤拷锟斤拷锟斤拷锟斤拷
+     	if (!btState) {
      		btAdapter.enable();
 //     		for (int i=0; i < 20; i++){
 //     			CommonUtils.sleep(500);
@@ -176,10 +171,7 @@ public class CSRBluetoothDemoActivity extends Activity {
 //     		}
      	}
     }
-    
-    /**
-     * 锟斤拷始锟斤拷ViewPager锟斤拷锟斤拷m_vpPageContainer
-     */
+
     private void initViewPager(){
     	m_settingFragment = new SettingFragment();
     	m_deviceListFragment = new DeviceListFragment();
@@ -217,26 +209,17 @@ public class CSRBluetoothDemoActivity extends Activity {
 		}
     
     }
-    
-    /**
-     * 锟斤拷始锟斤拷Tab锟斤拷Tab锟斤拷锟斤拷Fragment实锟街碉拷
-     */
+
     private void initTab(){
     	m_fm = getFragmentManager(); 
     	m_tabFragment = (TabFragment)m_fm.findFragmentById(R.id.tab_view);
     	m_tabFragment.setOnTabClickListerner(new TabOnClickListener());
     }
     
-    /**
-     * 
-     * @author yy
-     *  Tab锟斤拷Callback
-     */
     private class TabOnClickListener implements TabFragment.OnTabClickListener {
 
 		@Override
 		public void onTabClick(int tabIndex) {
-			// TODO Auto-generated method stub
 			if(m_vpPageContainer.getCurrentItem() == m_tabFragment.getCurTabPos())
 				return;
 			
@@ -261,26 +244,20 @@ public class CSRBluetoothDemoActivity extends Activity {
 				break;
 			}
 		}
-    	
     }
     
     private class MyViewPagerOnChangeListener implements OnPageChangeListener {
 
 		@Override
 		public void onPageScrollStateChanged(int arg0) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
 		public void onPageScrolled(int arg0, float arg1, int arg2) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
 		public void onPageSelected(int arg0) {
-			// TODO Auto-generated method stub
 			switch(arg0) {
 			case TAB_INDEX0:
 				m_tabFragment.setBtnOnSel(TAB_INDEX0);
@@ -333,7 +310,6 @@ public class CSRBluetoothDemoActivity extends Activity {
     	private ArrayList<Fragment> m_fragments;
 		public MyViewpagerAdapter(FragmentManager fm) {
 			super(fm);
-			// TODO Auto-generated constructor stub
 		}
 
 		public MyViewpagerAdapter(FragmentManager fm, ArrayList<Fragment> fragments){
@@ -342,8 +318,7 @@ public class CSRBluetoothDemoActivity extends Activity {
 		}
 		@Override
 		public Fragment getItem(int arg0) {
-			// TODO Auto-generated method stub
-			switch(arg0){
+			switch (arg0) {
 			case TAB_INDEX0:
 				return m_fragments.get(TAB_INDEX0);
 			case TAB_INDEX1:
@@ -362,7 +337,6 @@ public class CSRBluetoothDemoActivity extends Activity {
 
 		@Override
 		public int getCount() {
-			// TODO Auto-generated method stub
 			return m_fragments.size();
 		}
     	
@@ -422,11 +396,10 @@ public class CSRBluetoothDemoActivity extends Activity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// TODO Auto-generated method stub
 		//super.onActivityResult(requestCode, resultCode, data);
 //		Log.v(global.TAG, "CSRBluetoothDemoActivity:onActivityResult");
 		switch(resultCode) {
-//		case ProfileList.RESULT_DONE: //锟酵伙拷要锟斤拷锟斤拷锟斤拷锟街伙拷锟斤拷锟斤拷Profile锟斤拷锟斤拷应
+//		case ProfileList.RESULT_DONE:
 //			m_deviceListFragment.connectAllProfile(data.getStringExtra("BTAddress"));
 //			break;
 		default:

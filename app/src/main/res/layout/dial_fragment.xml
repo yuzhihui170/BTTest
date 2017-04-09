@@ -2,122 +2,139 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
     android:divider="?android:attr/dividerHorizontal"
-    android:showDividers="end"
-    android:paddingBottom="1dp">
-    
-    <TextView 
+    android:orientation="vertical"
+    android:paddingBottom="1dp"
+    android:showDividers="end">
+
+    <TextView
         android:id="@+id/BondedDeice"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-       	android:layout_gravity="center"
-	    android:gravity="center"
-        android:textSize="@dimen/text_middle_size" 
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_weight="0.1"
-        />
-    
-    <LinearLayout 
+        android:gravity="center"
+        android:text="please"
+        android:textSize="@dimen/text_middle_size" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.2"
-        android:layout_marginTop="20dp">
-	    <EditText
-	        android:layout_width="750dp"
-	        android:layout_height="60dp"
-	        android:id="@+id/dial_number_edit"
-	        android:textSize="@dimen/text_big_size"
-	        android:layout_marginLeft="6dp"
-	        android:hint="@string/enter_phone_num"
-	        android:textColor="#FFFFFF" 
-	        android:focusableInTouchMode="false"
-	        android:background="@drawable/phoneedit_backgnd"
-	        android:layout_gravity="center"
-	        android:gravity="center"/>
-	    <ImageButton 
-	        android:layout_width="wrap_content"
-	        android:layout_height="60dp"
-	        android:layout_marginLeft="30dp"
-	        android:id="@+id/dial_backspace_btn"
-	        android:layout_gravity="center"
-	        android:background="@drawable/tab_left_arrow"/>
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.2">
+
+        <EditText
+            android:id="@+id/dial_number_edit"
+            android:layout_width="550dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/phoneedit_backgnd"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:hint="@string/enter_phone_num"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_big_size" />
+
+        <ImageButton
+            android:id="@+id/dial_backspace_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/tab_left_arrow" />
     </LinearLayout>
-    
-     <TableLayout 
+
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.7">
-      <TableRow 
+
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:gravity="center"
-            android:layout_weight="0.5">
-            <ImageButton 
+            android:layout_weight="0.5"
+            android:gravity="center">
+
+            <ImageButton
                 android:id="@+id/dial_btn1"
-                style="@style/DialNumBtnStyle" 
-                android:src="@drawable/dial_num_1"/>
-        	 <ImageButton 
+                style="@style/DialNumBtnStyle"
+                android:src="@drawable/dial_num_1" />
+
+            <ImageButton
                 android:id="@+id/dial_btn2"
-                 style="@style/DialNumBtnStyle" 
-                 android:src="@drawable/dial_num_2"/>
-        	  <ImageButton 
+                style="@style/DialNumBtnStyle"
+                android:src="@drawable/dial_num_2" />
+
+            <ImageButton
                 android:id="@+id/dial_btn3"
-                style="@style/DialNumBtnStyle" 
-                android:src="@drawable/dial_num_3"/>
-        	   <ImageButton 
+                style="@style/DialNumBtnStyle"
+                android:src="@drawable/dial_num_3" />
+
+            <ImageButton
                 android:id="@+id/dial_btn4"
-                style="@style/DialNumBtnStyle" 
-                 android:src="@drawable/dial_num_4"/>
-            	<ImageButton 
+                style="@style/DialNumBtnStyle"
+                android:src="@drawable/dial_num_4" />
+
+            <ImageButton
                 android:id="@+id/dial_btn5"
-                style="@style/DialNumBtnStyle" 
-                 android:src="@drawable/dial_num_5"/>
-        	    <ImageButton 
+                style="@style/DialNumBtnStyle"
+                android:src="@drawable/dial_num_5" />
+
+            <ImageButton
                 android:id="@+id/dial_btnAdd"
-                 style="@style/DialNumBtnStyle" 
-                android:src="@drawable/dial_num_add"/>
-            <ImageButton 
+                style="@style/DialNumBtnStyle"
+                android:src="@drawable/dial_num_add" />
+
+            <ImageButton
                 android:id="@+id/dial_btnPound"
-                style="@style/DialNumBtnStyle" 
-                android:src="@drawable/dial_num_pound"/>
+                style="@style/DialNumBtnStyle"
+                android:src="@drawable/dial_num_pound" />
         </TableRow>
-        
-      <TableRow 
+
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:gravity="center"
-            android:layout_weight="0.5">
-              <ImageButton 
+            android:layout_weight="0.5"
+            android:gravity="center">
+
+            <ImageButton
                 android:id="@+id/dial_btn6"
-                style="@style/DialNumBtnStyle" 
-                android:src="@drawable/dial_num_6"/>
-            <ImageButton 
+                style="@style/DialNumBtnStyle"
+                android:src="@drawable/dial_num_6" />
+
+            <ImageButton
                 android:id="@+id/dial_btn7"
                 style="@style/DialNumBtnStyle"
-                android:src="@drawable/dial_num_7"/>
-            <ImageButton 
+                android:src="@drawable/dial_num_7" />
+
+            <ImageButton
                 android:id="@+id/dial_btn8"
                 style="@style/DialNumBtnStyle"
-                android:src="@drawable/dial_num_8"/>
-            <ImageButton 
+                android:src="@drawable/dial_num_8" />
+
+            <ImageButton
                 android:id="@+id/dial_btn9"
                 style="@style/DialNumBtnStyle"
-                android:src="@drawable/dial_num_9"/>
-            <ImageButton 
+                android:src="@drawable/dial_num_9" />
+
+            <ImageButton
                 android:id="@+id/dial_btn0"
                 style="@style/DialNumBtnStyle"
-                android:src="@drawable/dial_num_0"/>
-            <ImageButton 
+                android:src="@drawable/dial_num_0" />
+
+            <ImageButton
                 android:id="@+id/dial_btnStar"
                 style="@style/DialNumBtnStyle"
-                android:src="@drawable/dial_num_star"/>
-            <ImageButton 
+                android:src="@drawable/dial_num_star" />
+
+            <ImageButton
                 android:id="@+id/dial_btnDial"
                 style="@style/DialNumBtnStyle"
-                android:src="@drawable/bt_call"/>
-        </TableRow> 
-        
-    </TableLayout> 
-        
+                android:src="@drawable/bt_call" />
+        </TableRow>
+
+    </TableLayout>
+
 </LinearLayout>

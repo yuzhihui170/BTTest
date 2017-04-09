@@ -70,26 +70,21 @@ public class CallLogFragment extends Fragment {
 
 		public CallLogCursorAdapter(Context context, Cursor c) {
 			super(context, c);
-			// TODO Auto-generated constructor stub
 		}
 
 		
-		public CallLogCursorAdapter(Context context, Cursor c,
-				boolean autoRequery) {
+		public CallLogCursorAdapter(Context context, Cursor c, boolean autoRequery) {
 			super(context, c, autoRequery);
-			// TODO Auto-generated constructor stub
 		}
 
 
 		public CallLogCursorAdapter(Context context, Cursor c, int flags) {
 			super(context, c, flags);
-			// TODO Auto-generated constructor stub
 		}
 
 
 		@Override
 		public void bindView(View arg0, Context arg1, Cursor arg2) {
-			// TODO Auto-generated method stub
 			if(arg2 == null)
 				return;
 			

@@ -2,9 +2,9 @@
 
     <style name="AppTheme" parent="android:Theme.Light" />
 	<style name="DialNumBtnStyle">
-	    <item name="android:layout_width">wrap_content</item>
-	    <item name="android:layout_height">wrap_content</item>
-	    <item name="android:padding">15dp</item>
+	    <item name="android:layout_width">75dp</item>
+	    <item name="android:layout_height">75dp</item>
+	    <item name="android:layout_margin">5dp</item>
 	    <item name="android:background">#00000000</item>
 	</style>
 	

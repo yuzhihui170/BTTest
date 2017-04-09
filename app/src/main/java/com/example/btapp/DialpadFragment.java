@@ -53,31 +53,25 @@ public class DialpadFragment extends Fragment {
 	TextView m_BondedText;
 	Handler longclickhandler=new Handler();
 	
-	private BluetoothAdapter btAdapter;
-	private BluetoothDevice device;
 	private boolean mShowDialPadFlag = false;
 	
 	@Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
-		// TODO Auto-generated method stub
 		super.setUserVisibleHint(isVisibleToUser);
 		
-		if(isVisibleToUser == true){
+		if (isVisibleToUser == true) {
 //			Log.d(global.TAG, "[DialpadFragment]: Show View");
 			mShowDialPadFlag = true;
 			UpdateDeviceStats();
+
 		}else{
 //			Log.d(global.TAG, "[DialpadFragment]: Hide View");
 			mShowDialPadFlag = false;
 		}
 	}
 	
-	public void UpdateDeviceStats(){
-		if(mShowDialPadFlag){
-			Set<BluetoothDevice> devices= btAdapter.getBondedDevices();
-	        if(devices.size()>0) {
-	        for(Iterator<BluetoothDevice> iterator=devices.iterator();iterator.hasNext();){ 
-	        	device=iterator.next();
+	public void UpdateDeviceStats() {
+		if (mShowDialPadFlag) {
 //	        	if(global.hfp.hfpGetConnectStatus(device.getAddress()) == BluetoothHFP.HFP_CONNECTED){
 //	        			if(getActivity() != null && m_BondedText != null){
 //	        		m_BondedText.setText(getActivity().getResources().getString(R.string.Had_conn_device) + device.getName());
@@ -87,19 +81,15 @@ public class DialpadFragment extends Fragment {
 //	        		m_BondedText.setText(R.string.please_conn_device);
 //	        		}
 //	        	}
-	        }
-	    }
-	    else{
-			if(m_BondedText != null){
-			m_BondedText.setText(R.string.please_conn_device);
+	    } else {
+			if (m_BondedText != null) {
+			    m_BondedText.setText(R.string.please_conn_device);
 			}
 	    }
-		}
 	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
 		LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -107,7 +97,6 @@ public class DialpadFragment extends Fragment {
 				(ViewGroup)getActivity().findViewById(R.id.tabpage_frame), false);
 		m_editNumber = (EditText)m_DialpadView.findViewById(R.id.dial_number_edit);
 		m_editNumber.addTextChangedListener(new TextWatcher() {
-			
 			@Override
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
 				if ((m_editNumber.getText() != null)
@@ -118,24 +107,18 @@ public class DialpadFragment extends Fragment {
 					
 					getActivity().finish();
 				}
-				
 			}
-			
+
 			@Override
-			public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-					int arg3) {
-				// TODO Auto-generated method stub
-				
+			public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
 			}
 			
 			@Override
 			public void afterTextChanged(Editable arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 		});
+
 		m_BondedText = (TextView)m_DialpadView.findViewById(R.id.BondedDeice);
-		btAdapter= BluetoothAdapter.getDefaultAdapter();
 		//InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
 		//imm.hideSoftInputFromWindow(m_editNumber.getWindowToken(), 0);
 		m_editNumber.setInputType(InputType.TYPE_NULL);
@@ -155,7 +138,24 @@ public class DialpadFragment extends Fragment {
 //            }
 		}
 	};
-	
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		return m_DialpadView;
+	}
+
+	@Override
+	public void onResume() {
+//		 Log.v(global.TAG, "[DialpadFragment]:onResume");
+		super.onResume();
+	}
+
+	@Override
+	public void onPause() {
+//		Log.v(global.TAG, "[DialpadFragment]:onPause()");
+		super.onPause();
+	}
+
 	@Override
 	public void onDestroy() {
 //		Log.v(global.TAG, "[DialpadFragment]:onDestroy()");
@@ -163,20 +163,6 @@ public class DialpadFragment extends Fragment {
 //		getActivity().unregisterReceiver(mReceiver);
 	}
 
-	@Override
-	public void onPause() {
-		// TODO Auto-generated method stub
-//		Log.v(global.TAG, "[DialpadFragment]:onPause()");
-		super.onPause();
-	}
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		return m_DialpadView;
-	}
-	
 	private void setupKeypad(View fragmentView) {
 		fragmentView.findViewById(R.id.dial_btn0).setOnClickListener(new KeyBtnListener());
 		fragmentView.findViewById(R.id.dial_btn1).setOnClickListener(new KeyBtnListener());
@@ -258,17 +244,17 @@ public class DialpadFragment extends Fragment {
 			}
 		}
 	}
-	
+
 	 private void keyPressed(int keyCode) {
 	        KeyEvent event = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode);
 	        m_editNumber.onKeyDown(keyCode, event);
 
 	    }
-	 
+
 	 private boolean isDigitsEmpty() {
 	        return m_editNumber.length() == 0;
 	    }
-	
+
 	 private void dialButtonPressed() {
 		 if(!isDigitsEmpty()) {
 			 String number = m_editNumber.getText().toString();
@@ -277,13 +263,8 @@ public class DialpadFragment extends Fragment {
 			 startActivity(intent);
 		 }
 	 }
-	 
-	 @Override
-	public void onResume() {
-		// TODO Auto-generated method stub
-//		 Log.v(global.TAG, "[DialpadFragment]:onResume");
-		super.onResume();
-	}
+
+
 
 	private Intent newDialNumberIntent(String number) {
 //	        final Intent intent = new Intent(Intent.ACTION_CALL_PRIVILEGED,

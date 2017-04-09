@@ -48,8 +48,8 @@ public class BTUtil {
                 e.printStackTrace();
                 Log.e(TAG, "can not open bt.");
             }
+            Log.d(TAG,"[BTUtil] openDevice dev:" + mPathDefault + " baudrate:"+115200);
         }
-        Log.d(TAG,"[BTUtil] openDevice dev:" + mPathDefault + " baudrate:"+115200);
     }
 
     //关闭设备
@@ -57,8 +57,8 @@ public class BTUtil {
         if(mSerialPort != null) {
             mSerialPort.close();
             mSerialPort = null;
+            Log.d(TAG,"[BTUtil] close");
         }
-        Log.d(TAG,"[BTUtil] close");
     }
     //读取数据
     public int read(byte[] buffer, int offset, int byteCount) {
@@ -142,12 +142,13 @@ public class BTUtil {
     public String searchResult() {
         byte[] buffer = new byte[100];
         int ret = read(buffer, 0, 100);
+        Log.d(TAG, "read ret:"+ret);
         if(ret < 0) {
             return null;
         }
         String result = new String(buffer, 0, ret);
+        Log.d(TAG,"result  :"+result);
         if(result.substring(0, 1).equals(CmdConstant.SEARCH_RESULT)) {
-            Log.d(TAG,"result:"+result);
             return result;
         }
         return null;
@@ -162,5 +163,22 @@ public class BTUtil {
     //BT-->ARM IY:搜索结束
     public boolean stopSearchResult() {
         return getResult(CmdConstant.SEARCH_RESULT);
+    }
+
+
+    public String readStatus() {
+        byte[] buffer = new byte[100];
+        int ret = 0;
+        while (ret < 4) {
+           ret += read(buffer, ret, 100-ret);
+        }
+        Log.d(TAG, "read ret:"+ret);
+        String result = new String(buffer, 0, ret);
+        Log.d(TAG,"result  :"+result);
+        String[] status = result.split("\r\n");
+        for (String s : status) {
+            Log.d(TAG, "status: " + s);
+        }
+        return result;
     }
 }

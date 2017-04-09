@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="text_size">35dip</dimen>
-    <dimen name="text_middle_size">28dip</dimen>
+    <dimen name="text_middle_size">15dip</dimen>
     <dimen name="text_small_size">20dip</dimen>
-    <dimen name="text_big_size">45dip</dimen>
+    <dimen name="text_big_size">30dip</dimen>
     <dimen name="contact_tile_list_padding_top">0dip</dimen>
     <dimen name="empty_message_top_margin">45dip</dimen>
 </resources>

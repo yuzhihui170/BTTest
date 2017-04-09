@@ -216,10 +216,15 @@ public class DeviceListFragment extends Fragment{
 				while (isRunning) {
 					String result = mBTUtil.searchResult();
 					if (result == null) {
-						break;
+//						break;
+					}
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
 					}
 				}
-				mBTUtil.stopSearch();
+//				mBTUtil.stopSearch();
 				Log.d(TAG, " Search Thread exit.");
     		}
     	}

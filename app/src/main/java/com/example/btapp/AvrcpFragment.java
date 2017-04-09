@@ -48,7 +48,6 @@ public class AvrcpFragment extends Fragment {
 	
 	@Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
-		// TODO Auto-generated method stub
 		super.setUserVisibleHint(isVisibleToUser);
 		
 		if(isVisibleToUser == true){
@@ -64,7 +63,6 @@ public class AvrcpFragment extends Fragment {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
 		LayoutInflater inflater = getActivity().getLayoutInflater();

@@ -15,7 +15,7 @@ public class SerialPort {
 		System.loadLibrary("serial_port");
 	}
 
-	private static final String TAG = "SerialPort";
+	private static final String TAG = "yzh";
 	/*
 	 * Do not remove or rename the field mFd: it is used by native method
 	 * close();
