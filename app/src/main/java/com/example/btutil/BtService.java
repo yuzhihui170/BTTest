@@ -2,6 +2,7 @@ package com.example.btutil;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,7 +15,14 @@ public class BtService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        Log.d(TAG, "[BtService]: onBind ");
+        return myBinder;
+    }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        Log.d(TAG, "[BtService]: onUnbind ");
+        return super.onUnbind(intent);
     }
 
     @Override
@@ -22,10 +30,12 @@ public class BtService extends Service {
         super.onCreate();
         mBTUtil = BTUtil.getInstance();
         mBTUtil.openDevice();
+        Log.d(TAG, "[BtService]: onCreate ");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d(TAG, "[BtService]: onStartCommand ");
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -33,6 +43,15 @@ public class BtService extends Service {
     public void onDestroy() {
         super.onDestroy();
         mBTUtil.closeDevice();
+        Log.d(TAG, "[BtService]: onDestroy ");
+    }
+
+    private MyBinder myBinder = new MyBinder();
+    class MyBinder extends Binder {
+
+        public void connect(int index) {
+            mBTUtil.connect(index);
+        }
     }
 
     private boolean isRunning = false;
@@ -57,7 +76,6 @@ public class BtService extends Service {
                         e.printStackTrace();
                     }
                 }
-//				mBTUtil.stopSearch();
                 Log.d(TAG, " Search Thread exit.");
             }
         }

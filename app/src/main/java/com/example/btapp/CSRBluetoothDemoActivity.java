@@ -56,6 +56,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.btutil.BtService;
+
 public class CSRBluetoothDemoActivity extends Activity {
 	//private ToggleButton Btn_bluetooth_onoff;
 	private TabFragment m_tabFragment;
