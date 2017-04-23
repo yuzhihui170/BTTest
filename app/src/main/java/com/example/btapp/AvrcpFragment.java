@@ -29,11 +29,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.btutil.BtService;
+//音乐播放界面
 public class AvrcpFragment extends Fragment {
+    private final static String TAG = "yzh";
 
 	private TextView mPlaySatas;
 	private ImageButton mPlayPre;
@@ -45,16 +49,20 @@ public class AvrcpFragment extends Fragment {
 	private View mMainView;
 	private AvrcpBtnListener mBtnListener;
 	private boolean mShowArcvpFlag = false;
+	private Button mBtnVoiceToPhone;
+    private Button mBtnVoiceToBT;
+    private Button mBtnVoiceToPhoneOrBT;
+
+	private BtService.MyBinder myBinder;
 	
 	@Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
 		super.setUserVisibleHint(isVisibleToUser);
-		
-		if(isVisibleToUser == true){
+		if (isVisibleToUser == true) {
 //			Log.d(global.TAG, "[AvrcpFragment]: Show View");
 			mShowArcvpFlag = true;
-			UpdatePlayStats();
-		}else{
+//			updatePlayStats();
+		} else {
 //			Log.d(global.TAG, "[AvrcpFragment]: Hide View");
 			mShowArcvpFlag = false;
 //			ToastUtils.cancelCurrentToast();
@@ -73,23 +81,37 @@ public class AvrcpFragment extends Fragment {
 		mPlayNext = (ImageButton)mMainView.findViewById(R.id.avrcp_play_next);
 		mPause = (ImageButton)mMainView.findViewById(R.id.avrcp_pause);
 		mAudioSet = (ImageButton)mMainView.findViewById(R.id.audio_set);
-		
-		mBtnListener = new AvrcpBtnListener();
+
+        mBtnVoiceToPhone = (Button)mMainView.findViewById(R.id.btn_voiceToPhone);
+        mBtnVoiceToBT = (Button)mMainView.findViewById(R.id.btn_voiceToBT);
+
+        mBtnListener = new AvrcpBtnListener();
 		mPlayPre.setOnClickListener(mBtnListener);
 		mPlayPause.setOnClickListener(mBtnListener);
 		mStop.setOnClickListener(mBtnListener);
 		mPlayNext.setOnClickListener(mBtnListener);
 		mPause.setOnClickListener(mBtnListener);
 		mAudioSet.setOnClickListener(mBtnListener);
-		
-		mPlaySatas = (TextView)mMainView.findViewById(R.id.audio_playstats);
-		mPlaySatas.setText(R.string.avrcp_noplaying);
-		
+        mPlaySatas = (TextView)mMainView.findViewById(R.id.audio_playstats);
+
+        //设置声音切换按钮的监听事件
+        mBtnVoiceToPhone.setOnClickListener(mBtnListener);
+        mBtnVoiceToBT.setOnClickListener(mBtnListener);
+
 //        IntentFilter filter = new IntentFilter();
 //        filter.addAction(BluetoothIntent.BLUETOOTH_AVRCP_PLAY_BACK_STATUS_IND_ACTION);
 //        filter.addAction(BluetoothA2dpSink.ACTION_A2DP_SINK_STATUS_CHANGED);
 //        getActivity().registerReceiver(mReceiver, filter);
-        
+
+		myBinder = ((CSRBluetoothDemoActivity)getActivity()).getMyBinder();
+        if (myBinder.getMusicStatic()) {
+            mPlaySatas.setText(R.string.avrcp_playing);
+
+        } else {
+            mPlaySatas.setText(R.string.avrcp_noplaying);
+        }
+
+        Log.v(TAG, "[AvrcpFragment]: onCreate()");
 	}
 	
 
@@ -133,68 +155,49 @@ public class AvrcpFragment extends Fragment {
         }
     };
     
-	public void UpdatePlayStats(){
-//		String AvrcpAddress = global.ConnectedDevices.get("AVRCP");
-//		String A2dpAddress = global.ConnectedDevices.get("A2DP");
-//		if(AvrcpAddress != null &&!AvrcpAddress.isEmpty()
-//				&& A2dpAddress != null &&!A2dpAddress.isEmpty()) {
-//        	SharedPreferences sp = getActivity().getSharedPreferences("BTMusic_Stats",  Context.MODE_PRIVATE);
-//    		if(!sp.getBoolean("Music_PlayFlag", false)){
-//    			global.bu.avrcpPlay();
-//			}
-//		}else{
-//			if(mPlaySatas != null){
-//				mPlaySatas.setText(R.string.avrcp_noplaying);
-//			}
-//			if(getActivity() != null){
-//				ToastUtils.showMessage(getActivity(), getActivity().getResources().getString(R.string.avrcp_a2dp_unconnected));
-//			}else{
-//			}
-//		}
+	private void updatePlayStats(String content){
+        if(mPlaySatas != null){
+            mPlaySatas.setText(content);
+        }
 	}
 	
 	@Override
-	public void onStop() {
-		// TODO Auto-generated method stub
-//		Log.v(global.TAG, "[AvrcpFragment]:onStop()");
-		super.onStop();
-	}
-
-	@Override
 	public void onStart() {
-		// TODO Auto-generated method stub
-//		Log.v(global.TAG, "[AvrcpFragment]:onStart()");
 		super.onStart();
-	}
+		Log.v(TAG, "[AvrcpFragment]: onStart()");
+    }
 
 	@Override
 	public void onResume() {
-		// TODO Auto-generated method stub
-//		Log.v(global.TAG, "[AvrcpFragment]:onResume()");
 		super.onResume();
-		
-	}
-
-	@Override
-	public void onDestroy() {
-//		Log.v(global.TAG, "[AvrcpFragment]:onDestroy()");
-		// TODO Auto-generated method stub
-		super.onDestroy();
-		pauseMusic();
-//		getActivity().unregisterReceiver(mReceiver);
+        updatePlayStats("蓝牙音乐");
+		Log.v(TAG, "[AvrcpFragment]: onResume()");
 	}
 
 	@Override
 	public void onPause() {
-//		Log.v(global.TAG, "[AvrcpFragment]:onPause()");
-		// TODO Auto-generated method stub
 		super.onPause();
-	}
+		Log.v(TAG, "[AvrcpFragment]: onPause()");
+    }
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+	public void onStop() {
+		super.onStop();
+		Log.v(TAG, "[AvrcpFragment]: onStop()");
+    }
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+//		getActivity().unregisterReceiver(mReceiver);
+		Log.v(TAG, "[AvrcpFragment]: onDestroy()");
+    }
+
+
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.v(TAG, "[AvrcpFragment]: onCreateView()");
 		return mMainView;
 	}
 	
@@ -202,98 +205,44 @@ public class AvrcpFragment extends Fragment {
 
 		@Override
 		public void onClick(View arg0) {
-			// TODO Auto-generated method stub
 			int id = arg0.getId();
 			if (id == R.id.avrcp_play_next) {
-				playNext();
+				myBinder.nextMusic();
+
 			} else if (id == R.id.avrcp_play_pause) {
-        		playMusic();
+        		myBinder.playOrPauseMusic();
+
 			} else if (id == R.id.avrcp_play_pre) {
-				playPre();
+				myBinder.preMusic();
+
 			} else if (id == R.id.avrcp_stop) {
-				stopMusic();
+                myBinder.stopMusic();
+
 			} else if (id == R.id.avrcp_pause) {
-        		pauseMusic();
+                myBinder.playOrPauseMusic();
+
 			} else if(id == R.id.audio_set){
-				callAudioSet();
-			}
+//				callAudioSet();
+			} else if (id == R.id.btn_voiceToPhone) {
+                myBinder.switchVoiceToPhone();
+
+            } else if (id == R.id.btn_voiceToBT) {
+                myBinder.swtichVoiceToBT();
+
+            }
+
 		}
 		 
 	}
 	
 	private void callAudioSet() {
-		try {
+		/*try {
 			Intent intent = new Intent();
 			intent.setClassName("com.android.settings", "com.android.settings.apical.AudioSettings");
 			startActivity(intent);
 		} catch (Exception e) {
 			Toast.makeText(getActivity(), "Call Audio Settings: "+e.getMessage(), Toast.LENGTH_SHORT).show();
-		}
+		}*/
 	}
-	
-	private void playMusic() {
-    	SharedPreferences sp = getActivity().getSharedPreferences("BTMusic_Stats",  Context.MODE_PRIVATE);
-		if(!sp.getBoolean("Music_PlayFlag", false)){
-//			String AvrcpAddress = global.ConnectedDevices.get("AVRCP");
-//			String A2dpAddress = global.ConnectedDevices.get("A2DP");
-//			if(AvrcpAddress != null &&!AvrcpAddress.isEmpty()
-//					&& A2dpAddress != null &&!A2dpAddress.isEmpty()) {
-//				global.bu.avrcpPlay();
-//			}
-//			else{
-//				if(getActivity() != null){
-//					ToastUtils.showMessage(getActivity(), getActivity().getResources().getString(R.string.avrcp_a2dp_unconnected));
-//				}else{
-//					Log.d(global.TAG, "[AvrcpFragment]: r == null");
-//				}
-//			}
-		}
-	}
-	
-	private void pauseMusic() {
-    	SharedPreferences sp = getActivity().getSharedPreferences("BTMusic_Stats",  Context.MODE_PRIVATE);
-//		if(sp.getBoolean("Music_PlayFlag", false)){
-//			String AvrcpAddress = global.ConnectedDevices.get("AVRCP");
-//			String A2dpAddress = global.ConnectedDevices.get("A2DP");
-//			if(AvrcpAddress != null &&!AvrcpAddress.isEmpty()
-//					&& A2dpAddress != null &&!A2dpAddress.isEmpty()) {
-//				global.bu.avrcpPause();
-//			}else{
-//			}
-//		}
-	}
-	
-	private void playNext() {
-    	SharedPreferences sp = getActivity().getSharedPreferences("BTMusic_Stats",  Context.MODE_PRIVATE);
-//		if(sp.getBoolean("Music_PlayFlag", false)){
-//			String AvrcpAddress = global.ConnectedDevices.get("AVRCP");
-//			String A2dpAddress = global.ConnectedDevices.get("A2DP");
-//			if(AvrcpAddress != null &&!AvrcpAddress.isEmpty()
-//					&& A2dpAddress != null &&!A2dpAddress.isEmpty()) {
-//				global.bu.avrcpForward();
-//			}else{
-//			}
-//		}
-	}
-	
-	private void playPre() {
-    	SharedPreferences sp = getActivity().getSharedPreferences("BTMusic_Stats",  Context.MODE_PRIVATE);
-//		String AvrcpAddress = global.ConnectedDevices.get("AVRCP");
-//		String A2dpAddress = global.ConnectedDevices.get("A2DP");
-//		if(AvrcpAddress != null &&!AvrcpAddress.isEmpty()
-//				&& A2dpAddress != null &&!A2dpAddress.isEmpty()) {
-//			global.bu.avrcpBackward();
-//		}else{
-//		}
-	}
-	
-	private void stopMusic() {
-//		String AvrcpAddress = global.ConnectedDevices.get("AVRCP");
-//		String A2dpAddress = global.ConnectedDevices.get("A2DP");
-//		if(AvrcpAddress != null &&!AvrcpAddress.isEmpty()
-//				&& A2dpAddress != null &&!A2dpAddress.isEmpty()) {
-//			global.bu.avrcpStop();
-//		}else{
-//		}
-	}
+
 }

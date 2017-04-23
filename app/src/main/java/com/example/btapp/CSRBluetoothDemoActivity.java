@@ -33,6 +33,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -40,6 +41,7 @@ import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.provider.Settings;
 import android.support.v13.app.FragmentPagerAdapter;
@@ -59,6 +61,8 @@ import android.widget.Toast;
 import com.example.btutil.BtService;
 
 public class CSRBluetoothDemoActivity extends Activity {
+    private static final String TAG = "yzh";
+
 	//private ToggleButton Btn_bluetooth_onoff;
 	private TabFragment m_tabFragment;
 	private ViewPager m_vpPageContainer;
@@ -82,6 +86,22 @@ public class CSRBluetoothDemoActivity extends Activity {
 	private int pbTypeCounter; 
 	private int pbItemCounter;
 	long TestTimestamp;
+
+	private BtService.MyBinder myBinder;
+	private ServiceConnection connection = new ServiceConnection() {
+		@Override
+		public void onServiceDisconnected(ComponentName name) {
+			myBinder = null;
+            Log.d(TAG, "[CSRBluetoothDemoActivity]: onServiceDisconnected");
+		}
+
+		@Override
+		public void onServiceConnected(ComponentName name, IBinder service) {
+			myBinder = (BtService.MyBinder) service;
+            Log.d(TAG, "[CSRBluetoothDemoActivity]: onServiceConnected");
+		}
+	};
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);   
@@ -107,7 +127,12 @@ public class CSRBluetoothDemoActivity extends Activity {
         switchOnBT();
     	initTab();
     	initViewPager();
-     }
+
+        Intent intent = new Intent(this, BtService.class);
+        bindService(intent, connection, BIND_AUTO_CREATE);
+
+        Log.d(TAG, "[CSRBluetoothDemoActivity]: onCreate");
+	}
     
     @Override
 	public void onConfigurationChanged(Configuration newConfig) {
@@ -122,27 +147,19 @@ public class CSRBluetoothDemoActivity extends Activity {
 		res.updateConfiguration(config, dm); 
 	}
 
-	@Override
-    public void onDestroy(){
-//    	unregisterReceiver(mReceiver);
-    	super.onDestroy();
-//    	Log.d(global.TAG, "[CSRBluetoothDemoActivity]:onDestroy");
-//    	AppRunState.SetAppDestory();
-    }
-    
     @Override
     public void onStart(){
     	super.onStart();
-//    	Log.v(global.TAG, "[CSRBluetoothDemoActivity]:onStart:START");
+        Log.d(TAG, "[CSRBluetoothDemoActivity]: onStart");
     }
     
     @Override
     public void onResume(){
     	super.onResume();
-//    	Log.v(global.TAG, "[CSRBluetoothDemoActivity]:onResume:START+"+(System.currentTimeMillis() - TestTimestamp) );
     //	refershPairedDeviceList();
     //	refershComponentsState();
 //    	AppRunState.SetAppRun();
+        Log.d(TAG, "[CSRBluetoothDemoActivity]: onResume");
     }
     
     
@@ -150,7 +167,27 @@ public class CSRBluetoothDemoActivity extends Activity {
 	protected void onPause() {
 		super.onPause();
 //		AppRunState.SetAppStop();
+        Log.d(TAG, "[CSRBluetoothDemoActivity]: onPause");
 	}
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "[CSRBluetoothDemoActivity]: onStop");
+    }
+
+    @Override
+	public void onDestroy(){
+        super.onDestroy();
+//    	unregisterReceiver(mReceiver);
+        unbindService(connection);
+//    	AppRunState.SetAppDestory();
+        Log.d(TAG, "[CSRBluetoothDemoActivity]: onDestroy");
+	}
+
+    public BtService.MyBinder getMyBinder() {
+        return myBinder;
+    }
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
@@ -204,7 +241,6 @@ public class CSRBluetoothDemoActivity extends Activity {
 
 		@Override
 		public void onMessageSelected(int position) {
-			// TODO Auto-generated method stub
 			if(position == 0){
 				
 			}

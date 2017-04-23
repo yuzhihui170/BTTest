@@ -61,7 +61,6 @@ public class BTDialogFragment extends DialogFragment {
 	
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		int dialogType = getArguments().getInt("DialogType");
 		selectedBTAddress = getArguments().getString("BTAddress");
 		selectedBTName = getArguments().getString("BTName");

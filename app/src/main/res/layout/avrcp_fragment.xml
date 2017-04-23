@@ -2,86 +2,101 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
-    	<LinearLayout 
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_gravity="top|center"
-	    android:layout_marginTop="50dp"
-	    android:paddingBottom="50dp"
-	    android:orientation="horizontal"
-	    >
-	    	<TextView
-	    	android:id="@+id/audio_playstats"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:layout_gravity="center"
-	        android:gravity="center"
-	        android:textSize="@dimen/text_middle_size" 
-	        />
-    	    
-    	    <ImageButton 
-    	     android:id="@+id/audio_set"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	         android:layout_weight="1"
-	        android:layout_gravity="center"
-	        android:gravity="center"
-	        android:background="#00000000"
-	       
-	        android:src="@drawable/btn_audio_set"/>
-    	</LinearLayout>
-    	
-    	
-	<LinearLayout 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	     android:background="@drawable/avrcp_bg"
-	    android:orientation="horizontal"
-	     android:layout_gravity="center"
-	    >
-	    <ImageButton 
-	        android:layout_weight="1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:background="#00000000"
-	        android:layout_gravity="center_vertical"
-	        android:id="@+id/avrcp_play_pre"
-	        android:src="@drawable/btn_play_prev"/>
-	  <ImageButton
-	       android:layout_weight="1"
-	         android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:background="#00000000"
-	        android:id="@+id/avrcp_stop"
-	        android:src="@drawable/btn_stop"/>
-	    <ImageButton
-	         android:layout_weight="1"
-	         android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:background="#00000000"
-	        android:id="@+id/avrcp_play_pause"
-	        android:src="@drawable/btn_play"/>
-	   	
-	   	  <ImageButton 
-	   	       android:layout_weight="1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:background="#00000000"
-	        android:id="@+id/avrcp_pause"
-	        android:src="@drawable/btn_pause"/>
-	   	<ImageButton
-	   	     android:layout_weight="1"
-	         android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_vertical"
-	        android:background="#00000000"
-	        android:id="@+id/avrcp_play_next"
-	        android:src="@drawable/btn_play_next"/>
-	</LinearLayout>
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:paddingBottom="50dp">
+
+        <TextView
+            android:id="@+id/audio_playstats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/text_middle_size" />
+
+        <Button
+            android:id="@+id/btn_voiceToPhone"
+            android:text="声音切换到手机"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_voiceToBT"
+            android:text="声音切换到蓝牙"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/audio_set"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center"
+            android:src="@drawable/btn_audio_set" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/avrcp_bg"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/avrcp_play_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/btn_play_prev" />
+
+        <ImageButton
+            android:id="@+id/avrcp_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/btn_stop" />
+
+        <ImageButton
+            android:id="@+id/avrcp_play_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/btn_play" />
+
+        <ImageButton
+            android:id="@+id/avrcp_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/btn_pause" />
+
+        <ImageButton
+            android:id="@+id/avrcp_play_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/btn_play_next" />
+    </LinearLayout>
 </LinearLayout>

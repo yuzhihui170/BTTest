@@ -1,32 +1,13 @@
 /*
- * Copyright (C) Apical
+ * 拨号界面
  */
 package com.example.btapp;
 
-import java.util.Iterator;
-import java.util.Set;
-
-//import com.csr.BTApp.TabFragment.OnTabClickListener;
-//import com.csr.BTApp.common.BluetoothUtils;
-//import com.csr.BTApp.common.CommonUtils;
-//import com.csr.BTApp.common.global;
-//import com.csr.bluetooth.BluetoothIntent;
-
-import android.app.Activity;
 import android.app.Fragment;
-import android.bluetooth.BluetoothAdapter;
-//import android.bluetooth.BluetoothAvrcpCtl;
-import android.bluetooth.BluetoothDevice;
-//import android.bluetooth.BluetoothHFP;
-//import android.bluetooth.BluetoothPhonebookClient;
-//import android.bluetooth.BluetoothPhonebookClient.BluetoothPhonebookClientIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -34,19 +15,22 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.btutil.ActionConstant;
+import com.example.btutil.BtService;
 
 public class DialpadFragment extends Fragment {
+	private static final String TAG = "yzh";
+    private static final int H_GET_BINDER = 0x10;
+    private static final int H_GET_CONNECT_STATUS = 0x11;
 
 	View m_DialpadView;
 	EditText m_editNumber;
@@ -54,37 +38,17 @@ public class DialpadFragment extends Fragment {
 	Handler longclickhandler=new Handler();
 	
 	private boolean mShowDialPadFlag = false;
-	
-	@Override
-	public void setUserVisibleHint(boolean isVisibleToUser) {
-		super.setUserVisibleHint(isVisibleToUser);
-		
-		if (isVisibleToUser == true) {
-//			Log.d(global.TAG, "[DialpadFragment]: Show View");
-			mShowDialPadFlag = true;
-			UpdateDeviceStats();
 
-		}else{
-//			Log.d(global.TAG, "[DialpadFragment]: Hide View");
-			mShowDialPadFlag = false;
-		}
-	}
+	private BtService.MyBinder myBinder;
 	
-	public void UpdateDeviceStats() {
-		if (mShowDialPadFlag) {
-//	        	if(global.hfp.hfpGetConnectStatus(device.getAddress()) == BluetoothHFP.HFP_CONNECTED){
-//	        			if(getActivity() != null && m_BondedText != null){
-//	        		m_BondedText.setText(getActivity().getResources().getString(R.string.Had_conn_device) + device.getName());
-//	        		}
-//	        	}else{
-//	        		if(m_BondedText != null){
-//	        		m_BondedText.setText(R.string.please_conn_device);
-//	        		}
-//	        	}
-	    } else {
-			if (m_BondedText != null) {
-			    m_BondedText.setText(R.string.please_conn_device);
-			}
+	public void UpdateDeviceStats(boolean show, String showContect) {
+		if (show) {
+            if (m_BondedText != null) {
+//                m_BondedText.setText(R.string.please_conn_device);
+                m_BondedText.setText(showContect);
+            }
+        } else {
+
 	    }
 	}
 
@@ -124,44 +88,53 @@ public class DialpadFragment extends Fragment {
 		m_editNumber.setInputType(InputType.TYPE_NULL);
 		setupKeypad(m_DialpadView);
 		
-//        IntentFilter filter = new IntentFilter();
-//        filter.addAction(BluetoothHFP.ACTION_HFP_STATUS_CHANGED);
-//        getActivity().registerReceiver(mReceiver, filter); 
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ActionConstant.ACTION_HF_STATUS_CHANGE);
+        getActivity().registerReceiver(mReceiver, filter);
+
+        mHandler.sendEmptyMessageDelayed(H_GET_BINDER, 2000);
 	}
 	
 	BroadcastReceiver mReceiver = new BroadcastReceiver() {
-		
 		@Override
-		public void onReceive(Context arg0, Intent arg1) {
-//			if(arg1.getAction().equals(BluetoothHFP.ACTION_HFP_STATUS_CHANGED)) {
-//				UpdateDeviceStats();
-//            }
+		public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+			if(action.equals(ActionConstant.ACTION_HF_STATUS_CHANGE)) {
+                String hfStatus = intent.getStringExtra("hfStatus");
+                if(hfStatus.equals("MG3")) { //hfStatus==3时表示
+                    UpdateDeviceStats(true, "蓝牙设备连接");
+
+                } else if (hfStatus.equals("MG1")) {
+                    UpdateDeviceStats(true, "蓝牙设备未连接");
+                }
+            }
 		}
 	};
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.v(TAG, "[DialpadFragment]:onCreateView");
 		return m_DialpadView;
 	}
 
 	@Override
 	public void onResume() {
-//		 Log.v(global.TAG, "[DialpadFragment]:onResume");
 		super.onResume();
-	}
+        Log.v(TAG, "[DialpadFragment]:onResume");
+    }
 
 	@Override
 	public void onPause() {
-//		Log.v(global.TAG, "[DialpadFragment]:onPause()");
 		super.onPause();
-	}
+        Log.v(TAG, "[DialpadFragment]:onPause()");
+    }
 
 	@Override
 	public void onDestroy() {
-//		Log.v(global.TAG, "[DialpadFragment]:onDestroy()");
 		super.onDestroy();
-//		getActivity().unregisterReceiver(mReceiver);
-	}
+		getActivity().unregisterReceiver(mReceiver);
+        Log.v(TAG, "[DialpadFragment]:onDestroy()");
+    }
 
 	private void setupKeypad(View fragmentView) {
 		fragmentView.findViewById(R.id.dial_btn0).setOnClickListener(new KeyBtnListener());
@@ -186,11 +159,9 @@ public class DialpadFragment extends Fragment {
 	}
 	
 	OnLongClickListener olcl = new OnLongClickListener() {
-		
 		@Override
 		public boolean onLongClick(View arg0) {
 			longclickhandler.postDelayed(runnable, 200);
-			// TODO Auto-generated method stub
 			return false;
 		}
 	};
@@ -198,7 +169,6 @@ public class DialpadFragment extends Fragment {
 	Runnable runnable=new Runnable() {
 	    @Override
 	    public void run() {
-	        // TODO Auto-generated method stub
 	    	keyPressed(KeyEvent.KEYCODE_DEL);
 	    	longclickhandler.postDelayed(this, 200);
 	    }
@@ -208,7 +178,6 @@ public class DialpadFragment extends Fragment {
 
 		@Override
 		public void onClick(View arg0) {
-			// TODO Auto-generated method stub
 			int id = arg0.getId();
 			if (id == R.id.dial_btn0) {
 				keyPressed(KeyEvent.KEYCODE_0);
@@ -236,10 +205,10 @@ public class DialpadFragment extends Fragment {
 				keyPressed(KeyEvent.KEYCODE_POUND);
 			} else if (id == R.id.dial_btnStar) {
 				keyPressed(KeyEvent.KEYCODE_STAR);
-			} else if (id == R.id.dial_backspace_btn) {
+			} else if (id == R.id.dial_backspace_btn) { //删除按钮
 				longclickhandler.removeCallbacks(runnable);
 				keyPressed(KeyEvent.KEYCODE_DEL);
-			} else if (id == R.id.dial_btnDial) {
+			} else if (id == R.id.dial_btnDial) {  //拨号按钮
 				dialButtonPressed();
 			}
 		}
@@ -248,8 +217,7 @@ public class DialpadFragment extends Fragment {
 	 private void keyPressed(int keyCode) {
 	        KeyEvent event = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode);
 	        m_editNumber.onKeyDown(keyCode, event);
-
-	    }
+     }
 
 	 private boolean isDigitsEmpty() {
 	        return m_editNumber.length() == 0;
@@ -258,9 +226,18 @@ public class DialpadFragment extends Fragment {
 	 private void dialButtonPressed() {
 		 if(!isDigitsEmpty()) {
 			 String number = m_editNumber.getText().toString();
-//			 Intent  intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel://" + number));
-			 final Intent intent = newDialNumberIntent(number);
-			 startActivity(intent);
+             Log.d(TAG, "number:" + number);
+             if (myBinder != null) {
+                 //拨号
+                 myBinder.dial(number);
+
+             } else {
+                 Log.e(TAG, "myBinder is null.");
+             }
+             //本来应该弹出拨号界面 现在这里没有！！！
+//			 Intent  intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel://" + number));
+//			 final Intent intent = newDialNumberIntent(number);
+//			 startActivity(intent);
 		 }
 	 }
 
@@ -271,6 +248,27 @@ public class DialpadFragment extends Fragment {
 //	                                         Uri.fromParts("tel", number, null));
 //	        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 	        return null;
-	    }
+    }
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case H_GET_BINDER:
+                    myBinder = ((CSRBluetoothDemoActivity)getActivity()).getMyBinder();
+                    if (myBinder == null) {
+                        UpdateDeviceStats(true, "不能获取蓝牙服务");
+                    } else {
+                        UpdateDeviceStats(true, "获取蓝牙服务");
+                        mHandler.sendEmptyMessage(H_GET_CONNECT_STATUS);
+                    }
+                    break;
+
+                case H_GET_CONNECT_STATUS:
+                    myBinder.inquireHFStatus();
+                    break;
+            }
+        }
+    };
 
 }

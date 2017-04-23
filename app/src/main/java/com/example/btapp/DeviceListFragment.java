@@ -57,7 +57,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.btutil.ActionConstant;
 import com.example.btutil.BTUtil;
+import com.example.btutil.BtService;
 
 public class DeviceListFragment extends Fragment{
 	private static String TAG = "yzh";
@@ -80,10 +82,7 @@ public class DeviceListFragment extends Fragment{
 	private TextView m_listSerchingText;
 	private TextView m_listEmptyText;
 
-//	private BluetoothAdapter btAdapter;
-//	private BluetoothDevice device;
-	private ShowSearchTextThread mSearchThread;
-	
+	private BtService.MyBinder myBinder;
 	private String BondedBTAddress;
 	private String selectedBTAddress;
 	private String selectedState;
@@ -145,47 +144,17 @@ public class DeviceListFragment extends Fragment{
 			@Override
 			public void onClick(View arg0) {
 				data.clear();
-//				addPairedDevicesToListview();
-//		        if (btAdapter.isDiscovering()){
-//		        	btAdapter.cancelDiscovery();
-//		        }
-//				btAdapter.startDiscovery();
-				if (!isRunning) {
-					mSearchThread = new ShowSearchTextThread();
-					mSearchThread.start();
-				}
+                myBinder.search();
+                mHandler.sendEmptyMessage(0);
+                dlAdapter.notifyDataSetChanged();
 			}
 		});
     	
-//        IntentFilter filter = new IntentFilter();
-//        filter.addAction(BluetoothDevice.ACTION_FOUND);
-//        filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
-//        filter.addAction(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
-//        filter.addAction(BluetoothDevice.ACTION_NAME_CHANGED); //Gary_debug
-//        filter.addAction(BluetoothA2dpSink.ACTION_A2DP_SINK_STATUS_CHANGED);
-//        filter.addAction(BluetoothHFP.ACTION_HFP_STATUS_CHANGED);
-//        filter.addAction(BluetoothPhonebookClientIntent.BLUETOOTH_PHONEBOOK_CONNECTION_STATUS_CHANGED);
-//        filter.addAction(BluetoothIntent.BLUETOOTH_AVRCP_CON_IND_ACTION);
-//        filter.addAction(BluetoothIntent.BLUETOOTH_AVRCP_DIS_CON_IND_ACTION);
-//        filter.addAction(BluetoothDevice.ACTION_UUID);
-//        filter.addAction("android.bluetooth.device.action.PAIRING_REQUEST");
-//        filter.addAction("android.bluetooth.device.action.ProfileHaveHFP");
-//        filter.addAction("android.bluetooth.device.action.ProfileHaveA2DP");
-//        filter.addAction("android.bluetooth.device.action.ProfileHaveAVRCP");
-//        getActivity().registerReceiver(mReceiver, filter); 
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ActionConstant.ACTION_FOUND_DEVICE);
+        getActivity().registerReceiver(mReceiver, filter);
         
-//        btAdapter= BluetoothAdapter.getDefaultAdapter();
-//        if(btAdapter == null) {
-//        	Log.d(global.TAG, "");
-//        }else {
-//        	Log.d(global.TAG, "");
-//        }
-        
-        //Add paired devices to list.
-        addPairedDevicesToListview();
-
-		mBTUtil = BTUtil.getInstance();
-        mBTUtil.openDevice();
+		myBinder = ((CSRBluetoothDemoActivity)getActivity()).getMyBinder();
 		Log.d(TAG, "[DeviceListFragment] onCreate");
     }
     
@@ -200,40 +169,6 @@ public class DeviceListFragment extends Fragment{
         }
     };
 
-	private boolean isRunning = false;
-    public class ShowSearchTextThread extends Thread {
-    	@Override
-    	public void run() {
-    		synchronized (lock) {
-				isRunning = true;
-//	    		CommonUtils.sleep(500);
-	    		mHandler.sendEmptyMessage(0);
-				if (mBTUtil != null) {
-					mBTUtil.search();
-				} else {
-					return;
-				}
-				while (isRunning) {
-					String result = mBTUtil.searchResult();
-					if (result == null) {
-//						break;
-					}
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-//				mBTUtil.stopSearch();
-				Log.d(TAG, " Search Thread exit.");
-    		}
-    	}
-
-		public void stopThread() {
-			isRunning = false;
-		}
-    }
-    
     @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	Log.d(TAG, "[DeviceListFragment] onCreateView");
@@ -255,30 +190,26 @@ public class DeviceListFragment extends Fragment{
 	@Override
 	public void onResume() {
 		super.onResume();
-//		beginDiscovery();
 		Log.d(TAG, "[DeviceListFragment] onResume");
 	}
 
 	@Override
 	public void onPause() {
 		super.onPause();
+        myBinder.stopSearch();
 		Log.d(TAG, "[DeviceListFragment] onPause");
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		mSearchThread.stopThread();
-//		btAdapter.cancelDiscovery();
-		//	getActivity().setTitle(getResources().getString(R.string.app_name));
 		Log.d(TAG, "[DeviceListFragment] onStop");
 	}
     
     @Override
     public void onDestroy(){
     	super.onDestroy();
-//    	getActivity().unregisterReceiver(mReceiver);
-		mBTUtil.closeDevice();
+    	getActivity().unregisterReceiver(mReceiver);
 		Log.d(TAG, "[DeviceListFragment] onDestroy");
 	}
 
@@ -313,184 +244,6 @@ public class DeviceListFragment extends Fragment{
 //        }
 //    }
 
-
-    private void refreshName(BluetoothDevice device, String name){ 
-    	if (device == null)
-            return;
-		
-        int position = -1;
-        for (int i=0; i< data.size(); i++)
-            if ( device.getAddress().equals(getAddress(data.get(i).get("state").toString())) )
-                position = i;
-        if (position == -1)
-            return;
-//        Log.v(global.TAG, "Enter refreshName: "+name);
-        data.get(position).put("device", name);
-        dlAdapter.notifyDataSetChanged();
-    }
-	
-    public void refershState(String BTAddress){
-    	if (BTAddress == null)
-    		return;
-    	
-    	int position = -1;
-        for (int i=0; i< data.size(); i++)
-        	if ( BTAddress.equals(getAddress(data.get(i).get("state").toString())) )
-        		position = i;
-        if (position == -1)
-        	return;
-        
-//		switch (global.bu.getBluetoothPairState(BTAddress)){               			
-//		case BluetoothDevice.BOND_BONDING:
-//    		data.get(position).put("state", 
-//    				String.format(getActivity().getResources().getString(R.string.DL_Pairing)+"(%s)",
-//    						BTAddress)
-//    				);
-//    		dlAdapter.notifyDataSetChanged();
-//			break;
-//		case BluetoothDevice.BOND_NONE:
-//    		data.get(position).put("state", 
-//    				String.format("%s(%s)",
-//    						getActivity().getResources().getString(R.string.DL_PairWithThisDevice),
-//    						BTAddress)
-//			);
-//    		data.get(position).put("profile_btn", false);
-//    		dlAdapter.notifyDataSetChanged();
-//			break;
-//		case BluetoothDevice.BOND_BONDED:
-//        	data.get(position).put("state", 
-//        			String.format("%s(%s)",
-//        					getActivity().getResources().getString(R.string.DL_PairedAndConnecting),
-//        					BTAddress)
-//        			);
-//        	data.get(position).put("profile_btn", true);
-//        	//Check profiles state
-//        	String connectedStateStr = "";
-//        	String connectingStateStr = "";
-//        	switch (global.hfp.hfpGetConnectStatus(BTAddress)){
-//            	case BluetoothHFP.HFP_CONNECTED:
-//            		connectedStateStr = "HFP";
-//            		break;
-//            	case BluetoothHFP.HFP_CONNECTING:
-//            		connectingStateStr = "HFP";
-//            		break;
-//            	case BluetoothHFP.HFP_DISCONNECTING:
-//            		break;
-//            	case BluetoothHFP.HFP_DISCONNECTED:
-//            		break;
-//        	}
-//			switch (global.bu.a2dpGetConnectState(BTAddress)){
-//        		case BluetoothUtils.BLUETOOTH_A2DP_SINK_CONNECTED:
-//            		if (connectedStateStr.equals(""))
-//            			connectedStateStr = "A2DP";
-//            		else
-//            			connectedStateStr += ",A2DP";
-//        			break;
-//        		case BluetoothUtils.BLUETOOTH_A2DP_SINK_CONNECTING:
-//            		if (connectingStateStr.equals(""))
-//            			connectingStateStr = "A2DP";
-//            		else
-//            			connectingStateStr += ",A2DP";
-//        			break;
-//        		case BluetoothUtils.BLUETOOTH_A2DP_SINK_DISCONNECTED:
-//        			break;
-//			}
-//    		switch (global.bu.pbapGetConnectStatus(BTAddress)){
-//	    		case BluetoothPhonebookClient.BLUETOOTH_PHONEBOOK_CONNECTED:
-//            		if (connectedStateStr.isEmpty())
-//            			connectedStateStr = "PBAP";
-//            		else
-//            			connectedStateStr += ",PBAP";
-//	    			break;
-//	    		case BluetoothPhonebookClient.BLUETOOTH_PHONEBOOK_CONNECTING:
-//            		if (connectingStateStr.equals("")){
-//            			connectingStateStr = "PBAP";
-//            		}
-//            		else
-//            			connectingStateStr += ",PBAP";
-//        			break;
-//	    		case BluetoothPhonebookClient.BLUETOOTH_PHONEBOOK_DISCONNECTED:
-//	    			break;
-//	    		case BluetoothPhonebookClient.BLUETOOTH_PHONEBOOK_DISCONNECTING:
-//	    			break;
-//	    		case BluetoothPhonebookClient.BLUETOOTH_PHONEBOOK_COMMUNICATING:
-//            		if (connectedStateStr.equals("")){
-//            			connectedStateStr = "PBAP";
-//            		}
-//            		else
-//            			connectedStateStr += ",PBAP";
-//	    			break;
-//    		}
-//    		
-//    		switch (global.bu.avrcpGetAvrcpStatus(BTAddress)){
-//    		case BluetoothAvrcpCtl.CSR_BT_AVRCP_CONNECTED:
-//        		if (connectedStateStr.isEmpty())
-//        			connectedStateStr = "AVRCP";
-//        		else
-//        			connectedStateStr += ",AVRCP";
-//    			break;
-//    		case BluetoothAvrcpCtl.CSR_BT_AVRCP_DISCONNECTED:
-//    			break;
-//    		}
-//    		
-//        	SharedPreferences sp = getActivity().getSharedPreferences("Connect_Stats",  Context.MODE_PRIVATE);
-//    		if(!sp.getBoolean("ConnectFlag", true)){
-//    			Log.v(global.TAG, "Why is not come here");
-//        		data.get(position).put("state", 
-//        				String.format(getActivity().getResources().getString(R.string.DL_PairedButNotConnected)+ "(%s)",
-//        						BTAddress)
-//        				);
-//        		dlAdapter.notifyDataSetChanged();
-//    		}else 
-//    			if (! connectingStateStr.equals("")){
-//        		data.get(position).put("state", 
-//        				String.format(getActivity().getResources().getString(R.string.DL_Connecting) + "(%s)",
-//        						connectingStateStr,
-//        						BTAddress)
-//        		);
-//            	dlAdapter.notifyDataSetChanged();
-//    		}else if (connectedStateStr.equals("")){
-//	        		data.get(position).put("state", 
-//	        				String.format(getActivity().getResources().getString(R.string.DL_PairedAndConnecting) + "(%s)",
-//	        						BTAddress)
-//	        		);
-//	            	dlAdapter.notifyDataSetChanged();
-//	    	}else{
-//    			if(global.hfp.hfpGetConnectStatus(BTAddress) == BluetoothHFP.HFP_DISCONNECTED
-//    					/*&& ProfileHaveHFPFlag*/){
-//    				connectedStateStr = connectedStateStr + getActivity().getResources().getString(R.string.connecting_HFP);
-//    			}
-//    			if ( global.bu.a2dpGetConnectState(BTAddress) == BluetoothUtils.BLUETOOTH_A2DP_SINK_DISCONNECTED 
-//    					/*&& ProfileHaveA2DPFlag*/){
-//    				connectedStateStr = connectedStateStr + getActivity().getResources().getString(R.string.connecting_A2DP);
-//    			}
-//    	    	if(global.bu.avrcpGetAvrcpStatus(BTAddress) == BluetoothAvrcpCtl.CSR_BT_AVRCP_DISCONNECTED 
-//    	    			/*&& ProfileHaveAVRCPFlag*/){
-//    	    		connectedStateStr = connectedStateStr + getActivity().getResources().getString(R.string.connecting_AVRCP);
-//    	    	}
-//    			
-//    			String strState = String.format(getActivity().getResources().getString(R.string.DL_PairedAndConnected) +"(%s)",
-//						connectedStateStr,
-//						BTAddress);
-//        		data.get(position).put("state", 
-//        				strState);
-//        		
-//        		//锟斤拷锟斤拷arraylist锟斤拷2元锟截碉拷位锟斤拷,锟斤拷锟斤拷锟斤拷锟接碉拷锟借备锟矫讹拷锟斤拷示
-//        		if(0 != position){
-//        			Collections.swap(data, 0, position);
-//        		}
-//        		
-//            	dlAdapter.notifyDataSetChanged();
-//	    	}
-//
-//        	break;
-//		case BluetoothDevice.BOND_SUCCESS:
-//			break;
-//		}
-		
-		mCallback.onMessageSelected(0);
-    }
-	
     public void connectAllProfile(String BTAddress){
 //    	Log.v(global.TAG, "DeviceListActivity:connectAllProfile:Start");
 //    	
@@ -601,38 +354,30 @@ public class DeviceListFragment extends Fragment{
     	return -1;
     }
     
-    private void addPairedDevicesToListview(){
-//        Set<BluetoothDevice> devices= btAdapter.getBondedDevices();
-////        Log.d(global.TAG, "How many devices  (" + devices.size() + ").");
-//        if(devices.size()>0) {
-//            for(Iterator<BluetoothDevice> iterator=devices.iterator();iterator.hasNext();){
-//            	device=iterator.next();
+    private void addPairedDevicesToListview() {
+//            	"0cedd46659275takee 1"
 //            	addItem(device.getName(),"("+device.getAddress()+")", true);
-//            	refershState(device.getAddress());
-//            }
-//        }
-        dlAdapter.notifyDataSetChanged();
+        addItem("takee 1","("+"0cedd46659275"+")", true);
+//        refershState();
     }
-    
-    
-    
-    private String getAddress(String BTAddress){
+
+    private String getAddress(String BTAddress) {
     	String result = "";
     	Pattern pattern = Pattern.compile("\\((.+?)\\)");
     	Matcher matcher = pattern.matcher(BTAddress);
-    	if (matcher.find()){
+    	if (matcher.find()) {
     		result = matcher.group(1);
     	}
     	return result;
     }
     
-    private void addItem(String device,String status, boolean profileBtn){
-//    	Log.v(global.TAG, "DeviceListActivity:addItem:Start:"+device+" "+status);s
-    	Map<String,Object> item = new HashMap<String,Object>();
-    	item.put("device", device);
-    	item.put("state", status);
-    	item.put("profile_btn", profileBtn);
-    	data.add(item);
+    private void addItem(String device, String status, boolean profileBtn){
+    	Map<String, Object> item = new HashMap<String, Object>();
+        item.put("device", device);
+        item.put("state", status);
+        item.put("profile_btn", profileBtn);
+        data.add(item);
+//    	Log.v(TAG, "DeviceListActivity:addItem:Start:"+device+" "+status);
     }
     
     private void savebondedAdd(String BTAddress){
@@ -651,16 +396,11 @@ public class DeviceListFragment extends Fragment{
 				getActivity().sendBroadcast(clearintent);
 		 }
     	
-    	//锟斤拷锟斤拷锟较达拷匹锟斤拷锟斤拷只锟斤拷锟斤拷锟斤拷锟街�
 		Lastsp = getActivity().getSharedPreferences("LastAddress", Context.MODE_PRIVATE);
 		Editor Lasteditor = Lastsp.edit();
 		Lasteditor.putString("STRING_KEY",BTAddress);
 		Lasteditor.commit();
     	        
-//        if (btAdapter.isDiscovering()){
-//        	btAdapter.cancelDiscovery();
-//        }
-        
 //        openProfilelist(BTAddress);
         
 //		 Intent intent = new Intent();
@@ -673,108 +413,11 @@ public class DeviceListFragment extends Fragment{
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if (action.equals(BluetoothDevice.ACTION_FOUND)) {
-//                    device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-//                    Log.v(global.TAG, "Found Device:" + device.getName() +"  "+ device.getAddress());
-                    //Ignore exist devices.
-                    for (int i=0; i<data.size(); i++){
-                        String addr = getAddress(data.get(i).get("state").toString());
-//                        if (device.getAddress().equals(addr))
-//                            return;
-                    }
-                    //Add item
-//                    addItem(device.getName(),getActivity().getResources().getString(R.string.DL_PairWithThisDevice)+"("+device.getAddress()+")", false);
-                    dlAdapter.notifyDataSetChanged();
-            }else if (action.equals(BluetoothAdapter.ACTION_DISCOVERY_FINISHED)) {
-//    	    	Log.v(global.TAG, "Search Finished");
-    	    	m_listSerchingText.setText(" ");
-    	  //  	getActivity().setTitle(getResources().getString(R.string.app_name));
-            }else if (action.equals(BluetoothDevice.ACTION_BOND_STATE_CHANGED)) {
-//            	Log.v(global.TAG, "ACTION_BOND_STATE_CHANGED Finished");
-                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                refershState(device.getAddress());
-                switch (intent.getIntExtra(BluetoothDevice.EXTRA_BOND_STATE, BluetoothDevice.ERROR)){               			
-                    case BluetoothDevice.BOND_BONDING:
-                        break;
-                    case BluetoothDevice.BOND_NONE:
-                    	
-//						Intent Broadintent = new Intent("android.intent.action.Nobondeddevice");
-//						getActivity().sendBroadcast(Broadintent);
-                    	
-                        break;
-                    case BluetoothDevice.BOND_BONDED:
-                        //if (device.getAddress().equals(selectedBTAddress))
-                    	
-       				 SharedPreferences sp = getActivity().getSharedPreferences("bondedAddress",  getActivity().MODE_PRIVATE);
-       				 String bondedAddress = sp.getString("STRING_KEY", "");
-       				 
-//       				 if((bondedAddress == "" && bondedAddress!= null)
-//       						 || bondedAddress.equals(device.getAddress())
-//       						 || BluetoothDevice.BOND_NONE == global.bu.getBluetoothPairState(bondedAddress)){
-//       					Log.d(global.TAG, "[DeviceListFragment] Just One bondedAddress");
-//       					savebondedAdd(device.getAddress());
-//       				 }else{
-//       					Log.d(global.TAG, "[DeviceListFragment] Already Have One bondedAddress:"+bondedAddress);
-//       					global.bu.unpair(device.getAddress());
-////       					new UnpairMoreBondedDeviceThread(device.getAddress()).start();
-//       				 }
-                    	
-                        break;
-//                    case BluetoothDevice.BOND_SUCCESS:
-//                        break;
-                }
-            }else if (action.equals(BluetoothDevice.ACTION_NAME_CHANGED)) { //Gary_debug
-//                device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-//                String name = intent.getStringExtra(BluetoothDevice.EXTRA_NAME);
-//                Log.v(global.TAG, "ACTION_NAME_CHANGED -- BTAddress:"+device.getAddress()+"name: "+name);
-//                refreshName(device, name);
-            }/*else if(action.equals(BluetoothA2dpSink.ACTION_A2DP_SINK_STATUS_CHANGED)) {
-            	Log.v(global.TAG, "BLUETOOTH_A2DP_SINK_CONNECTION_ADDRESS");
-        		 int state = intent.getIntExtra(
-                 		BluetoothA2dpSink.EXTRA_A2DP_SINK_STATUS,
-                         BluetoothUtils.BLUETOOTH_A2DP_SINK_DISCONNECTED);
-                 String BTAddress = intent.getStringExtra(BluetoothA2dpSink.EXTRA_A2DP_SINK_ADDRESS);
-     			 refershState(BTAddress);
-        	}else if(action.equals(BluetoothHFP.ACTION_HFP_STATUS_CHANGED)) {
-        		Log.v(global.TAG, "BLUETOOTH_HFP_CONNECTION_STATUS_CHANGED_HFP");
-            	int state = intent.getIntExtra(BluetoothHFP.EXTRA_HFP_STATUS,BluetoothHFP.HFP_DISCONNECTED);
-                String BTAddress = intent.getStringExtra(BluetoothHFP.EXTRA_HFP_DEVICE_ADDRESS);
-                refershState(BTAddress);
-
-            }else if(action.equals(BluetoothPhonebookClientIntent.BLUETOOTH_PHONEBOOK_CONNECTION_STATUS_CHANGED)) {
-            	 Log.v(global.TAG, "BLUETOOTH_PBAPC_CONNECTION_STATUS_CHANGEDPHONEBOOK");
-            	 String BTAddress = intent.getStringExtra(BluetoothPhonebookClientIntent.BLUETOOTH_PHONEBOOK_CONNECTION_ADDRESS);
-                 refershState(BTAddress);
-            }else if(action.equals(BluetoothIntent.BLUETOOTH_AVRCP_CON_IND_ACTION)) {
-            	 Log.v(global.TAG, "BLUETOOTH_AVRCP_CON_IND_ACTION AVRCP_CON");
-            	  String BTAddress = intent.getStringExtra(BluetoothIntent.AVRCP_CON_ADDRESS);
-                  refershState(BTAddress);
-            }else if(action.equals(BluetoothIntent.BLUETOOTH_AVRCP_DIS_CON_IND_ACTION)){
-            	Log.v(global.TAG, "BLUETOOTH_AVRCP_DIS_CON_IND_ACTION AVRCP_DIS" );
-            	 String BTAddress = intent.getStringExtra(BluetoothIntent.AVRCP_CON_ADDRESS);
-                 refershState(BTAddress);     
-                
-            }*/else if (action.equals(BluetoothDevice.ACTION_UUID)) {
-//                Log.v(global.TAG, "BluetoothDevice.ACTION_UUID");
-                try {
-                    BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-//                    ParcelUuid[] pu = global.bu.mAdapter.getRemoteDevice(device.getAddress()).getUuids();
-//                    for (int i = 0; i < pu.length; i++) {
-//                        Log.v(global.TAG, "UUID -- " + pu[i].toString());
-//                        CommonUtils.saveProfile2db(device.getAddress(), pu[i].toString());
-//                    }
-                } catch (Exception e) {
-                    }                    
-                }else if(action.equals("android.bluetooth.device.action.PAIRING_REQUEST")){
-            }else if(action.equals("android.intent.action.ProfileHaveHFP")){
-//          	  Log.v(global.TAG, "Have Receive android.intent.action.ProfileHaveHFP");
-          	  ProfileHaveHFPFlag = true;
-            }else if(action.equals("android.intent.action.ProfileHaveA2DP")){
-//        	  Log.v(global.TAG, "Have Receive android.intent.action.ProfileHaveA2DP");
-        	  ProfileHaveA2DPFlag = true;
-            }else if(action.equals("android.intent.action.ProfileHaveAVRCP")){
-//	      	  Log.v(global.TAG, "Have Receive android.intent.action.ProfileHaveAVRCP");
-	      	  ProfileHaveAVRCPFlag = true;
+            if (action.equals(ActionConstant.ACTION_FOUND_DEVICE)) {
+                String deviceAddr = intent.getStringExtra("deviceAddr");
+                String deviceName = intent.getStringExtra("deviceName");
+                addItem(deviceName,"("+deviceAddr+")", true);
+                dlAdapter.notifyDataSetChanged();
             }
         }
     };
@@ -796,11 +439,8 @@ public class DeviceListFragment extends Fragment{
     
     OnItemClickListener listener = new OnItemClickListener(){
 		@Override
-		public void onItemClick(AdapterView<?> parent, View view, int position,
-				long id) {
-//			Log.v(global.TAG,parent.getItemAtPosition(position).toString());
-			
-			//selectedItemPosition = position;
+		public void onItemClick(AdapterView<?> parent, View view, int position,	long id) {
+            //获取蓝牙的地址
 			selectedState = data.get(position).get("state").toString();
 			selectedBTAddress = getAddress(selectedState);
 
@@ -809,21 +449,22 @@ public class DeviceListFragment extends Fragment{
 			 }else{
 				 selectedDeviceName = getActivity().getResources().getString(R.string.pb_name_unknown);
 			 }
+            myBinder.connect(selectedBTAddress);
 			
-			BTDialogFragment dialog;
-			int state = checkState(selectedState);
-			if(state == DIALOG_STATE_NO_PAIR){
-				dialog = BTDialogFragment.newInstance(BTDialogFragment.DIALOG_NO_PAIR, selectedBTAddress,selectedDeviceName);
-				dialog.show(getFragmentManager(), "");
-			}else if(state == DIALOG_STATE_PAIRED_BUT_NOT_CONNECTED){
-				dialog = BTDialogFragment.newInstance(BTDialogFragment.DIALOG_PAIRED_BUT_NOT_CONNECTED, selectedBTAddress,selectedDeviceName);
-				dialog.show(getFragmentManager(), "");
-			}else if (state == DIALOG_STATE_PAIRED_AND_CONNECTED
-					|| state == DIALOG_STATE_CONNECTING
-					|| state == DIALOG_STATE_PAIRED_AND_CONNECTING){
-				dialog = BTDialogFragment.newInstance(BTDialogFragment.DIALOG_PAIRED_AND_CONNECTED, selectedBTAddress,selectedDeviceName);
-				dialog.show(getFragmentManager(), "");
-			}
+//			BTDialogFragment dialog;
+//			int state = checkState(selectedState);
+//			if(state == DIALOG_STATE_NO_PAIR){
+//				dialog = BTDialogFragment.newInstance(BTDialogFragment.DIALOG_NO_PAIR, selectedBTAddress,selectedDeviceName);
+//				dialog.show(getFragmentManager(), "");
+//			}else if(state == DIALOG_STATE_PAIRED_BUT_NOT_CONNECTED){
+//				dialog = BTDialogFragment.newInstance(BTDialogFragment.DIALOG_PAIRED_BUT_NOT_CONNECTED, selectedBTAddress,selectedDeviceName);
+//				dialog.show(getFragmentManager(), "");
+//			}else if (state == DIALOG_STATE_PAIRED_AND_CONNECTED
+//					|| state == DIALOG_STATE_CONNECTING
+//					|| state == DIALOG_STATE_PAIRED_AND_CONNECTING){
+//				dialog = BTDialogFragment.newInstance(BTDialogFragment.DIALOG_PAIRED_AND_CONNECTED, selectedBTAddress,selectedDeviceName);
+//				dialog.show(getFragmentManager(), "");
+//			}
 		}
     };
     

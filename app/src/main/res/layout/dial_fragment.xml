@@ -15,7 +15,7 @@
         android:layout_marginTop="10dp"
         android:layout_weight="0.1"
         android:gravity="center"
-        android:text="please"
+        android:text="等待蓝牙设备连接"
         android:textSize="@dimen/text_middle_size" />
 
     <LinearLayout

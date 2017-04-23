@@ -45,7 +45,7 @@ public class BTUtil {
                 mOutputStream = mSerialPort.getOutputStream();
                 mInputStream = mSerialPort.getInputStream();
             } catch (IOException e) {
-                e.printStackTrace();
+//                e.printStackTrace();
                 Log.e(TAG, "can not open bt.");
             }
             Log.d(TAG,"[BTUtil] openDevice dev:" + mPathDefault + " baudrate:"+115200);
@@ -60,6 +60,7 @@ public class BTUtil {
             Log.d(TAG,"[BTUtil] close");
         }
     }
+
     //读取数据
     public int read(byte[] buffer, int offset, int byteCount) {
         int ret = -1;
@@ -74,15 +75,16 @@ public class BTUtil {
         }
         return ret;
     }
+
     //写数据
     public void write(byte[] buffer, int offset, int count) {
-        if(mOutputStream != null) {
+        if (mOutputStream != null) {
             try {
                 mOutputStream.write(buffer, offset, count);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else {
+        } else {
             Log.e(TAG,"mOutputStream = null,not openDevice or can not open");
         }
     }
@@ -107,8 +109,8 @@ public class BTUtil {
 
     //一.ARM ---> BT : AT#[CMD]\r\n
     //1.连接最后一次连接设备,或者配对列表index;
-    public void connect(int index) {
-        String cmdStr = HEAD + CmdConstant.CONNECT + index + END;
+    public void connect(String btAddr) {
+        String cmdStr = HEAD + CmdConstant.CONNECT + btAddr + END;
         byte[] cmd = cmdStr.getBytes();
         write(cmd, 0, cmd.length);
         Log.d(TAG,"connect : " + cmdStr);
@@ -138,22 +140,6 @@ public class BTUtil {
         write(cmdStr);
     }
 
-    //BT-->ARM 获取搜索结果 43.IX[addr:12][name]
-    public String searchResult() {
-        byte[] buffer = new byte[100];
-        int ret = read(buffer, 0, 100);
-        Log.d(TAG, "read ret:"+ret);
-        if(ret < 0) {
-            return null;
-        }
-        String result = new String(buffer, 0, ret);
-        Log.d(TAG,"result  :"+result);
-        if(result.substring(0, 1).equals(CmdConstant.SEARCH_RESULT)) {
-            return result;
-        }
-        return null;
-    }
-
     //44.ST:停止搜索;
     public void stopSearch() {
         String cmdStr = HEAD + CmdConstant.SEARCH_STOP + END;
@@ -165,20 +151,81 @@ public class BTUtil {
         return getResult(CmdConstant.SEARCH_RESULT);
     }
 
+    //BT-->ARM MD:下一曲
+    public void nextMusic() {
+        String cmdStr = HEAD + CmdConstant.NEXT_MUSIC + END;
+        write(cmdStr);
+    }
 
+    //BT-->ARM ME:上一曲
+    public void preMusic() {
+        String cmdStr = HEAD + CmdConstant.PRE_MUSIC + END;
+        write(cmdStr);
+    }
+
+    //BT-->ARM MA:播放、暂停音乐
+    public void playOrPauseMusic() {
+        String cmdStr = HEAD + CmdConstant.PLAY_OR_PAUSE_MUSIC + END;
+        write(cmdStr);
+    }
+
+
+    //BT-->ARM MC:停止音乐
+    public void stopMusic() {
+        String cmdStr = HEAD + CmdConstant.STOP_MUSIC + END;
+        write(cmdStr);
+    }
+
+    //！！！！ 注意：切换声音指令与实际情况不一样 CP：切换到手机 CO切换到蓝牙
+    //BT-->ARM 19.CP:声音切到蓝牙;
+    public void switchVoiceToBT() {
+        String cmdStr = HEAD + "CO" + END;
+        write(cmdStr);
+    }
+
+    //BT-->ARM 20.CN:声音切到手机
+    public void switchVoiceToPhone() {
+        String cmdStr = HEAD + "CP" + END;
+        write(cmdStr);
+    }
+
+    //BT-->ARM 18.CO:通话声音互切;
+//    public void switchVoiceToPhoneOrBT() {
+//        String cmdStr = HEAD + CmdConstant.VOICE_SWITCH_PHONE_OR_BT + END;
+//        write(cmdStr);
+//    }
+
+    //BT-->ARM 9.CW[NUMBER]:拨号;
+    public void dail(String num) {
+        String cmdStr = HEAD + CmdConstant.DIAL + num + END;
+        write(cmdStr);
+    }
+
+    //BT-->ARM 11.CY:查询 HF 状态;
+    public void inquireHFStatus() {
+        String cmdStr = HEAD + CmdConstant.INQUIRE + END;
+        write(cmdStr);
+    }
+
+    //BT-->ARM 37.PA:读取电话本;
+    public void readContact() {
+        String cmdStr = HEAD + CmdConstant.READ_TELE_BOOK + END;
+        write(cmdStr);
+    }
+
+    //读取蓝牙模块的各种数据
     public String readStatus() {
         byte[] buffer = new byte[100];
         int ret = 0;
-        while (ret < 4) {
-           ret += read(buffer, ret, 100-ret);
+        while (true) {
+            ret += read(buffer, ret, 100-ret);
+            if(ret >= 4 && buffer[ret-2] == '\r' && buffer[ret-1] == '\n') {
+                break;
+            }
         }
         Log.d(TAG, "read ret:"+ret);
         String result = new String(buffer, 0, ret);
         Log.d(TAG,"result  :"+result);
-        String[] status = result.split("\r\n");
-        for (String s : status) {
-            Log.d(TAG, "status: " + s);
-        }
         return result;
     }
 }

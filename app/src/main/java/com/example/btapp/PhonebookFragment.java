@@ -41,6 +41,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.provider.ContactsContract.CommonDataKinds;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -59,8 +60,12 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.btutil.BtService;
+
 
 public class PhonebookFragment extends Fragment{
+	private final static String TAG = "yzh";
+    private static final int H_GET_BINDER = 0x10;
 
 	//private TextView text_pbap_state;
 	private static byte[]  lock= new byte[0];
@@ -80,11 +85,13 @@ public class PhonebookFragment extends Fragment{
 	private boolean m_bDownLoaded= false;
 	private boolean mShowPbFlag = false; 
 	
-//	private ArrayList<SortEntry> mFilterList;//筛选锟斤拷询锟斤拷锟斤拷锟斤拷锟絣ist
+//	private ArrayList<SortEntry> mFilterList;
 //	private PbFilterAdapter PbFAdapter;
 	private PBCursorAdapter m_listAdapter;
 	PBLoaderListener m_pbLoader = new PBLoaderListener();
 //	BluetoothPhonebookClient mPhonebookClient = new BluetoothPhonebookClient();
+
+	private BtService.MyBinder myBinder;
 	
     private static final String[] FROM = new String[] {
     	   CommonDataKinds.Phone.DISPLAY_NAME,
@@ -97,7 +104,6 @@ public class PhonebookFragment extends Fragment{
     
     @Override
 	public void setUserVisibleHint(boolean isVisibleToUser) {
-		// TODO Auto-generated method stub
 		super.setUserVisibleHint(isVisibleToUser);
 		
 		if(isVisibleToUser == true){
@@ -133,7 +139,72 @@ public class PhonebookFragment extends Fragment{
 		}
 	}
 
-	//锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+							 Bundle savedInstanceState) {
+    	Log.v(TAG, "[PhonebookFragment]: onCreateView");
+
+		return m_pbView;
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		LayoutInflater inflater = LayoutInflater.from(getActivity()) ;
+		m_pbView = inflater.inflate(R.layout.phonebook_fragment, (ViewGroup)getActivity().findViewById(R.id.tabpage_frame),false);
+//    	IntentFilter intentFilter = new IntentFilter();
+//    	intentFilter.addAction(BluetoothPhonebookClientIntent.BLUETOOTH_PHONEBOOK_CONNECTION_STATUS_CHANGED);
+//    	intentFilter.addAction(BluetoothPhonebookClientIntent.BLUETOOTH_PHONEBOOK_MSG_RECEIVED);
+//    	intentFilter.addAction("android.intent.action.ClearPB");
+//    	intentFilter.addAction("android.intent.action.ClearLogs");
+//    	getActivity().registerReceiver(mReceiver, intentFilter);
+
+		m_dialogLoading = new ProgressDialog(getActivity());
+
+		initUIItems();
+		initPBLoader();
+
+        mHandler.sendEmptyMessageDelayed(H_GET_BINDER, 2000);
+		Log.v(TAG, "[PhonebookFragment]:onCreate");
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		Log.v(TAG, "[PhonebookFragment]:onStart");
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		Log.v(TAG, "[PhonebookFragment]:onResume");
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		Log.v(TAG, "[PhonebookFragment]:onPause");
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		Log.v(TAG, "[PhonebookFragment]:onStop");
+	}
+
+	@Override
+	public void onDestroy(){
+		super.onDestroy();
+		m_bRemoving=false;
+		if(m_dialogLoading != null){
+			m_dialogLoading.dismiss();
+		}
+		if(getActivity() != null){
+//    		getActivity().unregisterReceiver(mReceiver);
+		}
+    	Log.v(TAG, "[PhonebookFragment]:onDestroy");
+	}
+
 	private class PBLoaderListener implements LoaderManager.LoaderCallbacks<Cursor> {
     
 	    private final String[] CONTACTS_SUMMARY_PROJECTION = new String[] {
@@ -144,7 +215,6 @@ public class PhonebookFragment extends Fragment{
 	    
 		@Override
 		public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
-			// TODO Auto-generated method stub	
 	//		return new CursorLoader(getActivity(), CommonDataKinds.Phone.CONTENT_URI,
 	//				CONTACTS_SUMMARY_PROJECTION, null, null, null);
 //			Log.d(global.TAG, "[PhonebookFragment]: PBLoaderListener:onCreateLoader ");
@@ -156,8 +226,7 @@ public class PhonebookFragment extends Fragment{
 
 		@Override
 		public void onLoadFinished(Loader<Cursor> arg0, Cursor arg1) {
-			// TODO Auto-generated method stub
-			
+
 			m_CreateLoaderFlag = false;
 			if(m_PBShowLoading != null){
 				m_PBShowLoading.dismiss();
@@ -187,14 +256,12 @@ public class PhonebookFragment extends Fragment{
 
 		@Override
 		public void onLoaderReset(Loader<Cursor> arg0) {
-			// TODO Auto-generated method stub
 			m_listAdapter.swapCursor(null);
 //			Log.d(global.TAG, "[PhonebookFragment]: PBLoaderListener:onLoaderReset ");
 		}
 		
 	}
 	
-	//ListView锟斤拷Adapter
 	private class PBCursorAdapter extends CursorAdapter {
 
 		LayoutInflater m_inflater;
@@ -203,60 +270,49 @@ public class PhonebookFragment extends Fragment{
 		
 		public PBCursorAdapter(Context context, Cursor c, boolean autoRequery) {
 			super(context, c, autoRequery);
-			// TODO Auto-generated constructor stub
 			m_inflater = LayoutInflater.from(context);
 		}
 
 		public PBCursorAdapter(Context context, Cursor c, int flags) {
 			super(context, c, flags);
-			// TODO Auto-generated constructor stub
 			m_inflater = LayoutInflater.from(context);
 		}
 		
 		public PBCursorAdapter(Context context, Cursor c) {
 			super(context, c);
-			// TODO Auto-generated constructor stub
 			m_inflater = LayoutInflater.from(context);
 		}
 
 		
 		@Override
 		public View getView(int arg0, View arg1, ViewGroup arg2) {
-			// TODO Auto-generated method stub
 			viewPos = arg0;
 			return super.getView(arg0, arg1, arg2);
 		}
 
 		@Override
 		public void bindView(View arg0, Context arg1, Cursor arg2) {
-			// TODO Auto-generated method stub
-			//return
 			if(arg2 == null)
 			{
 				return;
 			}
 				
-
-			//锟斤拷锟斤拷锟斤拷示
-			TextView nameCtrl = (TextView)arg0.findViewById(R.id.pb_name);			
+			TextView nameCtrl = (TextView)arg0.findViewById(R.id.pb_name);
 			int idx_col_name = arg2.getColumnIndex( CommonDataKinds.Phone.DISPLAY_NAME);
 			String strName = arg2.getString(idx_col_name);
 			nameCtrl.setText(strName);
 			
-			//锟界话锟斤拷锟斤拷锟斤拷示
 			TextView numberCtrl = (TextView)arg0.findViewById(R.id.pb_number);
 			int idx_col_num = arg2.getColumnIndex(CommonDataKinds.Phone.NUMBER);
 			String strNumber = arg2.getString(idx_col_num);
 			numberCtrl.setText(strNumber);
 			
-			//锟斤拷锟脚帮拷钮
 			ImageButton dialBtn = (ImageButton)arg0.findViewById(R.id.pb_dial_btn);
 			dialBtn.setTag(strNumber);
 			dialBtn.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
 				public void onClick(View arg0) {
-					// TODO Auto-generated method stub
 //					 Intent intent = new Intent(Intent.ACTION_CALL_PRIVILEGED,
 //                             Uri.fromParts("tel", (String)arg0.getTag(), null));
 //					 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -264,12 +320,10 @@ public class PhonebookFragment extends Fragment{
 				}
 			});
 			
-			//锟斤拷母锟斤拷示textview锟斤拷锟斤拷示 锟斤拷锟斤拷锟饺伙拷玫锟角帮拷锟斤拷锟斤拷锟狡达拷锟斤拷锟斤拷锟侥�
 			TextView letterTag = (TextView)arg0.findViewById(R.id.pb_item_LetterTag);
 //			String firstLetter = PinyinUtils.getPingYin(strName.trim().substring(0, 1));
 //			firstLetter = firstLetter.substring(0,1).toUpperCase();
 			
-			//锟斤拷锟角耙伙拷锟斤拷锟斤拷锟斤拷锟狡达拷锟斤拷锟斤拷锟侥�
 			arg2.moveToPrevious();
 			String strNamePre = arg2.getString(idx_col_name);
 //			String firstLetterPre = PinyinUtils.getPingYin(strNamePre.trim().substring(0,1));
@@ -292,8 +346,7 @@ public class PhonebookFragment extends Fragment{
 
 		@Override
 		public View newView(Context arg0, Cursor arg1, ViewGroup arg2) {
-			// TODO Auto-generated method stub
-			
+
 			if(m_bRemoving){
 //			Log.d(global.TAG, "[PhonebookFragment]: newView m_bRemoving = ture");
 			m_listAdapter.swapCursor(null);
@@ -339,76 +392,7 @@ public class PhonebookFragment extends Fragment{
 //		}
 //	}
 	
-    @Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-//    	Log.d(global.TAG, "[PhonebookFragment]: onCreateView");
-    	
-    	return m_pbView;
-	}
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-    	super.onCreate(savedInstanceState);
-//    	Log.d(global.TAG, "[PhonebookFragment]:onCreate");
-    	
-    	LayoutInflater inflater = LayoutInflater.from(getActivity()) ;
-    	m_pbView = inflater.inflate(R.layout.phonebook_fragment, (ViewGroup)getActivity().findViewById(R.id.tabpage_frame),false);
-    	
-//    	IntentFilter intentFilter = new IntentFilter();
-//    	intentFilter.addAction(BluetoothPhonebookClientIntent.BLUETOOTH_PHONEBOOK_CONNECTION_STATUS_CHANGED);
-//    	intentFilter.addAction(BluetoothPhonebookClientIntent.BLUETOOTH_PHONEBOOK_MSG_RECEIVED);
-//    	intentFilter.addAction("android.intent.action.ClearPB");
-//    	intentFilter.addAction("android.intent.action.ClearLogs");
-//    	getActivity().registerReceiver(mReceiver, intentFilter);
-    	
-    	m_dialogLoading = new ProgressDialog(getActivity());
-    	
-    	initUIItems();
-		initPBLoader();
-    }
-	
-    @Override
-	public void onDestroy(){
-    	super.onDestroy();
-//    	Log.d(global.TAG, "[PhonebookFragment]:onDestroy");
-    	m_bRemoving=false;
-		if(m_dialogLoading != null){
-			m_dialogLoading.dismiss();
-		}
-    	if(getActivity() != null){
-//    		getActivity().unregisterReceiver(mReceiver);
-    	}
-    }
-    
-    @Override
-	public void onStart() {
-		// TODO Auto-generated method stub
-		super.onStart();
-//		Log.d(global.TAG, "[PhonebookFragment]:onStart");
-	}
-    
-	@Override
-	public void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-//		Log.d(global.TAG, "[PhonebookFragment]:onPause");
-	}
-
-	@Override
-	public void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-//		Log.d(global.TAG, "[PhonebookFragment]:onResume");
-	}
-
-	@Override
-	public void onStop() {
-		// TODO Auto-generated method stub
-		super.onStop();
-//		Log.d(global.TAG, "[PhonebookFragment]:onStop");
-	}
 
 	//public void 
     public void initPBLoader() {
@@ -417,16 +401,13 @@ public class PhonebookFragment extends Fragment{
     }
 
     private void initUIItems() {
-    	//锟斤拷始锟斤拷ListView
     	m_listView = (ListView)m_pbView.findViewById(R.id.pb_listvew);
     	m_listView.setVerticalScrollBarEnabled(true);
     	m_listAdapter = new PBCursorAdapter(getActivity(), null);
     	m_listView.setAdapter(m_listAdapter);
     	
-    	//锟斤拷始锟斤拷锟斤拷示锟斤拷
     	m_listEmptyText = (TextView)m_pbView.findViewById(R.id.pb_nocontacts_notice);
     	
-    	//锟斤拷始锟斤拷锟斤拷锟斤拷锟洁辑锟斤拷
     	m_editSearchPB = (EditText)m_pbView.findViewById(R.id.pb_search_edit);
 //    	m_editSearchPB.setVisibility(View.INVISIBLE);
     	m_editSearchPB.addTextChangedListener(new TextWatcher() {
@@ -476,23 +457,18 @@ public class PhonebookFragment extends Fragment{
 			}
 		});
     	
-    	//锟斤拷始锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷约锟斤拷锟侥革拷锟绞撅拷锟�
     	m_letterNotice = (TextView)m_pbView.findViewById(R.id.pb_letter_notice);
 //    	m_scrollBar = (AlphabetScrollBar)m_pbView.findViewById(R.id.pb_scrollbar);
 //    	m_scrollBar.setOnTouchBarListener(new ScrollBarListener());
-    	
-    	//锟斤拷始锟斤拷锟斤拷锟截帮拷钮锟斤拷锟斤拷删锟斤拷锟斤拷钮
+    	//下载电话本按钮
     	m_btnDownload = (ImageButton)m_pbView.findViewById(R.id.pb_download_contact);
     	m_btnDelete = (ImageButton)m_pbView.findViewById(R.id.pb_delete_contact);
     	
     	m_btnDownload.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-			//	m_listAdapter.swapCursor(null);
-					downloadPB();
-
+				m_listAdapter.swapCursor(null);
+				downloadPB();
 			}
 		});
     	
@@ -509,91 +485,9 @@ public class PhonebookFragment extends Fragment{
 		});
     }
     
-    public void downloadPB() {
-//    	m_deviceAddress = global.ConnectedDevices.get("PBAP");
-//    	int currentStatus = mPhonebookClient.getConnectionStatus(m_deviceAddress);
-//    	if (currentStatus != BluetoothPhonebookClient.BLUETOOTH_PHONEBOOK_DISCONNECTED) {
-//    		
-//    		if(m_listAdapter.getCount() !=0) {
-//    			AlertDialog  DownloadDialog = new AlertDialog.Builder(getActivity()).
-//    					setTitle(R.string.ready_download_phonebook).
-//    					setIcon(R.drawable.download_pb_icon).
-//    					setPositiveButton(android.R.string.ok, new OnClickListener() {
-//    						
-//    						@Override
-//    						public void onClick(DialogInterface arg0, int arg1) {
-//    							// TODO Auto-generated method stub
-//    			    	        m_dialogLoading = new ProgressDialog(getActivity());  
-//    			    	        m_dialogLoading.setProgressStyle(ProgressDialog.STYLE_SPINNER);//锟斤拷锟矫凤拷锟轿诧拷谓锟斤拷锟斤拷锟�  
-//    			    	        m_dialogLoading.setTitle(R.string.main_Phonebook);//锟斤拷锟矫憋拷锟斤拷  
-//    			    	        m_dialogLoading.setIcon(R.drawable.download_pb_icon);//锟斤拷锟斤拷图锟斤拷  
-//    			    	        m_dialogLoading.setMessage(getActivity().getResources().getString(R.string.phonebook_dlcontacts));  
-//    			    	        m_dialogLoading.setCancelable(false);
-//    			                m_dialogLoading.show();  
-//    			                
-//    			                setProgressDialogText(m_dialogLoading);
-//    			                
-//    	                     	SharedPreferences sp = getActivity().getSharedPreferences("PBDownloading_Stats", Context.MODE_PRIVATE);
-//    	                    	Editor editor = sp.edit();
-//    	                    	editor.putBoolean("PB_DownloadingFlag", true);
-//    	                    	editor.commit();
-//    			        		
-//    			        		//锟斤拷删锟斤拷锟界话锟斤拷
-//    					    	m_bRemoving = true;
-//    					    	m_bRemoveThenDownload = true;
-//    					    	Intent clearPhonebookIntent = new Intent();
-//    					        clearPhonebookIntent.setClass(getActivity(), BluetoothPbapcClearPhonebookService.class);
-//    					        getActivity().startService(clearPhonebookIntent);
-//    					        m_listAdapter.swapCursor(null);
-//    					        
-//    					        new ReDownloadPBThread().start();
-//
-//   // 			        		global.bu.pbapDownloadPB(m_deviceAddress);
-//    						}
-//    					}).
-//    					setNegativeButton(android.R.string.cancel, new OnClickListener() {
-//    						
-//    						@Override
-//    						public void onClick(DialogInterface arg0, int arg1) {
-//    							// TODO Auto-generated method stub
-//    							
-//    						}
-//    					}).create();
-//    					DownloadDialog.show();
-//    		}else{
-//    	        m_dialogLoading = new ProgressDialog(getActivity());  
-//    	        m_dialogLoading.setProgressStyle(ProgressDialog.STYLE_SPINNER);//锟斤拷锟矫凤拷锟轿诧拷谓锟斤拷锟斤拷锟�  
-//    	        m_dialogLoading.setTitle(R.string.main_Phonebook);//锟斤拷锟矫憋拷锟斤拷  
-//    	        m_dialogLoading.setIcon(R.drawable.download_pb_icon);//锟斤拷锟斤拷图锟斤拷  
-//    	        m_dialogLoading.setMessage(getActivity().getResources().getString(R.string.phonebook_dlcontacts));  
-//    	        m_dialogLoading.setCancelable(false);
-//                m_dialogLoading.show();  
-//                
-//                setProgressDialogText(m_dialogLoading);
-//
-//        		global.bu.pbapDownloadPB(m_deviceAddress);
-//                BluetoothPhonebookClient mPhonebookClient = new BluetoothPhonebookClient();
-//                int mDownloadFolderId;
-////               mDownloadFolderId = BluetoothPhonebookClient.CSR_ANDROID_PHONEBOOK_PHONE_PB;
-//               mDownloadFolderId = (BluetoothPhonebookClient.CSR_ANDROID_PHONEBOOK_SIM1_PB |
-//                       BluetoothPhonebookClient.CSR_ANDROID_PHONEBOOK_SIM1_ICH |
-//                       BluetoothPhonebookClient.CSR_ANDROID_PHONEBOOK_SIM1_MCH |
-//                       BluetoothPhonebookClient.CSR_ANDROID_PHONEBOOK_SIM1_OCH);
-//                if (mPhonebookClient.pullPhonebookReq(m_deviceAddress, mDownloadFolderId, 0, BluetoothPhonebookClient.BLUETOOTH_PHONEBOOK_MAX_CONTACT_NUMBER)) {
-//                    Log.v(global.TAG, "PBAPDownloadPB: true");
-//                } else {
-//                    Log.v(global.TAG, "PBAPDownloadPB: false");
-//                }
-    		}
-    		
-//    		DownloadPBTask task = new DownloadPBTask();
-//    		task.execute("Test AsyncTask");pbapDownloadSIMPB
-//    		global.bu.pbapDownloadSIMPB(m_deviceAddress);
-    		
-//    	}else{
-//    		ToastUtils.showMessage(getActivity(), getActivity().getResources().getString(R.string.str_no_pbap));
-//    	}
-//    }
+    private void downloadPB() {
+		myBinder.readContact();
+    }
     
 //    public class ReDownloadPBThread extends Thread {
 //
@@ -884,4 +778,16 @@ public class PhonebookFragment extends Fragment{
 //			return arg1;
 //		}
 //    }
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case H_GET_BINDER:
+                    myBinder = ((CSRBluetoothDemoActivity)getActivity()).getMyBinder();
+                    Log.d(TAG, "[PhonebookFragment]:mHandler-H_GET_BINDER ");
+                    break;
+            }
+        }
+    };
 }

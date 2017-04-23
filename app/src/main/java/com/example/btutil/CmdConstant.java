@@ -6,7 +6,7 @@ import android.app.SearchableInfo;
 public class CmdConstant {
     //ARM ---> BT : AT#[CMD]\r\n
     public static String HEAD = "AT#";
-    public static String END = "\\r\\n";
+    public static String END = "\r\n";
     public static String CONNECT = "CC";            // 1.连接最后一次连接设备,或者配对列表index
     public static String DISCONNECT = "CD";         // 2.断开当前设备所有连接
     public static String ANSWER_CALL = "CE";        // 3.接听来电
@@ -24,9 +24,9 @@ public class CmdConstant {
     public static String VOICE_ADD = "CK";          // 15.CK;音量+(部分版本暂不支持);
     public static String VOICE_SUB = "CL";          // 16.CL:音量- (部分版本暂不支持);
     public static String VOICE_SET = "VS";          // 17.VS[VALUE];设置音量:”1”<=VALUE<=”16”; 查询音量:value=”0”;
-    public static String TELE_VOICE_SWITCH = "CO";  // 18.CO:通话声音互切;
-    public static String TELE_VOICE_SWITCH_BT = "CP";// 19.CP:声音切好蓝牙;
-    public static String TELE_VOICE_SWITCH_PHONE = "CN"; // 20.CN:声音切到手机;
+    public static String VOICE_SWITCH_PHONE_OR_BT = "CO";  // 18.CO:通话声音互切;
+    public static String VOICE_SWITCH_BT = "CP";// 19.CP:声音切到蓝牙;
+    public static String VOICE_SWITCH_PHONE = "CN"; // 20.CN:声音切到手机;
     public static String PLAY_OR_PAUSE_MUSIC = "MA";   // 21.MA:播放、暂停音乐;
     public static String VOICE_FORCE_STOP = "MB";    // 22.MB:声音强制暂停;
     public static String STOP_MUSIC = "MC";          // 23.MC:停止音乐;
@@ -77,7 +77,7 @@ public class CmdConstant {
     public static String MIC_OPEN = "MJ";        //MJ:MIC 开
     public static String MIC_CLOSE = "MK";       //MK:MIC 关
     public static String CALL_OUT = "IC";        //IC[number]:去电
-    public static String CALL_STATUS_MISS = "MG";//MG[STATUS:1]:1;未连接 2;连接中 3;已连接 4 去电 5 来电 6通话中
+    public static String HF_STATUS = "MG";//MG[STATUS:1]:1;未连接 2;连接中 3;已连接 4 去电 5 来电 6通话中
     public static String START_SURCESS = "IS";   //IS;启动成功
     public static String VOICE_VALUE = "VS";     //VS[VALUE]
     public static String VOICE_BT = "MC";        //MC:声音在蓝牙端
