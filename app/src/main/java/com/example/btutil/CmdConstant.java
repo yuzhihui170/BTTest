@@ -45,7 +45,7 @@ public class CmdConstant {
     public static String CANCEL_AUTO_ANSWER = "MQ"; // 34.MQ:取消自动接听;
     public static String QUERY_A2DP_STATUE = "MV";  // 35.MV:查询 A2DP 状态;
     public static String QUERY_MACTH_LIST = "MX";   // 36.MX:查询配对列表
-    public static String READ_TELE_BOOK = "PA";     // 37.PA:读取电话本;
+    public static String READ_TELE_BOOK = "JO";     // 37.PA:读取电话本;
     public static String CALL_RECORDS = "PH";       // 38.PH:拨打通话记录;
     public static String RECEIVED_CALLS = "PI";     // 39.PI:已接通话记录;
     public static String MISS_CALLS = "PJ";         // 40.PJ::未接通话记录

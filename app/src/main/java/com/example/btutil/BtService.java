@@ -168,7 +168,7 @@ public class BtService extends Service {
     private void parseResult(String result) {
         String[] status = result.split("\r\n");
         for (String s : status) {
-            Log.d(TAG, "-- status: " + s);
+            Log.d(TAG, "parseResult: " + s);
             if (s.contains(CmdConstant.MACTCH_LIST)) {
 //                int index = Integer.parseInt(s.substring(2, 2));
                 String deviceAddr = s.substring(3, 15);

@@ -209,21 +209,27 @@ public class BTUtil {
 
     //BT-->ARM 37.PA:读取电话本;
     public void readContact() {
+//        String cmdStr1 = HEAD + "MY" + END;
+//        write(cmdStr1);
         String cmdStr = HEAD + CmdConstant.READ_TELE_BOOK + END;
         write(cmdStr);
     }
 
+    private final int BUFFER_LEN = 1024;
+    byte[] buffer = new byte[BUFFER_LEN];
     //读取蓝牙模块的各种数据
     public String readStatus() {
-        byte[] buffer = new byte[100];
         int ret = 0;
         while (true) {
-            ret += read(buffer, ret, 100-ret);
+            ret += read(buffer, ret, BUFFER_LEN-ret);
+            Log.d(TAG, "read ret:"+ret);
             if(ret >= 4 && buffer[ret-2] == '\r' && buffer[ret-1] == '\n') {
                 break;
             }
+            if (ret == 1024) {
+                break;
+            }
         }
-        Log.d(TAG, "read ret:"+ret);
         String result = new String(buffer, 0, ret);
         Log.d(TAG,"result  :"+result);
         return result;
