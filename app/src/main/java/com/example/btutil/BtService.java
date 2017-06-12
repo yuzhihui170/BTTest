@@ -9,6 +9,8 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.example.phoneUtil.ContactsUtil;
+
 public class BtService extends Service {
     private static String TAG = "yzh";
     public final static int H_CONNECT = 1;
@@ -23,6 +25,9 @@ public class BtService extends Service {
     private boolean mMusicPlaying = false;
     //HF 状态
     private String mHFStatus;
+
+    //插入电话簿
+    private ContactsUtil mContactsUtil;
 
     @Nullable
     @Override
@@ -43,8 +48,11 @@ public class BtService extends Service {
         mBTUtil = BTUtil.getInstance();
         mBTUtil.openDevice();
 
+        mContactsUtil = new ContactsUtil(getApplicationContext());
+
         mThread = new ReadStatusThread();
         mThread.start();
+
         Log.d(TAG, "[BtService]: onCreate ");
     }
 
@@ -205,6 +213,16 @@ public class BtService extends Service {
                 intent.putExtra("hfStatus", "MG1");
                 sendBroadcast(intent);
                 Log.d(TAG, "hf is not connected!");
+
+            } else if (s.contains(CmdConstant.READ_TELE_BOOK_DATA)) {  //PB[name]\FF[number]\r\n
+                int index1 = s.indexOf(0xff);
+                String name = s.substring(2, index1-1);
+                String number = s.substring(index1+1);
+                mContactsUtil.insert(name, number);
+
+            } else if (s.contains(CmdConstant.READ_TELE_BOOK_END)) { //PC:结束下载
+                Intent intent = new Intent(ActionConstant.ACTION_TELE_BOOK_READ_OVER);
+                sendBroadcast(intent);
 
             }
         }

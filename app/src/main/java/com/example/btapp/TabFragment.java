@@ -26,7 +26,7 @@ public class TabFragment extends Fragment {
 	private ImageButton Btn_Phone;
 	private ImageButton Btn_CallRecord;
 	private ImageButton Btn_setting;
-	private ImageButton m_btnWhichSel; //���洦��ѡ��״̬�İ�ť
+	private ImageButton m_btnWhichSel;
 	private View m_tabview;
 	private OnTabClickListener m_tabClickListener;
 	private int m_curTabIdx =  -1;

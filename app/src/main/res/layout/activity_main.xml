@@ -1,22 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_connect"
+    <TextView
+        android:text="Name: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="connect"/>
+        android:layout_margin="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="12dp"
+        android:id="@+id/tv_name"/>
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_name"/>
+
+    <TextView
+        android:text="Number: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/tv_name"
+        android:id="@+id/tv_number"/>
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_number"
+        android:layout_toRightOf="@+id/tv_number"/>
 
     <Button
-        android:id="@+id/btn_disconnect"
+        android:id="@+id/btn_insert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="disconnect"
-        android:layout_toEndOf="@+id/btn_connect"/>
+        android:text="connect"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/tv_number"
+        android:layout_alignStart="@+id/tv_number"/>
 
 </RelativeLayout>

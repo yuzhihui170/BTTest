@@ -255,7 +255,7 @@ public class DialpadFragment extends Fragment {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case H_GET_BINDER:
-                    myBinder = ((CSRBluetoothDemoActivity)getActivity()).getMyBinder();
+                    myBinder = ((BluetoothActivity)getActivity()).getMyBinder();
                     if (myBinder == null) {
                         UpdateDeviceStats(true, "不能获取蓝牙服务");
                     } else {

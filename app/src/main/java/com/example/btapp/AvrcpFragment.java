@@ -11,20 +11,12 @@ package com.example.btapp;
 import android.app.Fragment;
 //import android.bluetooth.BluetoothA2dpSink;
 //import android.bluetooth.BluetoothAvrcpCtl;
-import android.bluetooth.BluetoothDevice;
 //import android.bluetooth.BluetoothPhonebookClient;
 //import android.bluetooth.BluetoothPhonebookClient.BluetoothPhonebookClientIntent;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.content.res.Resources;
-import android.media.AudioManager;
 import android.os.Bundle;
-import android.os.ParcelUuid;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +24,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.btutil.BtService;
 //音乐播放界面
@@ -103,7 +94,7 @@ public class AvrcpFragment extends Fragment {
 //        filter.addAction(BluetoothA2dpSink.ACTION_A2DP_SINK_STATUS_CHANGED);
 //        getActivity().registerReceiver(mReceiver, filter);
 
-		myBinder = ((CSRBluetoothDemoActivity)getActivity()).getMyBinder();
+		myBinder = ((BluetoothActivity)getActivity()).getMyBinder();
         if (myBinder.getMusicStatic()) {
             mPlaySatas.setText(R.string.avrcp_playing);
 

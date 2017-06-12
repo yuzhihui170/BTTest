@@ -8,5 +8,7 @@ public class ActionConstant {
     public final static String ACTION_MUSIC_STATUS_CHANGE = "action.music.status.change";
     //HF状态广播
     public final static String ACTION_HF_STATUS_CHANGE = "action.hf.status.change";
+    //下载电话簿结束
+    public final static String ACTION_TELE_BOOK_READ_OVER = "action.phone.book.read.over";
 
 }

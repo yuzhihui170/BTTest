@@ -4,11 +4,8 @@
 package com.example.btapp;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,19 +16,14 @@ import java.util.regex.Pattern;
 //import com.csr.BTApp.common.global;
 //import com.csr.bluetooth.BluetoothIntent;
 
-import android.R.bool;
-import android.app.AlertDialog;
 import android.app.Fragment;
 //import android.bluetooth.BluetoothA2dpSink;
-import android.bluetooth.BluetoothAdapter;
 //import android.bluetooth.BluetoothAvrcpCtl;
-import android.bluetooth.BluetoothDevice;
 //import android.bluetooth.BluetoothHFP;
 //import android.bluetooth.BluetoothPhonebookClient;
 //import android.bluetooth.BluetoothPhonebookClient.BluetoothPhonebookClientIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -39,23 +31,17 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.ParcelUuid;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Gallery.LayoutParams;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.btutil.ActionConstant;
 import com.example.btutil.BTUtil;
@@ -154,7 +140,7 @@ public class DeviceListFragment extends Fragment{
         filter.addAction(ActionConstant.ACTION_FOUND_DEVICE);
         getActivity().registerReceiver(mReceiver, filter);
         
-		myBinder = ((CSRBluetoothDemoActivity)getActivity()).getMyBinder();
+		myBinder = ((BluetoothActivity)getActivity()).getMyBinder();
 		Log.d(TAG, "[DeviceListFragment] onCreate");
     }
     

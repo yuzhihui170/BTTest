@@ -60,7 +60,7 @@ import android.widget.Toast;
 
 import com.example.btutil.BtService;
 
-public class CSRBluetoothDemoActivity extends Activity {
+public class BluetoothActivity extends Activity {
     private static final String TAG = "yzh";
 
 	//private ToggleButton Btn_bluetooth_onoff;

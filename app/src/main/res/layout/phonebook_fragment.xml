@@ -23,8 +23,7 @@
 	            android:hint="@string/search_contacts"
 	            android:textSize="@dimen/text_small_size" 
                 android:textColor="#FFFFFF"
-                android:background="@drawable/phoneedit_backgnd"
-		        /> 
+                android:background="@drawable/phoneedit_backgnd" />
     
             <ListView 
 	            android:id="@+id/pb_listvew"
@@ -33,6 +32,7 @@
 	           	android:dividerHeight="2dp"
 	            android:divider="#FFFFFF"
 	            android:layout_marginRight="30dp"/>
+
         </LinearLayout>
         
         <TextView 
@@ -45,6 +45,7 @@
             android:textColor="#FFFFFF"
             android:textSize="50sp"
             android:visibility="gone"/>
+
         <TextView
             android:id="@+id/pb_nocontacts_notice"
             android:layout_width="wrap_content"
@@ -55,6 +56,7 @@
             android:textSize="@dimen/text_middle_size"
             android:text="@string/unconnect_notice"
             android:visibility="gone"/>
+
         <com.example.btapp.apical.util.AlphabetScrollBar
             android:id="@+id/pb_scrollbar"
             android:layout_gravity="right"
